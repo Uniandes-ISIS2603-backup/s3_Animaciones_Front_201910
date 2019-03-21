@@ -14,7 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 
-
+import {ArtistaModule} from './artista/artista.module';
 
 
 
@@ -38,7 +38,8 @@ import {AuthModule} from './auth/auth.module';
         }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
-        NgbModule
+        NgbModule,
+        ArtistaModule
     ],
     bootstrap: [AppComponent],
     providers: [
