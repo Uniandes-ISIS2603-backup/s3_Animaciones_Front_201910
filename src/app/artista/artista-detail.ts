@@ -1,6 +1,6 @@
 import{ Artista } from "./artista";
-/** TODO importar todo jajaja **/
+import { Animacion } from '../animacion/animacion';
 
 export class ArtistaDetail extends Artista {
-    
+    animaciones: Animacion[];
 }
