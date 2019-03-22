@@ -1,3 +1,16 @@
-<p>
-  artista-list works!
-</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Artistas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let artista of artistas">
+            <td style="cursor: pointer;">
+                <dd>{{artista.nombre}}</dd>
+            </td>
+        </tr>
+    </tbody>
+</table>

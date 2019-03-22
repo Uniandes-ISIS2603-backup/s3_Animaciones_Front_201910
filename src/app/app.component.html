@@ -11,7 +11,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav mr-auto mt-0">
-                
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/artistas/list">Artistas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/animaciones/list">Animaciones</a>
+                    </li>
+                </ul> 
             </div>
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
@@ -40,10 +47,6 @@
             <p class="navbar-text text-center">
                 <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
                 <a routerLink="/home"> s3_Animaciones-Front</a>
-
-                <app-artista-list></app-artista-list>
-                <app-animacion-list></app-animacion-list>
-
             </p>
         </div>
     </footer>
