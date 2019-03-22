@@ -5,6 +5,9 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import { ArtistaListComponent } from '../artista/artista-list/artista-list.component';
+import { AnimacionListComponent } from '../animacion/animacion-list/animacion-list.component';
+
 
 const routes: Routes = [
 
@@ -31,8 +34,26 @@ const routes: Routes = [
                     }
                 }
             }
-        ]
-    },
+        ],
+     },
+    {
+         path: 'artistas',
+         children: [
+             {
+                 path: 'list',
+                 component: ArtistaListComponent
+             }
+         ]
+     },
+    {
+         path: 'animaciones',
+         children: [
+             {
+                 path: 'list',
+                 component: AnimacionListComponent
+             }
+         ]
+     },
     {
         path: 'home',
         component: AuthLoginComponent

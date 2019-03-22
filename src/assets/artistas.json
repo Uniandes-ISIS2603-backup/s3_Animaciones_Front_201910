@@ -1,0 +1,41 @@
+[{
+  "id": 1,
+  "contrasenia": "jshAta6GHBF9",
+  "usuario": "dsouthan0",
+  "tema": "Yellow",
+  "tecnica": "Maroon",
+  "nombre": "Donaugh",
+  "privado": true
+}, {
+  "id": 2,
+  "contrasenia": "qYfR1AdnGNlr",
+  "usuario": "ewerrett1",
+  "tema": "Khaki",
+  "tecnica": "Khaki",
+  "nombre": "Earle",
+  "privado": true
+}, {
+  "id": 3,
+  "contrasenia": "1PL9mf4ngb",
+  "usuario": "fthain2",
+  "tema": "Fuscia",
+  "tecnica": "Fuscia",
+  "nombre": "Ferdie",
+  "privado": false
+}, {
+  "id": 4,
+  "contrasenia": "NZDBnfNP",
+  "usuario": "bsignore3",
+  "tema": "Orange",
+  "tecnica": "Orange",
+  "nombre": "Bernetta",
+  "privado": true
+}, {
+  "id": 5,
+  "contrasenia": "NAdI45yx",
+  "usuario": "ngladtbach4",
+  "tema": "Turquoise",
+  "tecnica": "Puce",
+  "nombre": "Nikki",
+  "privado": true
+}]
