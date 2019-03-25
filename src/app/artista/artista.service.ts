@@ -7,7 +7,7 @@ import { ArtistaDetail } from "./artista-detail";
 
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
-const artistas = '/artistas';
+const artistas = 'artistas';
 
 @Injectable()
 export class ArtistaService {

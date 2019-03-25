@@ -9,7 +9,9 @@
     <tbody>
         <tr *ngFor="let artista of artistas">
             <td style="cursor: pointer;">
-                <dd>{{artista.nombre}}</dd>
+                <a routerLink="/artistas/{{artista.id}}">
+                    <dd>{{artista.nombre}}</dd>
+                </a>
             </td>
         </tr>
     </tbody>

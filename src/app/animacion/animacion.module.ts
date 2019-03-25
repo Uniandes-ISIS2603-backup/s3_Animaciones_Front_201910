@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AnimacionListComponent } from './animacion-list/animacion-list.component';
 import { AnimacionService } from './animacion.service';
+import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { AnimacionService } from './animacion.service';
       HttpClientModule,
       FormsModule 
   ],
-    declarations: [AnimacionListComponent],
+    declarations: [AnimacionListComponent, AnimacionDetailComponent],
     providers: [AnimacionService],
     exports: [AnimacionListComponent]
 })
