@@ -1,0 +1,13 @@
+<div class="panel-body">
+    <div class="border">
+        <h3>{{artistaDetail.nombre}}</h3>
+        <dl>
+            <dt>Usuario</dt>
+            <dd>{{artistaDetail.usuario}}</dd>
+            <dt>Tecnica</dt>
+            <dd>{{artistaDetail.tecnica}}</dd>
+        </dl>
+    </div>
+    <h3>Animaciones de este artista: </h3>
+    <app-animacion-list [animaciones]="artistaDetail.animaciones"></app-animacion-list>
+</div>

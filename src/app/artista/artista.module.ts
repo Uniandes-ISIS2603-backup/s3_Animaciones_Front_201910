@@ -7,6 +7,9 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 import { ArtistaListComponent } from './artista-list/artista-list.component';
 import { ArtistaService } from './artista.service';
+import { ArtistaDetailComponent } from './artista-detail/artista-detail.component';
+
+import { AnimacionModule } from '../animacion/animacion.module';
 
 @NgModule({
   imports: [
@@ -14,9 +17,10 @@ import { ArtistaService } from './artista.service';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      AnimacionModule
   ],
-    declarations: [ArtistaListComponent],
+    declarations: [ArtistaListComponent, ArtistaDetailComponent],
     providers: [ArtistaService],
     exports: [ArtistaListComponent]
 })

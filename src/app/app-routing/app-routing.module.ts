@@ -7,7 +7,7 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { ArtistaListComponent } from '../artista/artista-list/artista-list.component';
 import { AnimacionListComponent } from '../animacion/animacion-list/animacion-list.component';
-
+import { ArtistaDetailComponent } from '../artista/artista-detail/artista-detail.component';
 
 const routes: Routes = [
 
@@ -42,6 +42,10 @@ const routes: Routes = [
              {
                  path: 'list',
                  component: ArtistaListComponent
+             },
+             {
+                 path: ':id',
+                 component: ArtistaDetailComponent
              }
          ]
      },
