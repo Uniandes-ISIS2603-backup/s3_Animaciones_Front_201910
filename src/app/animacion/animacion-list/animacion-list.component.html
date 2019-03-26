@@ -9,9 +9,8 @@
  <tbody>
     <tr *ngFor="let animacion of animaciones">
         <td style="cursor: pointer;">
-            <dd>{{animacion.nombre}}</dd>
+            <a routerLink="/animaciones/{{animacion.id}}"><dd>{{animacion.nombre}}</dd></a>
         </td>
     </tr>
  </tbody>
 </table>
-

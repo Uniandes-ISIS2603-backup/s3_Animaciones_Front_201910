@@ -15,7 +15,8 @@ import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.co
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule 
+      FormsModule//,
+      //NgModule
   ],
     declarations: [AnimacionListComponent, AnimacionDetailComponent],
     providers: [AnimacionService],

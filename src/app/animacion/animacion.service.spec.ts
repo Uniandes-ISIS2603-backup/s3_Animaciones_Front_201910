@@ -10,6 +10,7 @@ import {AppModule} from '../app.module';
 describe('Service: AnimacionService', () => {
     let injector: TestBed;
     let service: AnimacionService;
+    const animaciones: Animacion[] = require('../../assets/animaciones.json');
     
     beforeEach(() => {
         TestBed.configureTestingModule({

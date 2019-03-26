@@ -7,7 +7,7 @@ import { AnimacionDetail } from './animacion-detail';
 
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
-const animaciones = '/animaciones';
+const animaciones = 'animaciones';
 
 @Injectable()
 export class AnimacionService {
