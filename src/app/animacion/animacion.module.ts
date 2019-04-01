@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AnimacionListComponent } from './animacion-list/animacion-list.component';
 import { AnimacionService } from './animacion.service';
 import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.component';
+import { AnimacionCreateComponent } from './animacion-create/animacion-create.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.co
       FormsModule//,
       //NgModule
   ],
-    declarations: [AnimacionListComponent, AnimacionDetailComponent],
+    declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent],
     providers: [AnimacionService],
     exports: [AnimacionListComponent]
 })
