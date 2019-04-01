@@ -10,6 +10,7 @@ import { ArtistaService } from './artista.service';
 import { ArtistaDetailComponent } from './artista-detail/artista-detail.component';
 
 import { AnimacionModule } from '../animacion/animacion.module';
+import { ArtistaCreateComponent } from './artista-create/artista-create.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { AnimacionModule } from '../animacion/animacion.module';
       FormsModule,
       AnimacionModule
   ],
-    declarations: [ArtistaListComponent, ArtistaDetailComponent],
+    declarations: [ArtistaListComponent, ArtistaDetailComponent, ArtistaCreateComponent],
     providers: [ArtistaService],
     exports: [ArtistaListComponent]
 })
