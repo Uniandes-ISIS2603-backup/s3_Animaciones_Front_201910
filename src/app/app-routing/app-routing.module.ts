@@ -9,6 +9,7 @@ import { ArtistaListComponent } from '../artista/artista-list/artista-list.compo
 import { AnimacionListComponent } from '../animacion/animacion-list/animacion-list.component';
 import { ArtistaDetailComponent } from '../artista/artista-detail/artista-detail.component';
 import { AnimacionDetailComponent } from '../animacion/animacion-detail/animacion-detail.component';
+import { ArtistaCreateComponent } from '../artista/artista-create/artista-create.component';
 
 const routes: Routes = [
 
@@ -47,6 +48,10 @@ const routes: Routes = [
              {
                  path: ':id',
                  component: ArtistaDetailComponent
+             },
+             {
+                 path: 'add',
+                 component: ArtistaCreateComponent
              }
          ]
      },

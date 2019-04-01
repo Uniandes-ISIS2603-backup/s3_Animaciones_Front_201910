@@ -1,3 +1,9 @@
+<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Crear Artista</button>
+<div *ngIf="showCreate">
+    <app-artista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artista-create>
+</div>
+<br>
+<br>
 <table class="table">
     <thead>
         <tr>
