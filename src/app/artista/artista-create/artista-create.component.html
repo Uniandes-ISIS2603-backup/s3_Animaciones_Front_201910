@@ -1,3 +1,17 @@
-<p>
-  artista-create works!
-</p>
+<div class="row">
+    <br>
+    <h2 class="text-center">Crear un artista</h2>
+    <br>
+    <form name="artista" (ngSubmit)="f.form.valid && createArtista()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="artistaNombre"><b>Nombre</b></label>
+            <input type="text" name="artistaNombre" class="form-control" id="artistaNombre" [(ngModel)]="artista.nombre" #artistaNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaNombre.invalid}" required>
+                <div class="invalid-feedback"><p>Falta el nombre del artista</p></div>
+        </div>
+        <div class="row from-inline">
+            <button type="submit" class="btn">Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelCreation()">Cancel</button>
+        </div>
+    </form>
+</div>

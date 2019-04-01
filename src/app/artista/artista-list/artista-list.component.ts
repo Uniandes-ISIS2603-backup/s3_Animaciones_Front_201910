@@ -15,13 +15,20 @@ export class ArtistaListComponent implements OnInit {
 
     artistas: Artista[];
 
+    showCreate: boolean;
+
     getArtistas(): void {
         this.artistaService.getArtistas().subscribe(artistas => {
             this.artistas = artistas;
         });
     }
 
+    showHideCreate(): void {
+        this.showCreate = !this.showCreate!
+    }
+
     ngOnInit() {
+        this.showCreate = false;
         this.getArtistas();
     }
 
