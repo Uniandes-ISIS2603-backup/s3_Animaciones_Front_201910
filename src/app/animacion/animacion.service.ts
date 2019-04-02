@@ -20,4 +20,8 @@ export class AnimacionService {
     getAnimacionDetail(animacionId): Observable<AnimacionDetail> {
         return this.http.get<AnimacionDetail>(API_URL + animaciones + '/' + animacionId);
     }
+
+    createAnimacion(animacion): Observable<AnimacionDetail> {
+        return this.http.post<AnimacionDetail>(API_URL + animaciones, animacion);
+    }
 }
