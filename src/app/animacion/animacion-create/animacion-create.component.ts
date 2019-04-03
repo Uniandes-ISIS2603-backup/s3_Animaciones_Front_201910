@@ -41,6 +41,8 @@ export class AnimacionCreateComponent implements OnInit {
     }
 
     createAnimacion(): Animacion {
+        let dateA: Date = new Date(this.animacion.fecha.year, this.animacion.fecha.month - 1, this.animacion.fecha.day);
+        this.animacion.fecha = this.dp.transform(dateA, 'yyyy-MM-ddTHH:mm:ss.SSS');
         this.animacionService.createAnimacion(this.animacion).subscribe((animaicon) => {
             this.animacion = animaicon;
             this.create.emit();

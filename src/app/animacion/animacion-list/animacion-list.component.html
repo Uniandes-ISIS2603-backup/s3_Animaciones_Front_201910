@@ -1,3 +1,9 @@
+<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Crear Animacion</button>
+<div *ngIf="showCreate">
+    <app-animacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-animacion-create>
+</div>
+<br>
+<br>
 <table class="table">
  <thead>
     <tr>
