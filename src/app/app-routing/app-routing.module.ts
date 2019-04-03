@@ -10,6 +10,7 @@ import { AnimacionListComponent } from '../animacion/animacion-list/animacion-li
 import { ArtistaDetailComponent } from '../artista/artista-detail/artista-detail.component';
 import { AnimacionDetailComponent } from '../animacion/animacion-detail/animacion-detail.component';
 import { ArtistaCreateComponent } from '../artista/artista-create/artista-create.component';
+import { AnimacionCreateComponent } from '../animacion/animacion-create/animacion-create.component';
 
 const routes: Routes = [
 
@@ -65,6 +66,10 @@ const routes: Routes = [
              {
                  path: ':id',
                  component: AnimacionDetailComponent
+             },
+             {
+                 path: 'add',
+                 component: AnimacionCreateComponent
              }
          ]
      },

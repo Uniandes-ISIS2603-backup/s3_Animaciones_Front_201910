@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AnimacionListComponent } from './animacion-list/animacion-list.component';
 import { AnimacionService } from './animacion.service';
@@ -16,8 +17,8 @@ import { AnimacionCreateComponent } from './animacion-create/animacion-create.co
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule//,
-      //NgModule
+      FormsModule,
+      NgbModule
   ],
     declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent],
     providers: [AnimacionService],

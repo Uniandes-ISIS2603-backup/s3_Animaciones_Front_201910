@@ -16,13 +16,20 @@ export class AnimacionListComponent implements OnInit {
 
     @Input() animaciones: Animacion[];
 
+    showCreate: boolean;
+
     getAnimaciones(): void {
         this.animacionService.getAnimaciones().subscribe(animaciones => {
             this.animaciones = animaciones;
         });
     }
 
+    showHideCreate(): void {
+        this.showCreate = !this.showCreate;
+    }
+
     ngOnInit() {
+        this.showCreate = false;
         this.getAnimaciones();
     }
 }
