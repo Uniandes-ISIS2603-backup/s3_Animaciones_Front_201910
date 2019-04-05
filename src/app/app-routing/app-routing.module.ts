@@ -11,6 +11,12 @@ import { ArtistaDetailComponent } from '../artista/artista-detail/artista-detail
 import { AnimacionDetailComponent } from '../animacion/animacion-detail/animacion-detail.component';
 import { ArtistaCreateComponent } from '../artista/artista-create/artista-create.component';
 import { AnimacionCreateComponent } from '../animacion/animacion-create/animacion-create.component';
+import { RondaListComponent } from '../ronda/ronda-list/ronda-list.component';
+import { VotacionListComponent } from '../votacion/votacion-list/votacion-list.component';
+import { RondaDetailComponent } from '../ronda/ronda-detail/ronda-detail.component';
+import { VotacionDetailComponent } from '../votacion/votacion-detail/votacion-detail.component';
+import { RondaCreateComponent } from '../ronda/ronda-create/ronda-create.component';
+import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-create.component';
 
 const routes: Routes = [
 
@@ -73,6 +79,40 @@ const routes: Routes = [
              }
          ]
      },
+     {
+         path: 'rondas',
+         children: [
+                {
+                    path: 'list',
+                    component: RondaListComponent
+                },
+                {
+                    path: ':id',
+                    component: RondaDetailComponent
+                },
+                {
+                    path: 'add',
+                    component: RondaCreateComponent
+                }
+         ]
+     },
+     {
+        path: 'votaciones',
+        children: [
+               {
+                   path: 'list',
+                   component: VotacionListComponent
+               },
+               {
+                   path: ':id',
+                   component: VotacionDetailComponent
+               },
+               {
+                   path: 'add',
+                   component: VotacionCreateComponent
+               }
+        ]
+    },
     {
         path: 'home',
         component: AuthLoginComponent
