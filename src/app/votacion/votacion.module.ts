@@ -6,11 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { VotacionService } from './votacion.service';
 import { VotacionListComponent } from './votacion-list/votacion-list.component';
-import { VotacionDetailComponent } from './votacion-detail/votacion-detail.component';
 import { VotacionCreateComponent } from './votacion-create/votacion-create.component';
 
 @NgModule({
-  declarations: [VotacionListComponent, VotacionDetailComponent, VotacionCreateComponent],
+  declarations: [VotacionListComponent, VotacionCreateComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -19,6 +18,6 @@ import { VotacionCreateComponent } from './votacion-create/votacion-create.compo
     FormsModule,
   ],
   providers: [VotacionService],
-  exports: [VotacionListComponent, VotacionDetailComponent, VotacionCreateComponent]
+  exports: [VotacionListComponent, VotacionCreateComponent]
 })
 export class VotacionModule { }
