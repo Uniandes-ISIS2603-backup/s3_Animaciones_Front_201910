@@ -16,7 +16,8 @@ import {AuthModule} from './auth/auth.module';
 
 import {ArtistaModule} from './artista/artista.module';
 import {AnimacionModule} from './animacion/animacion.module';
-
+import {RondaModule} from './ronda/ronda.module';
+import {VotacionModule} from './votacion/votacion.module';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import {AnimacionModule} from './animacion/animacion.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         ArtistaModule,
-        AnimacionModule
+        AnimacionModule,
+        RondaModule,
+        VotacionModule
     ],
     bootstrap: [AppComponent],
     providers: [

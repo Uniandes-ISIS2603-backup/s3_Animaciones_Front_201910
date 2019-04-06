@@ -14,7 +14,6 @@ import { AnimacionCreateComponent } from '../animacion/animacion-create/animacio
 import { RondaListComponent } from '../ronda/ronda-list/ronda-list.component';
 import { VotacionListComponent } from '../votacion/votacion-list/votacion-list.component';
 import { RondaDetailComponent } from '../ronda/ronda-detail/ronda-detail.component';
-import { VotacionDetailComponent } from '../votacion/votacion-detail/votacion-detail.component';
 import { RondaCreateComponent } from '../ronda/ronda-create/ronda-create.component';
 import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-create.component';
 
@@ -102,10 +101,6 @@ const routes: Routes = [
                {
                    path: 'list',
                    component: VotacionListComponent
-               },
-               {
-                   path: ':id',
-                   component: VotacionDetailComponent
                },
                {
                    path: 'add',
