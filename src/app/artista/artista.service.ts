@@ -24,4 +24,8 @@ export class ArtistaService {
     createArtista(artista): Observable<Artista> {
         return this.http.post<Artista>(API_URL + artistas, artista);
     }
+
+    updateArtista(artista): Observable<ArtistaDetail> {
+        return this.http.put<ArtistaDetail>(API_URL + artistas + '/' + artista.id, artista);
+    }
 }

@@ -11,6 +11,7 @@ import { ArtistaDetailComponent } from './artista-detail/artista-detail.componen
 
 import { AnimacionModule } from '../animacion/animacion.module';
 import { ArtistaCreateComponent } from './artista-create/artista-create.component';
+import { ArtistaEditComponent } from './artista-edit/artista-edit.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { ArtistaCreateComponent } from './artista-create/artista-create.componen
       FormsModule,
       AnimacionModule
   ],
-    declarations: [ArtistaListComponent, ArtistaDetailComponent, ArtistaCreateComponent],
+    declarations: [ArtistaListComponent, ArtistaDetailComponent, ArtistaCreateComponent, ArtistaEditComponent],
     providers: [ArtistaService],
     exports: [ArtistaListComponent]
 })

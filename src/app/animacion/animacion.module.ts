@@ -10,6 +10,7 @@ import { AnimacionListComponent } from './animacion-list/animacion-list.componen
 import { AnimacionService } from './animacion.service';
 import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.component';
 import { AnimacionCreateComponent } from './animacion-create/animacion-create.component';
+import { AnimacionEditComponent } from './animacion-edit/animacion-edit.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { AnimacionCreateComponent } from './animacion-create/animacion-create.co
       FormsModule,
       NgbModule
   ],
-    declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent],
+    declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent, AnimacionEditComponent],
     providers: [AnimacionService],
     exports: [AnimacionListComponent]
 })
