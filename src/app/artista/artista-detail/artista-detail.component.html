@@ -1,3 +1,9 @@
+<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()">Editar Artista</button>
+<div *ngIf="showEdit">
+<app-artista-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-artista-edit>
+</div>
+<br>
+<br>
 <div class="panel-body">
     <div class="border">
         <h3>{{artistaDetail.nombre}}</h3>

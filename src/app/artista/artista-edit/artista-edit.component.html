@@ -1,0 +1,43 @@
+<div class="row">
+    <br>
+    <h2 class="text-center">Editar un artista</h2>
+    <br>
+    <form name="artista" (ngSubmit)="f.form.valid && updateArtista()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="artistaNombre"><b>Nombre</b></label>
+            <input type="text" name="artistaNombre" class="form-control" id="artistaNombre" [(ngModel)]="artista.nombre" #artistaNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && nombre.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el nombre del artista</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="artistaUsusario"><b>Usuario</b></label>
+            <input type="text" name="artistaUsuario" class="form-control" id="artistaNombre" [(ngModel)]="artista.usuario" #artistaUsusario="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaNombre.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el usuario</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="artistaConstrasenia"><b>Contrasenia</b></label>
+            <input type="text" name="artistaContrasenia" class="form-control" id="artistaConntrasenia" [(ngModel)]="artista.contrasenia" #artistaContrasenia="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaConntrasenia.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta la contrasenia</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="artistaTema"><b>Tema</b></label>
+        </div>
+        <div class="form-group">
+            <label for="artistaTecnica"><b>Tecnica</b></label>
+        </div>
+        <div class="form-group">
+            <label for="artistaPrivado"><b>Privado?</b></label>
+        </div>
+        <div class="row from-inline">
+            <button type="submit" class="btn">Update</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </form>
+</div>
+

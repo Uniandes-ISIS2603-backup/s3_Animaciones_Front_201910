@@ -19,13 +19,20 @@ export class ArtistaDetailComponent implements OnInit {
 
     artista_id: number;
 
+    showEdit: boolean;
+
     getArtistaDetail(): void {
         this.artistaService.getArtistaDetail(this.artista_id).subscribe(artistaDetail => {
             this.artistaDetail = artistaDetail
         });
     }
 
+    showHideEdit(): void {
+        this.showEdit = !this.showEdit!
+    }
+
     ngOnInit() {
+        this.showEdit = false;
         this.artista_id = +this.route.snapshot.paramMap.get('id');
         if(this.artista_id){
             this.artistaDetail = new ArtistaDetail();
