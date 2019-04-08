@@ -1,3 +1,61 @@
-<p>
-  animacion-edit works!
-</p>
+<div class="row">
+    <br>
+    <h2 class="text-cennter">Editar Animacion</h2>
+    <br>
+    <form name="animacion" (ngSubmit)="f.form.valid && editAnimacion()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="aninmaiconNombre"><b>Nombre</b></label>
+            <input type="text" name="animacionNombre" class="form-control" id="animacionNombre" [(ngModel)]="animacion.nombre" #animacionNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && animacionNombre.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el nombre de la animacion</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionPrecio"><b>Precio</b></label>
+            <input type="number" name="animacionPrecio" min="0" class="form-control" id="animacionPrecio" [(ngModel)]="animacion.precio" #animacionPrecio="ngModel" [ngClass]="{'is-invalid': f.submitted && animacionPrecio.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el precio</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionLink"><b>Link</b></label>
+            <input type="text" name="animacionLink" class="form-control" id="animacionLink" [(ngModel)]="animacion.link" #animacionLink="ngModel" [ngClass]="{'is-invalid': f.submitted && animacionLink.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el link</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionArtista"><b>Artista</b></label>
+            <select class="custom-select" name="animacionArtista" id="animacionArtista" [(ngModel)]="animacion.artista.id" #animacionArtista="ngModel" [ngClass]="{'is-invalid': f.submitted && animacionArtista.invalid}" required>
+                <option [value]="artista.id" *ngFor="let artista of artistas">{{artista.nombre}}</option>
+            </select>
+            <div class="invalid-feedback">
+                <div>Falta el artista</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionFecha"><b>Fecha</b></label>
+            <div [ngClass]="{'is-invalid': f.submitted && animacionFecha.invalid}">
+                <input name="animacionFecha" class="form-control" id="animcionFecha" [(ngModel)]="animacion.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #animacionFecha="ngModel" [ngClass]="{'is-invalid': (animacionFecha.untouched || animacionFecha.invalid)}" required>
+                <div class="invalid-feedback">
+                    <div>Falta la fecha</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionDescripcionn"><b>Descripcion</b></label>
+        </div>
+        <div class="form-group">
+            <label for="animacionTecnica"><b>Tecnica</b></label>
+        </div>
+        <div class="form-group">
+            <label for="animacionTags"><b>Tags</b></label>
+        </div>
+        <br>
+        <div class="row form-inline">
+            <button type="submit" class="btn">Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </form>
+</div> 

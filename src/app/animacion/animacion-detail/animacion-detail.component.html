@@ -1,3 +1,9 @@
+<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()">Editar Animacion</button>
+<div *ngIf="showEdit">
+    <app-animacion-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-animacion-edit>
+</div>
+<br>
+<br>
 <div class="panel-body">
     <div class="border">
         <h3>{{animacionDetail.nombre}}</h3>
