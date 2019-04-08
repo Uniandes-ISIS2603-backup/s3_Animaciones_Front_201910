@@ -6,6 +6,7 @@ import { Animacion } from './animacion';
 import { AnimacionDetail } from './animacion-detail';
 
 import { environment } from '../../environments/environment';
+import { ArtistaDetail } from '../artista/artista-detail';
 const API_URL = environment.apiURL;
 const animaciones = 'animaciones';
 
@@ -23,5 +24,9 @@ export class AnimacionService {
 
     createAnimacion(animacion): Observable<AnimacionDetail> {
         return this.http.post<AnimacionDetail>(API_URL + animaciones, animacion);
+    }
+
+    updateAnimacion(animacion): Observable<AnimacionDetail> {
+        return this.http.put<AnimacionDetail>(API_URL + animaciones + '/' + animacion.id, animacion);
     }
 }

@@ -21,13 +21,20 @@ export class AnimacionDetailComponent implements OnInit {
 
     annimacion_id: number;
 
+    showEdit: boolean;
+
     getAnimacionDetail(): void {
         this.animacionService.getAnimacionDetail(this.annimacion_id).subscribe(animacionDetail => {
             this.animacionDetail = animacionDetail
         });
     }
 
+    showHideEdit(): void {
+        this.showEdit = !this.showEdit!
+    }
+
     ngOnInit() {
+        this.showEdit = false;
         this.annimacion_id = +this.route.snapshot.paramMap.get('id');
         this.animacionDetail = new AnimacionDetail();
         this.getAnimacionDetail();
