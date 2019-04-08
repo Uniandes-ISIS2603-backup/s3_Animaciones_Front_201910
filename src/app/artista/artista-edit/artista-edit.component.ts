@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 import {ArtistaService} from '../artista.service';
 import {ArtistaDetail} from '../artista-detail';
 import {ToastrService} from 'ngx-toastr';
@@ -11,9 +11,10 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ArtistaEditComponent implements OnInit, OnChanges {
 
-    constructor(private artistaService: ArtistaService, private toastService: ToastrService) { }
+    constructor(private artistaService: ArtistaService, private toastService: ToastrService, private route: ActivatedRoute) { }
 
     @Input() artista: ArtistaDetail;
+    artista_id: number;
 
     @Output() cancel = new EventEmitter();
 
@@ -30,8 +31,19 @@ export class ArtistaEditComponent implements OnInit, OnChanges {
         this.cancel.emit();
     }
 
-  ngOnInit() {
-  }
+    getArtistaDetail(): void {
+        this.artistaService.getArtistaDetail(this.artista_id).subscribe(artistaDetail => {
+            this.artista = artistaDetail
+        });
+    }
+
+    ngOnInit() {
+        this.artista_id = +this.route.snapshot.paramMap.get('id');
+        if(this.artista_id){
+            this.artista = new ArtistaDetail();
+            this.getArtistaDetail();
+        }
+    }
 
     ngOnChanges(){
         this.ngOnInit()

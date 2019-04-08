@@ -2,17 +2,17 @@
     <br>
     <h2 class="text-center">Editar un artista</h2>
     <br>
-    <form name="artista" (ngSubmit)="f.form.valid && updateArtista()" #f="ngForm" novalidate>
+    <form name="artista" (ngSubmit)="f.form.valid && editArtista()" #f="ngForm" novalidate>
         <div class="form-group">
             <label for="artistaNombre"><b>Nombre</b></label>
-            <input type="text" name="artistaNombre" class="form-control" id="artistaNombre" [(ngModel)]="artista.nombre" #artistaNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && nombre.invalid}" required>
+            <input type="text" name="artistaNombre" class="form-control" id="artistaNombre" [(ngModel)]="artista.nombre" #artistaNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaNombre.invalid}" required>
             <div class="invalid-feedback">
                 <p>Falta el nombre del artista</p>
             </div>
         </div>
         <div class="form-group">
             <label for="artistaUsusario"><b>Usuario</b></label>
-            <input type="text" name="artistaUsuario" class="form-control" id="artistaNombre" [(ngModel)]="artista.usuario" #artistaUsusario="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaNombre.invalid}" required>
+            <input type="text" name="artistaUsuario" class="form-control" id="artistaNombre" [(ngModel)]="artista.usuario" #artistaUsusario="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaUsuario.invalid}" required>
             <div class="invalid-feedback">
                 <p>Falta el usuario</p>
             </div>
@@ -26,12 +26,21 @@
         </div>
         <div class="form-group">
             <label for="artistaTema"><b>Tema</b></label>
+            <input type="text" name="artistaTema" class="form-control" id="artistaTema" [(ngModel)]="artista.tema" #artistaTema="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaTema.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el tema</p>
+            </div>
         </div>
         <div class="form-group">
             <label for="artistaTecnica"><b>Tecnica</b></label>
+            <input type="text" name="artistaTecnica" class="form-control" id="artistaTecnica" [(ngModel)]="artista.tecnica" #artistaTecnica="ngModel" [ngClass]="{'is-invalid': f.submitted && artistaTecnica.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta la tecnica</p>
+            </div>
         </div>
         <div class="form-group">
             <label for="artistaPrivado"><b>Privado?</b></label>
+            <input type="checkbox" name="artistaPrivado" class="form-control" id="artistaPrivado" [(ngModel)]="artista.privado" #artistaPrivado="ngModel">
         </div>
         <div class="row from-inline">
             <button type="submit" class="btn">Update</button>
