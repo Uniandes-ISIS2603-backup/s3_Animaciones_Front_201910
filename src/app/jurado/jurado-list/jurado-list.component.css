@@ -1,0 +1,25 @@
+.jurados-container{
+    widows: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row;
+}
+.jurado-item{
+    width: 20%;
+    height: 150px;
+    padding: 4px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 100ms ease-in;
+}
+.jurado-item:hover{
+    width: 22%;
+    padding: 0;   
+}
+
+.jurado-item:hover p{
+    font-size: 1.2rem;
+}

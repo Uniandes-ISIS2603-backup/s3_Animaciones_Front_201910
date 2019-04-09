@@ -1,0 +1,35 @@
+<div class="col-12">
+
+    <form role="form">
+        <div class="form-group">
+          <label for="text">credenciales:</label>
+          <input type="text" class="form-control" id="credenciales">
+        </div>
+        <div class="form-group">
+            <label for="text">id:</label>
+            <input type="text" class="form-control" id="id">
+          </div>
+        <div class="form-group">
+          <label for="text">usuario:</label>
+          <input type="text" class="form-control" id="usuario">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Contraseña:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+        <div class="checkbox">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">crear</button>
+      </form>
+
+  <form (ngSubmit)="registrar()" #f="ngForm">
+      <div class="form-group">
+          <label for="jurado">Agregar Jurado Existente  </label>
+          <select class="form-control" name="jurado" id="jurado" [(ngModel)]="jurado_id">
+            <option *ngFor="let jurado of jurados" [ngValue]="jurado.id">{{jurado.usuario}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+  </form>
+</div>

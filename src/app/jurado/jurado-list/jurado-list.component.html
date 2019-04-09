@@ -1,0 +1,10 @@
+<h4 class="text-left my-4">Jurados</h4>
+    <div class="col-12 jurados-container">
+        <div class="jurado-item" *ngFor="let jurado of jurados">
+            <img src="../../../assets/img/user.png" alt="usuario"> 
+            <p>{{jurado.usuario}}</p>
+        </div>    
+    </div>
+    <div class="text-center col-12">
+        <button routerLink="/jurados/create" class="btn btn-info">Agregar Jurado</button>
+    </div>

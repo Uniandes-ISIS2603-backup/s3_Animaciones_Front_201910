@@ -1,3 +1,4 @@
+import { JuradoCreateComponent } from './../jurado/jurado-create/jurado-create.component';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
@@ -16,6 +17,7 @@ import { VotacionListComponent } from '../votacion/votacion-list/votacion-list.c
 import { RondaDetailComponent } from '../ronda/ronda-detail/ronda-detail.component';
 import { RondaCreateComponent } from '../ronda/ronda-create/ronda-create.component';
 import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-create.component';
+import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component';
 
 const routes: Routes = [
 
@@ -109,13 +111,38 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'jurados',
+        children: [
+               {
+                   path: 'list',
+                   component: JuradoListComponent,
+                   canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+               },
+               {
+                path: 'create',
+                component: JuradoCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            }
+        ]
+    },
+    {
         path: 'home',
         component: AuthLoginComponent
     },
     {
         path: '**',
         redirectTo: 'home',
-    }
+    },
 ];
 
 @NgModule({
