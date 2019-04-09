@@ -1,3 +1,4 @@
+import { JuradoDetailComponent } from './../jurado/jurado-detail/jurado-detail.component';
 import { JuradoCreateComponent } from './../jurado/jurado-create/jurado-create.component';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
@@ -132,8 +133,19 @@ const routes: Routes = [
                         only: ['GUEST']
                     }
                 }
+            },
+            {
+                path: 'detail/:id',
+                component: JuradoDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
             }
         ]
+        
     },
     {
         path: 'home',

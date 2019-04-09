@@ -1,25 +1,20 @@
 <div class="col-12">
 
-    <form role="form">
+    <form role="form" (ngSubmit)= "registrar()" #f="ngForm"> 
         <div class="form-group">
           <label for="text">credenciales:</label>
-          <input type="text" class="form-control" id="credenciales">
+          <input type="text" name="credenciales" class="form-control" [(ngModel)]= "jurado.credenciales" id="credenciales">
         </div>
-        <div class="form-group">
-            <label for="text">id:</label>
-            <input type="text" class="form-control" id="id">
-          </div>
+
         <div class="form-group">
           <label for="text">usuario:</label>
-          <input type="text" class="form-control" id="usuario">
+          <input type="text" name="usuario" class="form-control" [(ngModel)]= "jurado.usuario" id="usuario">
         </div>
         <div class="form-group">
             <label for="pwd">Contraseña:</label>
-            <input type="password" class="form-control" id="pwd">
+            <input type="password" name="cotrasena" class="form-control" [(ngModel)]= "jurado.contrasena" id="pwd">
           </div>
-        <div class="checkbox">
-          <label><input type="checkbox"> Remember me</label>
-        </div>
+
         <button type="submit" class="btn btn-primary mb-2">crear</button>
       </form>
 

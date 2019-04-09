@@ -20,8 +20,8 @@ export class JuradoService {
   }
   //getJuradoDetail
 
-  createJurado(artista): Observable<Jurado> {
-    return this.http.post<Jurado>(API_URL + jurados, artista);
+  createJurado(jurado : Jurado): Observable<Jurado> {
+    return this.http.post<Jurado>(API_URL + jurados, jurado);
 
   //updateJuradoDetail
 }
