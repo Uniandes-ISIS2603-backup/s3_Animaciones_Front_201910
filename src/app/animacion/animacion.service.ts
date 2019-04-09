@@ -14,18 +14,30 @@ const animaciones = 'animaciones';
 export class AnimacionService {
     constructor(private http: HttpClient) { }
 
+    /**
+     * Metodo para obtener todas las animaciones
+     */
     getAnimaciones(): Observable<Animacion[]> {
         return this.http.get<Animacion[]>(API_URL + animaciones);
     }
 
+    /**
+     * Metodo para obtener una animacion
+     */
     getAnimacionDetail(animacionId): Observable<AnimacionDetail> {
         return this.http.get<AnimacionDetail>(API_URL + animaciones + '/' + animacionId);
     }
 
+    /**
+     * Metodo para crear una animacion
+     */
     createAnimacion(animacion): Observable<AnimacionDetail> {
         return this.http.post<AnimacionDetail>(API_URL + animaciones, animacion);
     }
 
+    /**
+     * Metodo para actualizar una animacion
+     */
     updateAnimacion(animacion): Observable<AnimacionDetail> {
         return this.http.put<AnimacionDetail>(API_URL + animaciones + '/' + animacion.id, animacion);
     }
