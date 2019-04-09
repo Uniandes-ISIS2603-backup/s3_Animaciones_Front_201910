@@ -6,7 +6,7 @@ export class Jurado {
     usuario : string;
 
     //Atributo que contiene la contrasena del jurado
-    contraseña: string;
+    contrasena: string;
 
     //Atributo que contiene el id del jurado
     id: number;

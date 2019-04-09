@@ -13,6 +13,7 @@ export class JuradoCreateComponent implements OnInit {
   jurados : Jurado[];
   showCreate: boolean;
   jurado_id: any;
+  jurado : Jurado;
   
   constructor(private juradoService: JuradoService) { }
 
@@ -30,10 +31,12 @@ showHideCreate(): void {
   ngOnInit() {
     this.showCreate = false;
     this.getJurados();
+    this.jurado = new Jurado ();
   }
 
   registrar(): void{
-    console.log('id jurado', this.jurado_id);
+     
+    console.log('id jurado', this.jurado);
   }
 
 
