@@ -19,6 +19,7 @@ import {AnimacionModule} from './animacion/animacion.module';
 import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
+import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { JuradoModule } from './jurado/jurado.module';
         AnimacionModule,
         RondaModule,
         VotacionModule,
-        JuradoModule
+        JuradoModule,
+        MedioDePagoModule
     ],
     bootstrap: [AppComponent],
     providers: [
