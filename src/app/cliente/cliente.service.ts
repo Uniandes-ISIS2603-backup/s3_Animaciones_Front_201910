@@ -31,8 +31,26 @@ export class ClienteService {
        return this.http.get<Cliente[]>(API_URL + clientes);
    }
 
+   /**
+    * Returns the Observable object containing the cliente retrieved from the API
+    * @returns The editorial
+    */
+   getClienteDetail(clienteId): Observable<Cliente> {
+    return this.http.get<Cliente>(API_URL + clientes + '/' + clienteId);
+}
+
+
    createCliente(cliente : Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(API_URL + clientes, cliente);
+}
+     /**
+    * Updates an cliente
+    * @param cliente The cliente's information updated
+    * @returns The confirmation that the cliente was updated
+    */
+   updateCliente(cliente : Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(API_URL+ clientes + '/' + cliente.id, cliente);
 
 }
+
 }

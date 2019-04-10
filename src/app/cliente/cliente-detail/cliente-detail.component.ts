@@ -18,12 +18,14 @@ export class ClienteDetailComponent implements OnInit {
     cliente :Cliente ;
   
     showCreate: boolean;
-  
+    showEdit: boolean;
+
+
     constructor(private clienteService :ClienteService,
        private activateRoute :ActivatedRoute) { this.id = activateRoute.snapshot.params['id']}
   
     
-    getJurado(): void {
+    getCliente(): void {
       this.clienteService.getClientes().subscribe(clientes => {
         clientes.forEach(clientes => {
           if(clientes.id == this.id){
@@ -37,9 +39,13 @@ export class ClienteDetailComponent implements OnInit {
   showHideCreate(): void {
     this.showCreate = !this.showCreate!
   }
+
+  showHideEdit(): void {
+    this.showEdit = !this.showEdit!
+  }
   
   ngOnInit() {
-    this.getJurado();
+    this.getCliente();
   }
   
 }
