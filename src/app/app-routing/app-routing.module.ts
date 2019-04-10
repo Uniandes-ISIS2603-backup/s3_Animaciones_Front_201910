@@ -21,6 +21,7 @@ import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-cr
 import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component';
 import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
+import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 
@@ -126,6 +127,16 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: ClienteListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: 'create',
+                component: ClienteCreateComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
