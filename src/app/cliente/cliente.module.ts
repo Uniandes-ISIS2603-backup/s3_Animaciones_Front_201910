@@ -13,6 +13,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import {ClienteService} from './cliente.service';
 
 import {AppRoutingModule} from '../app-routing/app-routing.module';
+import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
   
       NgbModule
   ],
-      declarations: [ClienteListComponent, ClienteDetailComponent],
+      declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent],
   providers: [ClienteService],
   exports: [ClienteListComponent]
 })
