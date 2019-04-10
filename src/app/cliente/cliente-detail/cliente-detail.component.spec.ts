@@ -16,34 +16,18 @@ describe('ClienteDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        imports: [AppRoutingModule, HttpClientModule, AppModule],
-        declarations: [ ClienteDetailComponent ],
-        providers: [
-            {
-                provide: APP_BASE_HREF,
-                useValue: ''
-            },
-            ClienteService,
-            {
-                provide: ActivatedRoute,
-                useValue: {
-                    snapshot: {
-                        paramMap: convertToParamMap({id: 100})
-                    }
-                }
-            }
-        ]
-  })
-  .compileComponents();
-}));
+      declarations: [ ClienteDetailComponent ]
+    })
+    .compileComponents();
+  }));
 
-beforeEach(() => {
-  fixture = TestBed.createComponent(ClienteDetailComponent);
-  component = fixture.componentInstance;
-  fixture.detectChanges();
-});
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ClienteDetailComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-it('should create', () => {
-  expect(component).toBeTruthy();
-});
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

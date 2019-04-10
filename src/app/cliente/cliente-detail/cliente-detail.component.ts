@@ -13,31 +13,33 @@ import { Cliente } from '../cliente';
 })
 export class ClienteDetailComponent implements OnInit {
 
-  @Input() cliente: Cliente;
+    id = 0;
 
-    constructor(private route: ActivatedRoute, private clienteService: ClienteService) { }
-
-    cliente_id: number;
-
-    showEdit: boolean;
-
-    getClienteDetail(): void {
-        this.clienteService.getClienteDetail(this.cliente_id).subscribe(cliente => {
-            this.cliente = cliente
+    cliente :Cliente ;
+  
+    showCreate: boolean;
+  
+    constructor(private clienteService :ClienteService,
+       private activateRoute :ActivatedRoute) { this.id = activateRoute.snapshot.params['id']}
+  
+    
+    getJurado(): void {
+      this.clienteService.getClientes().subscribe(clientes => {
+        clientes.forEach(clientes => {
+          if(clientes.id == this.id){
+            this.cliente =clientes;
+          }
         });
-    }
-
-    showHideEdit(): void {
-        this.showEdit = !this.showEdit!
-    }
-
-    ngOnInit() {
-        this.showEdit = false;
-        this.cliente_id = +this.route.snapshot.paramMap.get('id');
-        if(this.cliente_id){
-            this.cliente = new Cliente();
-            this.getClienteDetail();
-        }
+  
+      });
   }
-
+  
+  showHideCreate(): void {
+    this.showCreate = !this.showCreate!
+  }
+  
+  ngOnInit() {
+    this.getJurado();
+  }
+  
 }

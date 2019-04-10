@@ -7,28 +7,10 @@ import {AppModule} from '../app.module';
 import { ClienteService } from './cliente.service';
 
 describe('ClienteService', () => {
-  let injector: TestBed;
-  let service: ClienteService;
-  const clientes: Cliente[] = require('../../assets/clientes.json');
+    beforeEach(() => TestBed.configureTestingModule({}));
   
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-        imports: [HttpClientModule, AppModule],
-        declarations: [],
-        providers: [{provide: APP_BASE_HREF, useValue: ''}, ClienteService]
+    it('should be created', () => {
+      const service: ClienteService = TestBed.get(ClienteService);
+      expect(service).toBeTruthy();
     });
-    injector = getTestBed();
-    service = injector.get(ClienteService);
-});
-
-
-
-it('#getClientes should return value from observable',
-(done: DoneFn) => {
-  service.getClientes().subscribe(value => {
-        expect(value.length).toBeGreaterThan(0);
-        done();
-    });
-});
-
-});
+  });

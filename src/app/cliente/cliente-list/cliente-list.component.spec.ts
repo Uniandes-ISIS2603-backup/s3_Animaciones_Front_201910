@@ -17,34 +17,21 @@ describe('ClienteListComponent', () => {
   const clientes: Cliente[] = require('../../../assets/clientes.json');
 
   beforeEach(async(() => {
-      TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
           imports: [AppRoutingModule, HttpClientModule, AppModule],
-          declarations: [],
+          declarations: [ ClienteListComponent ],
           providers: [{provide: APP_BASE_HREF, useValue: ''}, ClienteService]
-      })
-          .compileComponents();
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-      fixture = TestBed.createComponent(ClienteListComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
+    fixture = TestBed.createComponent(ClienteListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
-
 
   it('should create', () => {
-      expect(component).toBeTruthy();
-  });
-
-
-  it('should have a list of clientes', () => {
-      component.clientes = clientes;
-      expect(component.clientes.length).toEqual(clientes.length);
-  });
-
-  it('a author should be a cliente (first and last)', () => {
-      component.clientes = clientes;
-      expect(component.clientes[0].nombre).toEqual(clientes[0].nombre);
-      expect(component.clientes[clientes.length - 1].nombre).toEqual(clientes[clientes.length - 1].nombre);
+    expect(component).toBeTruthy();
   });
 });

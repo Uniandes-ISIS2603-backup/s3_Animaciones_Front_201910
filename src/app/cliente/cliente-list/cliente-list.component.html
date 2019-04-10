@@ -1,24 +1,28 @@
-<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Crear Cliente</button>
-<div *ngIf="showCreate">
-  
-</div>
-<br>
-<br>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Clientes
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of clientes">
-            <td style="cursor: pointer;">
-                <a routerLink="/clientes/{{cliente.id}}">
-                    <dd>{{cliente.nombre}}</dd>
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+
+<h4 class="text-left my-4">Clientes</h4>
+<div class="container-fluid">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let cliente of clientes">
+                            <td style="cursor: pointer;">
+
+                   <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.id]"> {{cliente.nombre}}</a>
+                     </td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="text-center col-12">
+            <button routerLink="/clientes/list" class="btn btn-info">Agregar Cliente</button>
+        </div>
