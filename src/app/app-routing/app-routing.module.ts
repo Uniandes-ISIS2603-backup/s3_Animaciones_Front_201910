@@ -19,6 +19,8 @@ import { RondaDetailComponent } from '../ronda/ronda-detail/ronda-detail.compone
 import { RondaCreateComponent } from '../ronda/ronda-create/ronda-create.component';
 import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-create.component';
 import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component';
+import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
+import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 
@@ -101,6 +103,55 @@ const routes: Routes = [
         ]
     },
     {
+         path: 'animaciones',
+         children: [
+             {
+                 path: 'list',
+                 component: AnimacionListComponent
+             },
+             {
+                 path: ':id',
+                 component: AnimacionDetailComponent
+             },
+             {
+                 path: 'add',
+                 component: AnimacionCreateComponent
+             }
+         ]
+     },
+
+     {
+        path: 'clientes',
+        children: [
+            {
+                path: 'list',
+                component: ClienteListComponent
+            },
+            {
+                path: ':id',
+                component: ClienteDetailComponent
+            }
+        ]
+    },
+
+     {
+         path: 'rondas',
+         children: [
+                {
+                    path: 'list',
+                    component: RondaListComponent
+                },
+                {
+                    path: ':id',
+                    component: RondaDetailComponent
+                },
+                {
+                    path: 'add',
+                    component: RondaCreateComponent
+                }
+         ]
+     },
+     {
         path: 'votaciones',
         children: [
             {

@@ -19,6 +19,8 @@ import {AnimacionModule} from './animacion/animacion.module';
 import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
+import { ClienteModule } from './cliente/cliente.module';
+
 import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
 
@@ -44,6 +46,7 @@ import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
         NgbModule,
         ArtistaModule,
         AnimacionModule,
+        ClienteModule,
         RondaModule,
         VotacionModule,
         JuradoModule,
