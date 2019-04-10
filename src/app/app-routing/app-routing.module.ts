@@ -19,6 +19,8 @@ import { RondaDetailComponent } from '../ronda/ronda-detail/ronda-detail.compone
 import { RondaCreateComponent } from '../ronda/ronda-create/ronda-create.component';
 import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-create.component';
 import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component';
+import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
+import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
 
 const routes: Routes = [
 
@@ -81,6 +83,21 @@ const routes: Routes = [
              }
          ]
      },
+
+     {
+        path: 'clientes',
+        children: [
+            {
+                path: 'list',
+                component: ClienteListComponent
+            },
+            {
+                path: ':id',
+                component: ClienteDetailComponent
+            }
+        ]
+    },
+
      {
          path: 'rondas',
          children: [

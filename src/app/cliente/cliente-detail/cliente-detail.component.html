@@ -1,0 +1,22 @@
+<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()">Editar Cliente</button>
+<div *ngIf="showEdit">
+   
+</div>
+<br>
+<br>
+<div class="panel-body">
+    <div class="border">
+        <h3>{{cliente.nombre}}</h3>
+        <dl>
+            <dt>Nombre</dt>
+            <dd>{{cliente.nombre}}</dd>
+            <dt>Descripcion</dt>
+            <dd>{{cliente.descripcion}}</dd>
+            <dt>Usuario</dt>
+            <dd>{{cliente.usuario}}</dd>
+            <dt>Contraseña</dt>
+            <dd>{{cliente.contrasenia}}</dd>
+
+        </dl>
+    </div>
+</div>

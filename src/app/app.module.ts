@@ -19,6 +19,8 @@ import {AnimacionModule} from './animacion/animacion.module';
 import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
+import { ClienteModule } from './cliente/cliente.module';
+
 
 
 @NgModule({
@@ -43,6 +45,7 @@ import { JuradoModule } from './jurado/jurado.module';
         NgbModule,
         ArtistaModule,
         AnimacionModule,
+        ClienteModule,
         RondaModule,
         VotacionModule,
         JuradoModule
