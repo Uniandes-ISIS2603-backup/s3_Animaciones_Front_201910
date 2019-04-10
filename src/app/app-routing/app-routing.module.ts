@@ -1,9 +1,9 @@
 import { JuradoDetailComponent } from './../jurado/jurado-detail/jurado-detail.component';
 import { JuradoCreateComponent } from './../jurado/jurado-create/jurado-create.component';
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {NgxPermissionsGuard} from 'ngx-permissions';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { NgxPermissionsGuard } from 'ngx-permissions';
 
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
@@ -21,10 +21,12 @@ import { VotacionCreateComponent } from '../votacion/votacion-create/votacion-cr
 import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component';
 import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
+import { createComponent } from '@angular/compiler/src/core';
+import { CreateComponent } from '../medio-de-pago/create/create.component';
 
 const routes: Routes = [
 
-     {
+    {
         path: 'auth',
         children: [
             {
@@ -48,24 +50,58 @@ const routes: Routes = [
                 }
             }
         ],
-     },
+    },
     {
-         path: 'artistas',
-         children: [
-             {
-                 path: 'list',
-                 component: ArtistaListComponent
-             },
-             {
-                 path: ':id',
-                 component: ArtistaDetailComponent
-             },
-             {
-                 path: 'add',
-                 component: ArtistaCreateComponent
-             }
-         ]
-     },
+        path: 'artistas',
+        children: [
+            {
+                path: 'list',
+                component: ArtistaListComponent
+            },
+            {
+                path: ':id',
+                component: ArtistaDetailComponent
+            },
+            {
+                path: 'add',
+                component: ArtistaCreateComponent
+            }
+        ]
+    },
+    {
+        path: 'animaciones',
+        children: [
+            {
+                path: 'list',
+                component: AnimacionListComponent
+            },
+            {
+                path: ':id',
+                component: AnimacionDetailComponent
+            },
+            {
+                path: 'add',
+                component: AnimacionCreateComponent
+            }
+        ]
+    },
+    {
+        path: 'rondas',
+        children: [
+            {
+                path: 'list',
+                component: RondaListComponent
+            },
+            {
+                path: ':id',
+                component: RondaDetailComponent
+            },
+            {
+                path: 'add',
+                component: RondaCreateComponent
+            }
+        ]
+    },
     {
          path: 'animaciones',
          children: [
@@ -118,30 +154,30 @@ const routes: Routes = [
      {
         path: 'votaciones',
         children: [
-               {
-                   path: 'list',
-                   component: VotacionListComponent
-               },
-               {
-                   path: 'add',
-                   component: VotacionCreateComponent
-               }
+            {
+                path: 'list',
+                component: VotacionListComponent
+            },
+            {
+                path: 'add',
+                component: VotacionCreateComponent
+            }
         ]
     },
     {
         path: 'jurados',
         children: [
-               {
-                   path: 'list',
-                   component: JuradoListComponent,
-                   canActivate: [NgxPermissionsGuard],
+            {
+                path: 'list',
+                component: JuradoListComponent,
+                canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
                         only: ['GUEST']
                     }
                 }
-               },
-               {
+            },
+            {
                 path: 'create',
                 component: JuradoCreateComponent,
                 canActivate: [NgxPermissionsGuard],
@@ -162,7 +198,25 @@ const routes: Routes = [
                 }
             }
         ]
-        
+
+    },
+    {
+        path: 'mediodepago',
+        children: [
+            
+            {
+                path: 'create',
+                component: CreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            
+        ]
+
     },
     {
         path: 'home',
@@ -177,7 +231,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+        RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })
     ],
     exports: [RouterModule],
     declarations: []

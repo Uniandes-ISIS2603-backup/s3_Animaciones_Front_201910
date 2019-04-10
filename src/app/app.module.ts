@@ -21,6 +21,7 @@ import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
 import { ClienteModule } from './cliente/cliente.module';
 
+import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ClienteModule } from './cliente/cliente.module';
         ClienteModule,
         RondaModule,
         VotacionModule,
-        JuradoModule
+        JuradoModule,
+        MedioDePagoModule
     ],
     bootstrap: [AppComponent],
     providers: [
