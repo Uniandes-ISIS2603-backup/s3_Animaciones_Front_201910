@@ -63,7 +63,7 @@ onSelected(cliente_id: number): void {
     this.showView = true;
     this.cliente_id = cliente_id;
     this.selectedCliente = new Cliente();
-    this.getClienteDetail();
+
 }
 
 /**
@@ -85,7 +85,7 @@ showHideEdit(cliente_id: number): void {
         this.showEdit = true;
         this.cliente_id = cliente_id;
        this.selectedCliente = new Cliente();
-        this.getClienteDetail();
+     
     }
     else {
         this.showEdit = false;
@@ -102,19 +102,10 @@ getClientes(): void {
             this.clientes = clientes;
         });
 }
-getClienteDetail(): void {
-    this.clienteService.getClienteDetail(this.cliente_id)
-        .subscribe(selectedCliente => {
-            this.selectedCliente = selectedCliente
-        });
-}
 
-  ngOnInit() {
+
+ngOnInit() {
     this.showCreate = false;
-    this.showView = false;
-    this.showEdit = false;
-    this.selectedCliente = undefined;
-    this.cliente_id = undefined;
     this.getClientes();
   }
 

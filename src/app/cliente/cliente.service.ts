@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente';
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
-const clientes = 'clientes';
+const API_URL = environment.apiLocal;
+const clientes = 'clientes.json';
 
 @Injectable({
   providedIn: 'root'
@@ -30,11 +30,6 @@ export class ClienteService {
    getClientes(): Observable<Cliente[]> {
        return this.http.get<Cliente[]>(API_URL + clientes);
    }
-    /**
-     * Metodo para obtener un cliente
-     */
-    getClienteDetail(clienteId): Observable<Cliente> {
-      return this.http.get<Cliente>(API_URL + clientes + '/' + clienteId);
-  }
+
    
 }

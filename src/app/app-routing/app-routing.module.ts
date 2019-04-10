@@ -125,11 +125,24 @@ const routes: Routes = [
         children: [
             {
                 path: 'list',
-                component: ClienteListComponent
+                component: ClienteListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
             },
+          
             {
-                path: ':id',
-                component: ClienteDetailComponent
+                path: 'detail/:id',
+                component:ClienteDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
             }
         ]
     },
