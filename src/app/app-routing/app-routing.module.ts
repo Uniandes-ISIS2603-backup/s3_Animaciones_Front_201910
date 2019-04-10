@@ -22,6 +22,7 @@ import { JuradoListComponent } from '../jurado/jurado-list/jurado-list.component
 import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
 import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create.component';
+import { ClienteEditComponent } from '../cliente/cliente-edit/cliente-edit.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 
@@ -143,6 +144,17 @@ const routes: Routes = [
                         only: ['GUEST']
                     }
                 }
+            },
+            {
+                path: 'edit/:id',
+                component: ClienteEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+                
             },
           
             {
