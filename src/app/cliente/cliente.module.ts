@@ -14,6 +14,7 @@ import {ClienteService} from './cliente.service';
 
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
+import { ClienteEditComponent } from './cliente-edit/cliente-edit.component';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ClienteCreateComponent } from './cliente-create/cliente-create.componen
   
       NgbModule
   ],
-      declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent],
+      declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent, ClienteEditComponent],
   providers: [ClienteService],
   exports: [ClienteListComponent]
 })
