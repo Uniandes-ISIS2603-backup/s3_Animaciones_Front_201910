@@ -19,6 +19,9 @@ export class CreateComponent implements OnInit {
     this.formasdePago = ['DEBITO' , 'CREDITO', 'PAYPAL', 'PSE'];
   }
   
+  /**
+   * Metodo que crea la peticion de registrar
+   */
   registrar (){
     this.medioPagoService.createMedioDePago(this.medioDePago).subscribe((rs)=>{console.log('http medioDepago', rs)})
      console.log (this.medioDePago)
