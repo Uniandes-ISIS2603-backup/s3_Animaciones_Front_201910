@@ -1,3 +1,40 @@
-<p>
-  ronda-detail works!
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="table-info">
+					<tr>
+            <th>ID</th>
+						<th>ID ANIMACION</th>
+            <th>PUNTOS</th>
+            <th>RONDA</th>
+            
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let i of rondaD.votaciones">
+            
+            <td>
+            <p class = "figure-caption"> {{i.id}}</p>
+            </td>
+            	<td>
+							<a class="figure-caption" >{{i.idAnimacion}}</a>
+						</td>
+          <td>
+            <p class = "figure-caption"> {{i.puntos}} </p>
+            </td>
+            <td>
+            <p class = "figure-caption"> {{i.idRonda}}</p>
+            </td> 
+
+          </tr>
+          <p class = "figure-caption">Total: {{totalPuntos()}}</p>
+				</tbody>
+			</table>
+		</div>
+	</div>
+  <div class="border row">
+		<div class="col">
+		</div>
+	</div>
+</div>
