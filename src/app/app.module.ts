@@ -20,6 +20,7 @@ import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { CalificacionModule } from './calificacion/calificacion.module';
 
 import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
@@ -47,6 +48,7 @@ import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
         ArtistaModule,
         AnimacionModule,
         ClienteModule,
+        CalificacionModule,
         RondaModule,
         VotacionModule,
         JuradoModule,

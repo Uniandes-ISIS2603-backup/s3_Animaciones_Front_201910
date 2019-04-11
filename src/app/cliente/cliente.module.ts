@@ -30,6 +30,6 @@ import { ClienteEditComponent } from './cliente-edit/cliente-edit.component';
   ],
       declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent, ClienteEditComponent],
   providers: [ClienteService],
-  exports: [ClienteListComponent]
+  exports: [ClienteListComponent,ClienteCreateComponent ]
 })
 export class ClienteModule { }
