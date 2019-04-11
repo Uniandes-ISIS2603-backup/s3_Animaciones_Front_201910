@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Votacion } from "./votacion";
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
-const votaciones = 'votaciones';
+const API_URL = '../../assets/';
+const votaciones = 'votaciones.json';
 
 @Injectable({
   providedIn: 'root'
