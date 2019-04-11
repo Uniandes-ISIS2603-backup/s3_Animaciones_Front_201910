@@ -19,6 +19,8 @@ import {AnimacionModule} from './animacion/animacion.module';
 import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 
+import {ConcursoModule} from './concurso/concurso.module';
+
 
 @NgModule({
     declarations: [
@@ -43,7 +45,8 @@ import {VotacionModule} from './votacion/votacion.module';
         ArtistaModule,
         AnimacionModule,
         RondaModule,
-        VotacionModule
+        VotacionModule,
+        ConcursoModule,
     ],
     bootstrap: [AppComponent],
     providers: [
