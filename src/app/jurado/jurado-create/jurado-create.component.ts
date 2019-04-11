@@ -35,8 +35,10 @@ showHideCreate(): void {
   }
 
   registrar(): void{
-     
-    console.log('id jurado', this.jurado);
+        this.juradoService.createJurado(this.jurado).subscribe(
+          data=> {console.log('http',data);}
+        );
+        console.log('id jurado', this.jurado);
   }
 
 

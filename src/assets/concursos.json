@@ -1,0 +1,21 @@
+[{
+  "id": 1,
+  "tema": "Animaciones de Naturaleza",
+  "tecnica": "rotoscopia",
+  "reglas": "No maltratar animales"
+}, {
+  "id": 2,
+  "tema": "Animaciones en la ciudad",
+  "tecnica": "animacion de punto",
+  "reglas": "No grabar en espacios no permitidos"
+},{
+  "id": 3,
+  "tema": "Animacion fantastica",
+  "tecnica": "stop motion",
+  "reglas": "usar más de 80 frames"
+},  {
+  "id": 4,
+  "tema": "Animaciones Para la familia",
+  "tecnica": "claymotion",
+  "reglas": "usar plastilina orgánica"
+}]
