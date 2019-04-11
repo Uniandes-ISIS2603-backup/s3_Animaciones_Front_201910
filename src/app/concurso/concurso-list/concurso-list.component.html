@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre del concurso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of concursos">
+                        <td style="cursor: pointer;">
+                            <a class="figure-caption" (click)="onSelected(i.id)">{{i.tema}}</a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="border row">
+        <div class="col">
+            <div *ngIf="selectedConcurso">
+                <app-concurso-detail [concursoDetail]="selectedConcurso"> </app-concurso-detail>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center col-12">
+            <button routerLink="/concursos/create" class="btn btn-info">Agregar Concurso</button>
+        </div>

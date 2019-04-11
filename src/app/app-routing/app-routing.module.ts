@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPermissionsGuard } from 'ngx-permissions';
 
+
+
+
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { ArtistaListComponent } from '../artista/artista-list/artista-list.component';
@@ -25,6 +28,10 @@ import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create
 import { ClienteEditComponent } from '../cliente/cliente-edit/cliente-edit.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
+
+import {ConcursoListComponent} from '../concurso/concurso-list/concurso-list.component';
+import {ConcursoDetailComponent} from '../concurso/concurso-detail/concurso-detail.component';
+import {ConcursoCreateComponent} from '../concurso/concurso-create/concurso-create.component';
 
 const routes: Routes = [
 
@@ -188,6 +195,40 @@ const routes: Routes = [
          ]
      },
      {
+        path: 'animaciones',
+        children: [
+            {
+                path: 'list',
+                component: AnimacionListComponent
+            },
+            {
+                path: ':id',
+                component: AnimacionDetailComponent
+            },
+            {
+                path: 'add',
+                component: AnimacionCreateComponent
+            }
+        ]
+    },
+    {
+        path: 'rondas',
+        children: [
+            {
+                path: 'list',
+                component: RondaListComponent
+            },
+            {
+                path: ':id',
+                component: RondaDetailComponent
+            },
+            {
+                path: 'add',
+                component: RondaCreateComponent
+            }
+        ]
+    },
+    {
         path: 'votaciones',
         children: [
             {
@@ -198,6 +239,24 @@ const routes: Routes = [
                 path: 'add',
                 component: VotacionCreateComponent
             }
+        ]
+    }
+    ,
+    {
+        path: 'concursos',
+        children: [{
+            path: 'list',
+            component: ConcursoListComponent
+        },
+        {
+            path: ':id',
+            component: ConcursoDetailComponent,
+            outlet: 'detail'
+        },
+        {
+            path: 'create',
+            component: ConcursoCreateComponent
+        }
         ]
     },
     {

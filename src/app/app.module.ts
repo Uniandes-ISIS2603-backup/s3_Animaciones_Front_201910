@@ -23,6 +23,8 @@ import { ClienteModule } from './cliente/cliente.module';
 
 import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
+import {ConcursoModule} from './concurso/concurso.module';
+
 
 @NgModule({
     declarations: [
@@ -49,6 +51,7 @@ import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
         ClienteModule,
         RondaModule,
         VotacionModule,
+        ConcursoModule,
         JuradoModule,
         MedioDePagoModule
     ],

@@ -1,0 +1,45 @@
+<div class="row">
+    <br>
+    <h2 class="text-center">Crear un concurso</h2>
+    <br>
+    <form name="concurso" (ngSubmit)="f.form.valid && concursoArtista()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="concursoNombre"><b>tema</b></label>
+            <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el tema del concurso</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="concursoTecnica"><b>Tecnica</b></label>
+            <input type="text" name="concursoTecnica" class="form-control" id="concursoTecnica" [(ngModel)]="concurso.tecnica" #concursoTecnica="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoTecnica.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el usuario</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Concurso reglas </b></label>
+            <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Faltan las reglas</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Concurso rondas </b></label>
+              <li class="nav-item">
+                        <a class="nav-link" routerLink="/rondas/add">Crear rondas</a>
+              </li>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Concurso jurados </b></label>
+              <li class="nav-item">
+                        <a class="nav-link" routerLink="/jurados/create">Crear jurados</a>
+              </li>
+        </div>
+        <div class="row from-inline">
+            <button type="submit" class="btn">Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelCreation()">Cancel</button>
+        </div>
+    </form>
+</div>
