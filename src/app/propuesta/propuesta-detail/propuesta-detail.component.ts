@@ -12,15 +12,34 @@ import {DataService} from '../../data.service';
   styleUrls: ['./propuesta-detail.component.css']
 })
 export class PropuestaDetailComponent implements OnInit, OnDestroy {
-
+    /**
+     * ID de la propuesta que se está viendo
+     */
   id: number;
 
+    /**
+     * id de la factura asociada a la propuesta, si existe
+     */
   idFactura: number;
-
+    
+  
+  /**
+   * La propuesta en cuestión
+   */
   propuesta: Propuesta;
 
+    /**
+     * La suscripción a la navegación
+     */
   navigationSubscription;
 
+    /**
+     * Método constructor
+     * @param route La ruta a utilizar
+     * @param service El servicio que trae la propuesta
+     * @param router ???
+     * @param data El servicio que sincroniza el id de la factura
+     */
   constructor(private route: ActivatedRoute, private service: PropuestaService, private router: Router, private data: DataService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
             if (e instanceof NavigationEnd) {
@@ -29,14 +48,23 @@ export class PropuestaDetailComponent implements OnInit, OnDestroy {
       });
    }
 
+/**
+ * mÉTODO QUE TRAe la propuesta detallada
+ */
   getPropuestaDetail(): void{
     this.service.getPropuestaDetail(this.id).subscribe(sapon => {this.propuesta = sapon});
   }
 
+    /**
+     * Método que debería sincronizar el id de factura
+     */
   getFacturaId(): void{
     this.data.currentMessage.subscribe(sapin =>{this.idFactura=sapin});
   }
 
+    /**
+     * Método que se ejecuta al instanciar la clase
+     */
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.propuesta = new Propuesta();
@@ -49,6 +77,9 @@ export class PropuestaDetailComponent implements OnInit, OnDestroy {
     
   }
 
+    /**
+     * Método que se ejecuta al destruir la clase
+     */
   ngOnDestroy() {
         if (this.navigationSubscription) {
             this.navigationSubscription.unsubscribe();
