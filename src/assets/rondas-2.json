@@ -1,0 +1,12 @@
+{
+    "id":2,
+    "numero":2,
+    "fechaInicio":"4/18/2018",
+    "fechaFin":"5/14/2018",
+    "votaciones":[
+        {"id":11,"idAnimacion":1,"puntos":2,"idRonda":2},
+        {"id":14,"idAnimacion":4,"puntos":3,"idRonda":2},
+        {"id":15,"idAnimacion":4,"puntos":4,"idRonda":2}
+    ],
+    "animacionesParticipantes":[]
+}
