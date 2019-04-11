@@ -1,0 +1,21 @@
+<div class = "container-fluid">
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Crear Propuesta</div>
+  <div class="card-body">
+    <form name="propuesta" (ngSubmit)="f.form.valid && crearPropuesta()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="precio"><b>Precio inicial</b></label>
+        <input type="number" min="0" name="precio" class="form-control" id="precio" [(ngModel)]="factura.precio"             #precio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precio.invalid }" required>
+        <div class="invalid-feedback">
+          <div>Falta el precio</div>
+        </div>
+        <p class="card-text">Inserte aquí el precio deseado para la propuesta.</p>
+        </div>
+        <div class="row form-inline justify-content-center align-self-center">
+          <button type="submit" class="btn btn-dark">Crear</button>                    
+          <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+        </div>
+    </form> 
+  </div>
+  </div>
+</div> 

@@ -28,6 +28,11 @@ import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create
 import { ClienteEditComponent } from '../cliente/cliente-edit/cliente-edit.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
+import { PropuestaListComponent} from '../propuesta/propuesta-list/propuesta-list.component'
+import {PropuestaDetailComponent} from '../propuesta/propuesta-detail/propuesta-detail.component';
+import {PropuestaCreateComponent} from '../propuesta/propuesta-create/propuesta-create.component';
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaCreateComponent} from '../factura/factura-create/factura-create.component';
 
 import {ConcursoListComponent} from '../concurso/concurso-list/concurso-list.component';
 import {ConcursoDetailComponent} from '../concurso/concurso-detail/concurso-detail.component';
@@ -313,6 +318,32 @@ const routes: Routes = [
         ]
 
     },
+    {
+        path: 'propuestas',
+        component: PropuestaListComponent,
+        children: [
+          {
+            path: 'create',
+            component: PropuestaCreateComponent
+          },
+          {
+            path: ':id',
+            component: PropuestaDetailComponent,
+            children: [
+              {
+                path: 'factura',
+                component: FacturaDetailComponent,
+                children: [
+                  {
+                    path: 'createF',
+                    component: FacturaCreateComponent
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
     {
         path: 'home',
         component: AuthLoginComponent
