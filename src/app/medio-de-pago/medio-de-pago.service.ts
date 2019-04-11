@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiLocal;
+const API_URL = environment.apiURL;
+const metodoDePago = "mediosDePago"
 const medioPago = 'medioDePago.json';
 
 @Injectable({
@@ -17,7 +18,7 @@ export class MedioDePagoService {
 
   constructor(private http: HttpClient) { }
 
-  createJurado(medioDePago : MedioDePago): Observable<MedioDePago> {
-    return this.http.post<MedioDePago>(API_URL + medioPago, medioDePago);
+  createMedioDePago(medioDePago : MedioDePago): Observable<MedioDePago> {
+    return this.http.post<MedioDePago>(API_URL + metodoDePago, medioDePago);
   }
 }

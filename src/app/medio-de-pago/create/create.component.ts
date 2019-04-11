@@ -16,10 +16,11 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
     this.medioDePago = new MedioDePago (); 
-    this.formasdePago = ['debito' , 'credito', 'paypal', 'pse'];
+    this.formasdePago = ['DEBITO' , 'CREDITO', 'PAYPAL', 'PSE'];
   }
   
   registrar (){
+    this.medioPagoService.createMedioDePago(this.medioDePago).subscribe((rs)=>{console.log('http medioDepago', rs)})
      console.log (this.medioDePago)
   }
 
