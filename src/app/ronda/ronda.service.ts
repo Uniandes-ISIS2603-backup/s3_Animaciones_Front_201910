@@ -6,8 +6,8 @@ import { Ronda } from "./ronda";
 import { RondaDetail } from "./ronda-detail";
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
-const rondas = 'rondas';
+const API_URL = '../../assets/';
+const rondas = 'rondas.json';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class RondaService {
 }
 
 getRondaDetail(rondaId): Observable<RondaDetail> {
-    return this.http.get<RondaDetail>(API_URL + rondas + '/' + rondaId);
+    return this.http.get<RondaDetail>(API_URL + 'rondas-' + rondaId + '.json');
 }
 
 createRonda(ronda): Observable<Ronda> {
