@@ -1,0 +1,10 @@
+{
+  "id": 4,
+  "precio": 10,
+  "estado": "ENPROCESO",
+  "factura": {
+    "estado": "ENPROCESO",
+    "id": 4,
+    "idAnim": 65    
+  }
+}
