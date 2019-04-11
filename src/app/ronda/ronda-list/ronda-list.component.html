@@ -1,3 +1,50 @@
-<p>
-  ronda-list works!
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="table-info">
+					<tr>
+            <th>ID</th>
+						<th>NUMERO</th>
+            <th>FECHA INICIO</th>
+            <th>FECHA FIN</th>
+            
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let i of rondas" class = "figure-caption" (click)="onSelected(i.id)">
+            <td  style="cursor: pointer;">
+            <p class = "figure-caption" (click)="onSelected(i.id)"> {{i.id}}</p>
+            </td>
+            	<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(i.id)" >{{i.numero}}</a>
+						</td>
+          <td  style="cursor: pointer;">
+            <p class = "figure-caption" (click)="onSelected(i.id)" > {{i.fechaInicio}}</p>
+            </td>
+            <td  style="cursor: pointer;">
+            <p class = "figure-caption" (click)="onSelected(i.id)"> {{i.fechaFin}}</p>
+            </td>        
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+  <div class="border row">
+		<div class="col">
+				<div *ngIf="selectedRonda">
+						<app-ronda-detail [rondaD]="selectedRonda"> </app-ronda-detail>
+					</div>
+		</div>
+
+	</div>
+	<div class="border row">
+			<ul class="nav row">
+						<li class="nav-item col">
+						<button type= "button" class="btn btn-success" 
+							 routerLink="rondas/create" 
+							 routerLinkActive="active">Add Ronda</button>
+					</li>
+				</ul>
+	</div>
+</div>
