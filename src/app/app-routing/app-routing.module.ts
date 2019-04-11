@@ -26,6 +26,10 @@ import {ClienteListComponent } from '../cliente/cliente-list/cliente-list.compon
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
 import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create.component';
 import { ClienteEditComponent } from '../cliente/cliente-edit/cliente-edit.component';
+import {CalificacionListComponent } from '../calificacion/calificacion-list/calificacion-list.component';
+import { CalificacionDetailComponent } from '../calificacion/calificacion-detail/calificacion-detail.component';
+import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
+import { CalificacionEditComponent } from '../calificacion/calificacion-edit/calificacion-edit.component';
 import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 import { PropuestaListComponent} from '../propuesta/propuesta-list/propuesta-list.component'
@@ -181,6 +185,56 @@ const routes: Routes = [
             }
         ]
     },
+
+    {
+        path: 'calificaciones',
+        children: [
+            {
+                path: 'list',
+                component: CalificacionListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: 'create',
+                component:  CalificacionCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: 'edit/:id',
+                component: CalificacionEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+                
+            },
+          
+            {
+                path: 'detail/:id',
+                component: CalificacionDetailComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            }
+        ]
+    },
+
+
 
      {
          path: 'rondas',

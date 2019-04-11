@@ -21,6 +21,7 @@ import {RondaModule} from './ronda/ronda.module';
 import {VotacionModule} from './votacion/votacion.module';
 import { JuradoModule } from './jurado/jurado.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { CalificacionModule } from './calificacion/calificacion.module';
 import {PropuestaModule} from './propuesta/propuesta.module';
 import {FacturaModule} from './factura/factura.module';
 
@@ -52,6 +53,7 @@ import {ConcursoModule} from './concurso/concurso.module';
         ArtistaModule,
         AnimacionModule,
         ClienteModule,
+        CalificacionModule,
         RondaModule,
         VotacionModule,
         ConcursoModule,

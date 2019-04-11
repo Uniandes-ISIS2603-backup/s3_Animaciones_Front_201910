@@ -21,11 +21,6 @@
 </div>
 <br>
 <br>
-
-<td>
-        <button [ngClass]="{ 'btn-primary': (!showEdit || cliente_edit_id != cliente.id), 'btn-danger': (showEdit && cliente_edit_id == cliente.id) }"
-            type="button" class="btn" (click)="showHideEdit(cliente.id)">Editar Cliente</button>
-    </td>
-    <div *ngIf="showEdit">
-     <app-cliente-edit [cliente_id]="cliente_edit_id" (cancel)="showHideEdit(cliente_edit_id)" (update)="updateCliente()"></app-cliente-edit>
-        </div>
+<div class="text-center col-12">
+        <button routerLink="/clientes/edit" class="btn btn-info">Editar Cliente</button>
+    </div>
