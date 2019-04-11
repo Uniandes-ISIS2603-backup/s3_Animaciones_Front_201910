@@ -1,0 +1,31 @@
+[{
+    "credenciales": "123456",
+    "usuario": "usuario1",
+    "contrasena": "contrasena1",
+    "id": 1
+  },
+  {
+    "credenciales": "223456",
+    "usuario": "usuario2",
+    "contrasena": "contrasena2",
+    "id": 2
+  },
+  {
+    "credenciales": "323456",
+    "usuario": "usuario3",
+    "contrasena": "contrasena3",
+    "id": 3
+  },
+  {
+    "credenciales": "423456",
+    "usuario": "usuario4",
+    "contrasena": "contrasena4",
+    "id": 4
+  },
+  {
+    "credenciales": "523456",
+    "usuario": "usuario5",
+    "contrasena": "contrasena5",
+    "id": 5
+  }
+]

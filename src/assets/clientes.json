@@ -1,0 +1,32 @@
+[{
+  "id": 1,
+  "nombre": "Juan Martinez",
+  "informacion": "27 años, fan del arte y las animaciones",
+  "usuario": "juanm23",
+  "contrasenia": "jshAta6GHBF9"
+
+}, {
+  "id": 2,
+  "nombre": "Camila Lopez",
+  "informacion": "31 años, fan de los gatos",
+  "usuario": "cami123",
+  "contrasenia": "abfrg174"
+}, {
+  "id": 3,
+  "nombre": "Carlos Perez",
+  "informacion": "28 años, aficionado de las obras de ciencia ficcion",
+  "usuario": "carlosp28",
+  "contrasenia": "chg579he"
+}, {
+  "id": 4,
+  "nombre": "Lina Cifuentes",
+  "informacion": "36 años, admiradora de historias de terror",
+  "usuario": "linita14",
+  "contrasenia": "lmtl731"
+}, {
+  "id": 5,
+  "nombre": "Daniel Rodriguez ",
+  "informacion": "25 años, fan de star wars",
+  "usuario": "danil45",
+  "contrasenia": "jhkgm598"
+}]

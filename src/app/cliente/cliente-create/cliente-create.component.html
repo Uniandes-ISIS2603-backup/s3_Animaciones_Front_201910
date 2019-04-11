@@ -1,0 +1,35 @@
+<div class="col-12">
+
+    <form role="form" (ngSubmit)= "registrar()" #f="ngForm"> 
+        <div class="form-group">
+          <label for="text">Nombre:</label>
+          <input type="text" name="nombre" class="form-control" [(ngModel)]= "cliente.nombre" id="nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="text">Información:</label>
+          <input type="text" name="informacion" class="form-control" [(ngModel)]= "cliente.informacion" id="informacion">
+        </div>
+        <div class="form-group">
+            <label for="text">Usuario:</label>
+            <input type="text" name="usuario" class="form-control" [(ngModel)]= "cliente.usuario" id="usuario">
+          </div>
+
+        <div class="form-group">
+            <label for="pwd">Contraseña:</label>
+            <input type="password" name="cotrasenia" class="form-control" [(ngModel)]= "cliente.contrasenia" id="contrasenia">
+          </div>
+
+        <button type="submit" class="btn btn-primary mb-2">crear</button>
+      </form>
+
+  <form (ngSubmit)="registrar()" #f="ngForm">
+      <div class="form-group">
+          <label for="cliente">Agregar Cliente Existente  </label>
+          <select class="form-control" name="cliente" id="cliente" [(ngModel)]="cliente_id">
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">{{cliente.nombre}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+  </form>
+</div>

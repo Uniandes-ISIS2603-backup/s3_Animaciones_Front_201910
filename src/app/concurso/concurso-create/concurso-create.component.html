@@ -18,11 +18,23 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="concursoReglas"><b>Concurso reglas (separadas por un ";")</b></label>
+            <label for="concursoReglas"><b>Concurso reglas </b></label>
             <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
             <div class="invalid-feedback">
                 <p>Faltan las reglas</p>
             </div>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Concurso rondas </b></label>
+              <li class="nav-item">
+                        <a class="nav-link" routerLink="/rondas/add">Crear rondas</a>
+              </li>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Concurso jurados </b></label>
+              <li class="nav-item">
+                        <a class="nav-link" routerLink="/jurados/create">Crear rondas</a>
+              </li>
         </div>
         <div class="row from-inline">
             <button type="submit" class="btn">Create</button>

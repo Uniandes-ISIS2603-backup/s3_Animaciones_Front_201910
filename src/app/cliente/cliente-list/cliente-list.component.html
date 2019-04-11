@@ -1,0 +1,28 @@
+
+
+<h4 class="text-left my-4">Clientes</h4>
+<div class="container-fluid">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let cliente of clientes">
+                            <td style="cursor: pointer;">
+
+                   <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.id]"> {{cliente.nombre}}</a>
+                     </td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="text-center col-12">
+            <button routerLink="/clientes/create" class="btn btn-info">Agregar Cliente</button>
+        </div>

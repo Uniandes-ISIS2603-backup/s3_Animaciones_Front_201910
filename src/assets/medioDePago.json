@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "numerotarjeta": 123,
+      "codigo": 12,
+      "fechavencimiento": "12/12/1212"
+    },
+    {
+      "id": 2,
+      "numerotarjeta": 223,
+      "codigo": 22,
+      "fechavencimiento": "22/22/2212"
+    },
+    {
+      "id": 3,
+      "numerotarjeta": 323,
+      "codigo": 32,
+      "fechavencimiento": "12/12/1212"
+    },
+    {
+      "id": 3,
+      "numerotarjeta": 323,
+      "codigo": 32,
+      "fechavencimiento": "12/12/1212"
+    }
+  ]

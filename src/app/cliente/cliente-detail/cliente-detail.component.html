@@ -1,0 +1,31 @@
+
+
+<div class="panel-body">
+    <div class="border">
+        
+        <h3>{{cliente.nombre}}</h3>
+        <dl>
+                <dt>Id:</dt>
+                <dd>{{cliente.id}}</dd>
+            <dt>Nombre:</dt>
+            <dd>{{cliente.nombre}}</dd>
+            <dt>Información:</dt>
+            <dd>{{cliente.informacion}}</dd>
+            <dt>Usuario:</dt>
+            <dd>{{cliente.usuario}}</dd>
+            <dt>Contraseña:</dt>
+            <dd>{{cliente.contrasenia}}</dd>
+
+        </dl>
+    </div>
+</div>
+<br>
+<br>
+
+<td>
+        <button [ngClass]="{ 'btn-primary': (!showEdit || cliente_edit_id != cliente.id), 'btn-danger': (showEdit && cliente_edit_id == cliente.id) }"
+            type="button" class="btn" (click)="showHideEdit(cliente.id)">Editar Cliente</button>
+    </td>
+    <div *ngIf="showEdit">
+     <app-cliente-edit [cliente_id]="cliente_edit_id" (cancel)="showHideEdit(cliente_edit_id)" (update)="updateCliente()"></app-cliente-edit>
+        </div>
