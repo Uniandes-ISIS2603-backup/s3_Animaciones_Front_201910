@@ -1,3 +1,6 @@
+/*
+ * archivo que representa el modulo de la ronda
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RondaService } from './ronda.service';

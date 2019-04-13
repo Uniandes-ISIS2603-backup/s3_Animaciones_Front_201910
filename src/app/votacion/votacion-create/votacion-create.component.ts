@@ -1,3 +1,6 @@
+/*
+ * componente que representa el caso de uso para crear una votación
+ */
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
@@ -12,12 +15,20 @@ export class VotacionCreateComponent implements OnInit {
 
   constructor(    private VotacionService: VotacionService,
     private router: Router) { }
-
+/*
+ * votación que se va a crear
+ */
     votacion : Votacion;
+ /*
+ * función que se llama al inicializar el componente
+ */
   ngOnInit() {
     this.votacion = new Votacion();
   }
 
+/*
+ * función para crear una nueva votación
+ */
   createVotacion(): Votacion {
     console.log(this.votacion);
 this.VotacionService.createVotacion(this.votacion)
