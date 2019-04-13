@@ -4,7 +4,7 @@ export class MedioDePago {
      */
     id: number;
     /**
-     * atributo que modela el numeroTarjeta del medio de pago
+     * atributo que modela el numeroTarjetang del medio de pago
      */
     numeroTarjeta : number; 
     /**
