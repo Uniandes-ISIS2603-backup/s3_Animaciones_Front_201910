@@ -1,0 +1,21 @@
+<div class = "container-fluid">
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Crear Factura</div>
+  <div class="card-body">
+    <form name="factura" (ngSubmit)="f.form.valid && crearFactura()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="idAnim"><b>id de la Animación</b></label>
+        <input type="number" name="idAnim" class="form-control" id="idAnim" [(ngModel)]="factura.idAnim"             #idAnim="ngModel" [ngClass]="{ 'is-invalid': f.submitted && idAnim.invalid }" required>
+        <div class="invalid-feedback">
+          <div>Falta la animación</div>
+        </div>
+        <p class="card-text">Inserte aquí la animación a facturar.</p>
+      </div>
+      <div class="row form-inline justify-content-center align-self-center">
+          <button type="submit" class="btn btn-dark">Crear</button>                    
+          <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+      </div>
+    </form> 
+  </div>
+  </div>
+</div> 

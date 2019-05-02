@@ -1,3 +1,6 @@
+/*
+ * archivo que representa el modulo de la ronda
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RondaService } from './ronda.service';
@@ -21,6 +24,6 @@ import { VotacionModule } from '../votacion/votacion.module';
     VotacionModule
   ],
   providers: [RondaService],
-  exports: [RondaListComponent, RondaDetailComponent, RondaCreateComponent]
+  exports: [RondaListComponent]
 })
 export class RondaModule { }
