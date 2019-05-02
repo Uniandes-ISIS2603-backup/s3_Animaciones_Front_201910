@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Calificacion} from '../calificacion';
 import { ActivatedRoute } from '@angular/router';
 import {CalificacionService} from '../calificacion.service';
@@ -18,7 +18,7 @@ export class CalificacionListComponent implements OnInit {
         ) { }
 
   
-        calificaciones:Calificacion[];
+    @Input() calificaciones:Calificacion[];
   
         getCalificaciones():void
   {
