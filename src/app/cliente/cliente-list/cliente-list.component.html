@@ -13,7 +13,7 @@
 
                     <tr *ngFor="let cliente of clientes">
                         <td style="cursor: pointer;">
-                                <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.nombre]"> {{cliente.nombre}}</a>
+                                <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.id]"> {{cliente.nombre}}</a>
                           </td>
 
                     </tr>
