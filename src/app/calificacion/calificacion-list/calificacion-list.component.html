@@ -14,19 +14,20 @@
                 <th>Calificacion</th>
                 <tr *ngFor="let calificacion of calificaciones">
                     <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.usuario]"> {{calificacion.usuario}}</a>
+                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.usuario}}</a>
                       </td>
                       <td style="cursor: pointer;">
-                          <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.comentario]"> {{calificacion.comentario}}</a>
+                          <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.comentario}}</a>
                         </td>
                         <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.calificacion]"> {{calificacion.calificacion}}</a>
+                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.calificacion}}</a>
                           </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    
    
        <div class="col">
             <p>
