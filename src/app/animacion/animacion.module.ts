@@ -11,6 +11,7 @@ import { AnimacionService } from './animacion.service';
 import { AnimacionDetailComponent } from './animacion-detail/animacion-detail.component';
 import { AnimacionCreateComponent } from './animacion-create/animacion-create.component';
 import { AnimacionEditComponent } from './animacion-edit/animacion-edit.component';
+import { CalificacionModule } from '../calificacion/calificacion.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { AnimacionEditComponent } from './animacion-edit/animacion-edit.componen
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      NgbModule
+      NgbModule,
+      CalificacionModule
   ],
     declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent, AnimacionEditComponent],
     providers: [AnimacionService],
