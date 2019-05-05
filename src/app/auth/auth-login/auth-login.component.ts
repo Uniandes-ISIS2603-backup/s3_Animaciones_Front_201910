@@ -32,7 +32,7 @@ export class AuthLoginComponent implements OnInit {
     */
     login(): void {
         this.authService.login(this.user.role);
-        this.toastrService.success('Logged in')
+        this.toastrService.success('Login Correcto!')
     }
 
     /**
@@ -40,7 +40,7 @@ export class AuthLoginComponent implements OnInit {
     */
     ngOnInit() {
         this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.roles = ['Administrator', 'Client','Jurado', 'Artista', 'Organizador'];
     }
 
 }
