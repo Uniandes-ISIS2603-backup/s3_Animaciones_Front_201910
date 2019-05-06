@@ -7,7 +7,7 @@
 <div class="panel-body">
     <div class="border">
         <h3>{{animacionDetail.nombre}}</h3>
-        <youtube-player [videoId]="id"></youtube-player>
+        <iframe width="560" height="315" [src]="safeSrc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <dl>
             <dt>Descripcion</dt>
             <dd>{{animacionDetail.descripcionn}}</dd>

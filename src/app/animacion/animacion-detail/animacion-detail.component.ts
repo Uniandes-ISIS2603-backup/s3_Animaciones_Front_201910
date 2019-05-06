@@ -17,9 +17,6 @@ export class AnimacionDetailComponent implements OnInit {
 
     safeSrc: SafeResourceUrl;
 
-    player: YT.Player;
-    private id: string;
-
     constructor(
         private animacionService: AnimacionService,
         private route: ActivatedRoute,
@@ -32,7 +29,8 @@ export class AnimacionDetailComponent implements OnInit {
 
     getAnimacionDetail(): void {
         this.animacionService.getAnimacionDetail(this.annimacion_id).subscribe(animacionDetail => {
-            this.animacionDetail = animacionDetail
+            this.animacionDetail = animacionDetail;
+            this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+this.animacionDetail.link);
         });
     }
 
@@ -45,7 +43,6 @@ export class AnimacionDetailComponent implements OnInit {
         this.annimacion_id = +this.route.snapshot.paramMap.get('id');
         this.animacionDetail = new AnimacionDetail();
         this.getAnimacionDetail();
-        this.id = this.animacionDetail.link;
-       //this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.animacionDetail.link);
+        //this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+this.animacionDetail.link);
     }
 }

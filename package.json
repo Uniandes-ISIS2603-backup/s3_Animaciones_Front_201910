@@ -49,9 +49,7 @@
         "rxjs": "^6.0.0",
         "rxjs-compat": "^6.2.2",
         "typescript": "^2.7.2",
-        "zone.js": "^0.8.26",
-        "ngx-youtube-player": "0.1.0",
-        "@types/youtube": "0.0.37"
+        "zone.js": "^0.8.26"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.7.0",
