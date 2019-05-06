@@ -2,16 +2,16 @@
 
     <form role="form" (ngSubmit)= "registrar()" #f="ngForm"> 
         <div class="form-group">
-          <label for="text">credenciales:</label>
+          <label style="color: #313a87" for="text">credenciales:</label>
           <input type="text" name="credenciales" class="form-control" [(ngModel)]= "jurado.credenciales" id="credenciales">
         </div>
 
         <div class="form-group">
-          <label for="text">usuario:</label>
+          <label style="color: #313a87" for="text">usuario:</label>
           <input type="text" name="usuario" class="form-control" [(ngModel)]= "jurado.usuario" id="usuario">
         </div>
         <div class="form-group">
-            <label for="pwd">Contraseña:</label>
+            <label style="color: #313a87" for="pwd">Contraseña:</label>
             <input type="password" name="cotrasena" class="form-control" [(ngModel)]= "jurado.contrasena" id="pwd">
           </div>
 
@@ -20,11 +20,11 @@
 
   <form (ngSubmit)="registrar()" #f="ngForm">
       <div class="form-group">
-          <label for="jurado">Agregar Jurado Existente  </label>
+          <label style="color: #313a87" for="jurado">Agregar Jurado Existente  </label>
           <select class="form-control" name="jurado" id="jurado" [(ngModel)]="jurado_id">
             <option *ngFor="let jurado of jurados" [ngValue]="jurado.id">{{jurado.usuario}}</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+        <button style="background-color: #313a87" type="submit" class="btn btn-primary mb-2">Agregar</button>
   </form>
 </div>
