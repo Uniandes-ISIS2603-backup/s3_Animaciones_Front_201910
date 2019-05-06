@@ -241,62 +241,59 @@ const routes: Routes = [
          children: [
                 {
                     path: 'list',
-                    component: RondaListComponent
+                    component: RondaListComponent,
+                    canActivate: [NgxPermissionsGuard],
+                    data: {
+                        permissions: {
+                            only: ['GUEST', 'CLIENT', 'ADMIN', 'ARTISTA', 'JURADO', 'ORGANIZADOR']
+                        }
+                    }
                 },
                 {
                     path: ':id',
-                    component: RondaDetailComponent
+                    component: RondaDetailComponent,
+                    canActivate: [NgxPermissionsGuard],
+                    data: {
+                        permissions: {
+                            only: ['GUEST', 'CLIENT', 'ADMIN', 'ARTISTA', 'JURADO', 'ORGANIZADOR']
+                        }
+                    }
                 },
                 {
                     path: 'add',
-                    component: RondaCreateComponent
+                    component: RondaCreateComponent,
+                    canActivate: [NgxPermissionsGuard],
+                    data: {
+                        permissions: {
+                            only: ['ADMIN', 'ORGANIZADOR']
+                        }
+                    }
                 }
          ]
      },
-     {
-        path: 'animaciones',
-        children: [
-            {
-                path: 'list',
-                component: AnimacionListComponent
-            },
-            {
-                path: ':id',
-                component: AnimacionDetailComponent
-            },
-            {
-                path: 'add',
-                component: AnimacionCreateComponent
-            }
-        ]
-    },
-    {
-        path: 'rondas',
-        children: [
-            {
-                path: 'list',
-                component: RondaListComponent
-            },
-            {
-                path: ':id',
-                component: RondaDetailComponent
-            },
-            {
-                path: 'add',
-                component: RondaCreateComponent
-            }
-        ]
-    },
     {
         path: 'votaciones',
         children: [
             {
                 path: 'list',
-                component: VotacionListComponent
+                component: VotacionListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST', 'CLIENT', 'ADMIN', 'ARTISTA', 'JURADO', 'ORGANIZADOR']
+                    }
+                }
+
             },
             {
                 path: 'add',
-                component: VotacionCreateComponent
+                component: VotacionCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','JURADO']
+                    }
+                }
             }
         ]
     }

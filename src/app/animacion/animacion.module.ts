@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { AnimacionListComponent } from './animacion-list/animacion-list.component';
 import { AnimacionService } from './animacion.service';
@@ -21,7 +22,8 @@ import { CalificacionModule } from '../calificacion/calificacion.module';
       HttpClientModule,
       FormsModule,
       NgbModule,
-      CalificacionModule
+      CalificacionModule,
+      NgxPermissionsModule
   ],
     declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent, AnimacionEditComponent],
     providers: [AnimacionService],
