@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { AnimacionService } from '../animacion.service';
 import { Animacion } from '../animacion';
@@ -14,9 +15,15 @@ export class AnimacionDetailComponent implements OnInit {
 
     @Input() animacionDetail: AnimacionDetail;
 
+    safeSrc: SafeResourceUrl;
+
+    player: YT.Player;
+    private id: string;
+
     constructor(
         private animacionService: AnimacionService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private sanitizer: DomSanitizer
     ) { }
 
     annimacion_id: number;
@@ -38,5 +45,7 @@ export class AnimacionDetailComponent implements OnInit {
         this.annimacion_id = +this.route.snapshot.paramMap.get('id');
         this.animacionDetail = new AnimacionDetail();
         this.getAnimacionDetail();
+        this.id = this.animacionDetail.link;
+       //this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.animacionDetail.link);
     }
 }
