@@ -1,45 +1,91 @@
 <div class="row">
-    <br>
-    <h2 class="text-center">Crear un concurso</h2>
-    <br>
-    <form name="concurso" (ngSubmit)="f.form.valid && concursoArtista()" #f="ngForm" novalidate>
-        <div class="form-group">
-            <label for="concursoNombre"><b>tema</b></label>
-            <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
-            <div class="invalid-feedback">
-                <p>Falta el tema del concurso</p>
-            </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center" style="color:#313a87">Creando tu concurso</h1>
+            <br>
         </div>
-        <div class="form-group">
-            <label for="concursoTecnica"><b>Tecnica</b></label>
-            <input type="text" name="concursoTecnica" class="form-control" id="concursoTecnica" [(ngModel)]="concurso.tecnica" #concursoTecnica="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoTecnica.invalid}" required>
-            <div class="invalid-feedback">
-                <p>Falta el usuario</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="concursoReglas"><b>Concurso reglas </b></label>
-            <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
-            <div class="invalid-feedback">
-                <p>Faltan las reglas</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="concursoReglas"><b>Concurso rondas </b></label>
-              <li class="nav-item">
-                        <a class="nav-link" routerLink="/rondas/add">Crear rondas</a>
-              </li>
-        </div>
-        <div class="form-group">
-            <label for="concursoReglas"><b>Concurso jurados </b></label>
-              <li class="nav-item">
-                        <a class="nav-link" routerLink="/jurados/create">Crear jurados</a>
-              </li>
-        </div>
-        <div class="row from-inline">
-            <button type="submit" class="btn">Create</button>
-            <div class="divider"></div>
-            <button type="button" class="btn" (click)="cancelCreation()">Cancel</button>
-        </div>
-    </form>
+    </div>
+    <div class="container-fluid">
+        <div clss="row" style="background-color:#b6dbf2;">
+            <br>
+            <div class="row">
+                <div class="col-2">
+                    <img class="col" src="https://img1.freepng.es/20180130/rtw/kisspng-trophy-cartoon-comics-cartoon-trophies-5a713c1cb19340.6013151015173703967274.jpg" alt="trofeo" />
+                </div>
+                <div class="col-9">
+                    <form name="concurso" (ngSubmit)="f.form.valid && concursoArtista()" #f="ngForm" novalidate>
+
+                          <div class="form-group">
+                            <div class="row">
+                                <div class="col-1">
+                                    <label for="concursoNombre" style="color:#313a87"><b>Tema</b></label>
+                                </div>
+                                <div class="col">
+                                    <input style="color:#313a87" type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
+                                           <div class="invalid-feedback">
+                                        <p>Falta el tema del concurso</p>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div style="color:#313a87" class="form-group">
+                            <div class="row">
+                                <div class="col-1"> 
+                                    <label for="concursoTecnica"><b> Tecnica   </b></label>
+                                </div>
+                                <div class="col">
+                                    <select name="select">
+                                        <option value="value1" selected>Libre</option> 
+                                        <option value="value1" >Aniamcion completa</option> 
+                                        <option value="value2">Animacion limitada</option>
+                                        <option value="value3">Rotoscopia</option>
+                                        <option value="value2">Live-Action</option>
+                                        <option value="value3">Claymotion</option>
+                                        <option value="value2">Pixelation</option>
+                                        <option value="value3">Go-Motion</option>
+                                        <option value="value2">Con Recortes</option>
+                                        <option value="value3">Flash</option>
+                                        <option value="value2">Captura de movimiento</option>
+                                        <option value="value3">Modelado 3D</option>
+                                        <option value="value2">Animacion con Arena</option>
+                                        <option value="value3">Pinscreen</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="color:#313a87" class="form-group">
+                            <div class="row">
+                                <div class="col-1">
+                                    <label for="concursoReglas"><b>Reglas </b></label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
+                                           <div class="invalid-feedback">
+                                        <p>Faltan las reglas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="color:#313a87" class="form-group">
+                            <label for="concursoReglas"><b>Rondas </b></label>
+                        </div>
+                        <div style="color:#313a87" class="form-group">
+                            <label for="concursoReglas"><b>Jurados </b></label>
+                        
+                           <!-- <div> <app-jurado-create> d</app-jurado-create> </div>-->
+                        </div>
+                        <div class="row from-inline">
+                            <button type="submit"  style="margin-left: 10px" class="btn btn-primary mb1 bg-blue">Create</button>
+                            <div class="divider">   </div>
+                            <button type="button" style="margin-left: 10px"  class="btn btn-primary mb1 bg-black" (click)="cancelCreation()">Cancel</button>
+                            
+                        </div>
+                          <br>
+                    </form>
+                </div>
+            </div>            
+        </div>   
+
+    </div>
 </div>

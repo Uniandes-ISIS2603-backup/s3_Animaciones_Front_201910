@@ -1,36 +1,51 @@
-<div class="text-center col-12">
-    Concursos
+<div class="text-center col-12" style="color: #313a87;">
+    <h1> Concursos </h1>
 
     <div class="text-right col-12">
         <button routerLink="/concursos/create" class="btn btn-info">Agregar Concurso</button>
     </div>
 </div>
-
 <div class="container-fluid" >
-    <div class="row">
+    <div class="row" style="background-color:#ffffff;">
         <div class="col">
+            <div class="col" style="background-color:#b6dbf2;">
 
-            <div class="container-fluid" *ngFor="let i of concursos" >
-                 <br>
-                <div  class="row" style="border-bottom-color:#000000;border-bottom-width:3px;border-bottom-style:solid;border-top-color:#000000;border-top-style:solid;border-top-width:3px; border-left-color:#FF0000; border-left-width:3px;border-left-style:solid;border-right-color:#FF0000; border-right-width:3px;border-right-style:solid;"> 
-
-                    <div class="col">
-                        <img class="col-2" src="https://img1.freepng.es/20180130/rtw/kisspng-trophy-cartoon-comics-cartoon-trophies-5a713c1cb19340.6013151015173703967274.jpg" alt="trofeo" />
-                    </div>
-                    <div class="col text-left" >
-                        <a class="figure-caption" (click)="onSelected(i.id)">{{i.tema}}</a>
-                    </div> 
-                    <div class="border row">
+                <div class="container-fluid" *ngFor="let i of concursos" >
+                     <br>
+                    <!-- style="border-bottom-color:#000000;border-bottom-width:3px;border-bottom-style:solid;border-top-color:#000000;border-top-style:solid;border-top-width:3px; border-left-color:#FF0000; border-left-width:3px;border-left-style:solid;border-right-color:#FF0000; border-right-width:3px;border-right-style:solid;" -->
+                    <div  class="row" style="background-color:#ffffff;"> 
+                        <!-- 
                         <div class="col">
-                            <div *ngIf="selectedConcurso">
-                                <app-concurso-detail [concursoDetail]="selectedConcurso"> </app-concurso-detail>
-                            </div>
+                            <img class="col-2" src="https://img1.freepng.es/20180130/rtw/kisspng-trophy-cartoon-comics-cartoon-trophies-5a713c1cb19340.6013151015173703967274.jpg" alt="trofeo" />
+                        </div>
+                        -->
+                        <div class="col text-left" style="color:#313a87">
+                            <a class="figure-caption" (click)="onSelected(i.id)">{{i.tema}}</a>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div> 
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col" style="background-color:#b6dbf2; height: 100%;">
+                <br>
+                <div class="col">
+                    <div class="row" style="background-color:#ffffff;">
+                        <div *ngIf="selectedConcurso" >
+                            <app-concurso-detail [concursoDetail]="selectedConcurso"> </app-concurso-detail>
                         </div>
                     </div>
-                </div> 
+                    <br>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
 

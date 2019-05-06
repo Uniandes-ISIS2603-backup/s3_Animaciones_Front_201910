@@ -1,0 +1,28 @@
+ul {
+     
+  width: 80%;
+  background-color: #f1f1f1;
+  height: 100%; 
+  overflow: auto; 
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #b6dbf2;
+  color: #313a87;
+}
+
+li a:active{
+    background-color: #bbbbbb;
+  color: #313a87;
+}
+

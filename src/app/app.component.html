@@ -1,82 +1,109 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <div class="form-inline">
-                <h2 class="mainTitle">s3_Animaciones-Front</h2>
-            </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav mr-auto mt-0">
-                <ul class="nav">
-                    <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
-                        <a class="nav-link" routerLink="/artistas/list">Artistas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/animaciones/list">Animaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="/concursos/list">Concursos</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/clientes/list">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link" routerLink="/calificaciones/list">Calificaciones</a>
-                        </li>
-                        <li>
-                        <a class="nav-link" routerLink="/propuestas">Propuestas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/calificaciones/list">Calificaciones</a>
-                    </li>
-                    <li>
-                    <a class="nav-link" routerLink="/propuestas">Propuestas</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="/jurados/list">Jurados</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="/votaciones/list">Votaciones</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="/rondas/list">Rondas</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" routerLink="/mediosDePago">Medio de pago</a>
-                    </li>
-                </ul> 
-            </div>
-            <div class="navbar-nav ml-auto flex-column">
-                <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
-                    <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
-                                Sign Up</a></li>
-                        <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Login</a></li>
+    <div class="row " >  <!-- horizontal navbar begin aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+        <div class="col-12" style="background-color:#313a87"> 
+            <nav class="navbar navbar-expand-lg" style="color:#313a87" >
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">demasiado zoom camarada</span>
+                </button>
+
+
+                <form class="form-inline"  >
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+
+                <div class="collapse navbar-collapse"  style="color:#313a87" id="navbarSupportedContent">
+                    <div class="navbar-nav ml-auto flex-column" style="background-color:#313a87">
+                        <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
+                            <div class="form-inline">
+                                <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
+                                        Sign Up</a></li>
+                                <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Login</a></li>
+                            </div>
+                        </div>
+                        <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+                            <div class="form-inline">
+                                <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
-                    <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
-                    </div>
+            </nav> 
+        </div>
+    </div><!-- horizontal navbar end aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+
+
+    <div class="row" >
+        <div class="col-2" style="background-color:#313a87">  <!-- vertical navbar begin aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+            <nav class="navbar navbar-expand-lg" >
+
+                <div class="collapse navbar-collapse" >
+                    <div class="navbar-nav ">
+                        <ul class="nav"  style="background-color:#313a87">
+
+                            <li>
+                                <a class="navbar-brand" href="#">
+                                    <div class="form-inline">
+                                        Home
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
+                                <a class="nav-link" routerLink="/artistas/list">Artistas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/animaciones/list">Animaciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/concursos/list">Concursos</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/clientes/list">Clientes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/calificaciones/list">Calificaciones</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/propuestas">Propuestas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/calificaciones/list">Calificaciones</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/propuestas">Propuestas</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/jurados/list">Jurados</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/votaciones/list">Votaciones</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/rondas/list">Rondas</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/mediosDePago">Medio de pago</a>
+                            </li>
+                        </ul> 
+                    </div>         
+
                 </div>
+            </nav> 
+        </div><!-- vertical navbar end aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+
+        <div class="col">
+            <div class="container-fluid">
+
+                <router-outlet></router-outlet>
             </div>
         </div>
-        
-
-    </nav>
-
-    <div>
-        <router-outlet></router-outlet>
-        <br>
-        <br>
     </div>
-   
-    
+
+
+
     <footer class="footer bg-light" id="footer">
         <div class="container">
             <p class="navbar-text text-center">

@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 
 import { ConcursoService } from '../concurso.service';
-import { ConcursoDetailComponent } from '../concurso-detail/concurso-detail.component';
 import { ConcursoDetail } from '../concurso-detail';
+import {JuradoCreateComponent} from '../../jurado/jurado-create/jurado-create.component'
 import { Concurso } from '../concurso';
 
 @Component({
