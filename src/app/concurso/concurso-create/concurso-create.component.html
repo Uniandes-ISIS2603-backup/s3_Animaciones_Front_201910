@@ -1,43 +1,14 @@
 <div class="row">
+    
     <div class="container-fluid">
         <div class="row">
-            <div class="col" style="background-color:lightblue;">1</div>
-            <div class="col" style="background-color:orange;">2</div>
-            <div class="col" style="background-color:lightblue;">3</div>
-            <div class="col" style="background-color:orange;">4</div>
-            <div class="col" style="background-color:lightblue;">5</div>
-            <div class="col" style="background-color:orange;">6</div>
-            <div class="col" style="background-color:lightblue;">7</div>
-            <div class="col" style="background-color:orange;">8</div>
-            <div class="col" style="background-color:lightblue;">9</div>
-            <div class="col" style="background-color:orange;">10</div>
-            <div class="col" style="background-color:lightblue;">11</div>
-            <div class="col" style="background-color:orange;">12</div>
-        </div>
-        <br>
-    </div>
-    <div class="container-fluid">
-        <div clss="row">
-            <h1 class="text-center">Creando tu concurso</h1>
+            <h1 class="text-center" style="color:#313a87">Creando tu concurso</h1>
             <br>
         </div>
     </div>
     <div class="container-fluid">
-        <div clss="row" style="border-bottom-color:#000000;border-bottom-width:3px;border-bottom-style:solid;border-top-color:#000000;border-top-style:solid;border-top-width:3px; border-left-color:#FF0000; border-left-width:3px;border-left-style:solid;border-right-color:#FF0000; border-right-width:3px;border-right-style:solid;">
-            <div class="row">
-                <div class="col" style="background-color:lightblue;">1</div>
-                <div class="col" style="background-color:orange;">2</div>
-                <div class="col" style="background-color:lightblue;">3</div>
-                <div class="col" style="background-color:orange;">4</div>
-                <div class="col" style="background-color:lightblue;">5</div>
-                <div class="col" style="background-color:orange;">6</div>
-                <div class="col" style="background-color:lightblue;">7</div>
-                <div class="col" style="background-color:orange;">8</div>
-                <div class="col" style="background-color:lightblue;">9</div>
-                <div class="col" style="background-color:orange;">10</div>
-                <div class="col" style="background-color:lightblue;">11</div>
-                <div class="col" style="background-color:orange;">12</div>
-            </div>
+        <div clss="row" style="background-color:#b6dbf2;">
+            <br>
             <div class="row">
                 <div class="col-2">
                     <img class="col" src="https://img1.freepng.es/20180130/rtw/kisspng-trophy-cartoon-comics-cartoon-trophies-5a713c1cb19340.6013151015173703967274.jpg" alt="trofeo" />
@@ -48,20 +19,20 @@
                           <div class="form-group">
                             <div class="row">
                                 <div class="col-1">
-                                    <label for="concursoNombre"><b>tema</b></label>
+                                    <label for="concursoNombre" style="color:#313a87"><b>Tema</b></label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
+                                    <input style="color:#313a87" type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
                                            <div class="invalid-feedback">
                                         <p>Falta el tema del concurso</p>
                                     </div>
                                 </div>                            
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div style="color:#313a87" class="form-group">
                             <div class="row">
                                 <div class="col-1"> 
-                                    <label for="concursoTecnica"><b>Tecnica   </b></label>
+                                    <label for="concursoTecnica"><b> Tecnica   </b></label>
                                 </div>
                                 <div class="col">
                                     <select name="select">
@@ -83,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div style="color:#313a87" class="form-group">
                             <div class="row">
                                 <div class="col-1">
                                     <label for="concursoReglas"><b>Reglas </b></label>
@@ -96,19 +67,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div style="color:#313a87" class="form-group">
                             <label for="concursoReglas"><b>Rondas </b></label>
                         </div>
-                        <div class="form-group">
+                        <div style="color:#313a87" class="form-group">
                             <label for="concursoReglas"><b>Jurados </b></label>
                         
                            <!-- <div> <app-jurado-create> d</app-jurado-create> </div>-->
                         </div>
                         <div class="row from-inline">
-                            <button type="submit" class="btn btn-success">Create</button>
-                            <div class="divider"></div>
-                            <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                            <button type="submit"  style="margin-left: 10px" class="btn btn-primary mb1 bg-blue">Create</button>
+                            <div class="divider">   </div>
+                            <button type="button" style="margin-left: 10px"  class="btn btn-primary mb1 bg-black" (click)="cancelCreation()">Cancel</button>
+                            
                         </div>
+                          <br>
                     </form>
                 </div>
             </div>            
