@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav mr-auto mt-0">
                 <ul class="nav">
-                    <li class="nav-item">
+                    <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
                         <a class="nav-link" routerLink="/artistas/list">Artistas</a>
                     </li>
                     <li class="nav-item">
@@ -45,6 +45,9 @@
                     </li>
                     <li>
                         <a class="nav-link" routerLink="/rondas/list">Rondas</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/mediosDePago">Medio de pago</a>
                     </li>
                 </ul> 
             </div>

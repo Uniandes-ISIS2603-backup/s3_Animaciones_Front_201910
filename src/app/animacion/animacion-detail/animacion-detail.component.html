@@ -1,4 +1,4 @@
-<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()">Editar Animacion</button>
+<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()" *ngxPermissionsOnly="['ARTISTA']">Editar Animacion</button>
 <div *ngIf="showEdit">
     <app-animacion-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-animacion-edit>
 </div>

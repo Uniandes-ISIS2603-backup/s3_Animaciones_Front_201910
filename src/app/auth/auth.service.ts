@@ -42,6 +42,24 @@ export class AuthService {
         localStorage.setItem('role', 'CLIENT');
     }
 
+    setJuradoRole (): void {
+        this.roleService.flushRoles();
+        this.roleService.addRole('JURADO', ['']);
+        localStorage.setItem('role', 'JURADO');
+    }
+
+    setArtistaRole (): void {
+        this.roleService.flushRoles();
+        this.roleService.addRole('ARTISTA', ['']);
+        localStorage.setItem('role', 'ARTISTA');
+    }
+
+    setOrganizadorRole (): void {
+        this.roleService.flushRoles();
+        this.roleService.addRole('ORGANIZADOR', ['']);
+        localStorage.setItem('role', 'ORGANIZADOR');
+    }
+
     setAdministratorRole (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
@@ -59,8 +77,23 @@ export class AuthService {
     login (role): void {
         if (role === 'Administrator') {
             this.setAdministratorRole();
-        } else {
-            this.setClientRole()
+        }
+        else if(role == 'Client'){
+            this.setClientRole();
+        }
+        else if(role == 'Artista'){
+            this.setArtistaRole();
+        }
+        else if (role == 'Jurado')
+        {
+            this.setJuradoRole();
+        }
+        else if (role == 'Organizador')
+        {
+            this.setOrganizadorRole()
+        }
+        else{
+            this.setGuestRole();
         }
         this.router.navigateByUrl('/');
     }
