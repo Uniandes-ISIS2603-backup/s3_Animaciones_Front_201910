@@ -1,4 +1,4 @@
-<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Crear Animacion</button>
+<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()" *ngxPermissionsOnly="['ARTISTA']">Crear Animacion</button>
 <div *ngIf="showCreate">
     <app-animacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-animacion-create>
 </div>
