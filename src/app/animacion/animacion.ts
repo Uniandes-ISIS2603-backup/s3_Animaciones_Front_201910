@@ -11,4 +11,8 @@ export class Animacion {
     calificacion: number;
     fecha: any;
     artista: Artista;
+
+    public getLink(): string {
+        return this.link;
+    }
 }

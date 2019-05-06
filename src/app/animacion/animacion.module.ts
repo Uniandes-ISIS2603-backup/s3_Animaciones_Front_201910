@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 import { AnimacionListComponent } from './animacion-list/animacion-list.component';
 import { AnimacionService } from './animacion.service';
@@ -24,8 +23,7 @@ import { CalificacionModule } from '../calificacion/calificacion.module';
       FormsModule,
       NgbModule,
       CalificacionModule,
-      NgxPermissionsModule,
-      YoutubePlayerModule
+      NgxPermissionsModule
   ],
     declarations: [AnimacionListComponent, AnimacionDetailComponent, AnimacionCreateComponent, AnimacionEditComponent],
     providers: [AnimacionService],
