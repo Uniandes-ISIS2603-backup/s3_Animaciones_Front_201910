@@ -375,7 +375,12 @@ const routes: Routes = [
         children: [
           {
             path: 'create',
-            component: PropuestaCreateComponent
+            component: PropuestaCreateComponent,
+            canActivate: [NgxPermissionsGuard],
+            data: {
+                permissions: {
+                        only: ['CLIENT', 'ADMIN']
+            }}
           },
           {
             path: ':id',
@@ -387,14 +392,34 @@ const routes: Routes = [
                 children: [
                   {
                     path: 'createF',
-                    component: FacturaCreateComponent
+                    component: FacturaCreateComponent,
+                    canActivate: [NgxPermissionsGuard],
+                    data: {
+                        permissions: {
+                            only: ['CLIENT', 'ADMIN']
+                    }}
                   }
-                ]
+                ],
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT', 'ADMIN']
+                }}
               }
-            ]
+            ],
+            canActivate: [NgxPermissionsGuard],
+            data: {
+                permissions: {
+                        only: ['CLIENT', 'ADMIN']
+            }}
           }
-        ]
-      },
+        ],
+        canActivate: [NgxPermissionsGuard],
+        data: {
+                permissions: {
+                    only: ['CLIENT', 'ADMIN']
+            }}
+    },
     {
         path: 'home',
         component: AuthLoginComponent
