@@ -4,19 +4,9 @@
 </div>
 <br>
 <br>
-<table class="table">
- <thead>
-    <tr>
-        <th>
-            Animaciones
-        </th>
-    </tr>
- </thead>
- <tbody>
-    <tr *ngFor="let animacion of animaciones">
-        <td style="cursor: pointer;">
-            <a routerLink="/animaciones/{{animacion.id}}"><dd>{{animacion.nombre}}</dd></a>
-        </td>
-    </tr>
- </tbody>
-</table>
+<div class="galeria">
+     <div class="cuadro" *ngFor="let animacion of animaciones">
+         <!-- <iframe width="18%" height="315" src="{{animacion.link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+         <a routerLink="/animaciones/{{animacion.id}}"><dd>{{animacion.nombre}}</dd></a>
+    </div>
+</div>
