@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { ArtistaListComponent } from './artista-list/artista-list.component';
 import { ArtistaService } from './artista.service';
@@ -20,7 +21,8 @@ import { ArtistaEditComponent } from './artista-edit/artista-edit.component';
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      AnimacionModule
+      AnimacionModule,
+      NgxPermissionsModule
   ],
     declarations: [ArtistaListComponent, ArtistaDetailComponent, ArtistaCreateComponent, ArtistaEditComponent],
     providers: [ArtistaService],
