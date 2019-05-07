@@ -12,11 +12,13 @@ import { AnimacionService } from '../animacion.service';
 })
 export class AnimacionListComponent implements OnInit {
 
-    constructor(private animacionService: AnimacionService) { }
+    constructor(private animacionService: AnimacionService, private route: ActivatedRoute) { }
 
     @Input() animaciones: Animacion[];
 
     showCreate: boolean;
+
+    all: string = 'no';
 
     getAnimaciones(): void {
         this.animacionService.getAnimaciones().subscribe(animaciones => {
@@ -30,6 +32,11 @@ export class AnimacionListComponent implements OnInit {
 
     ngOnInit() {
         this.showCreate = false;
-        this.getAnimaciones();
+        this.route.queryParams.filter(params => params.all).subscribe(params => {
+            this.all = params.all;
+        });
+        if(this.all == 'yes'){
+            this.getAnimaciones();
+        }
     }
 }
