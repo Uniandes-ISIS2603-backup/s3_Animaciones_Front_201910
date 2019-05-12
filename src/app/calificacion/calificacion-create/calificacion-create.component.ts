@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {ToastrService} from 'ngx-toastr';
 import {CalificacionService} from '../calificacion.service';
 import {Calificacion} from '../calificacion';
 
@@ -12,29 +13,32 @@ export class CalificacionCreateComponent implements OnInit {
   calificaciones : Calificacion[];
   showCreate: boolean;
   calificacion_id: any;
-  calificacion : Calificacion;
+
   
-  constructor(private calificacionService: CalificacionService) { }
+  constructor(private calificacionService: CalificacionService,private toastService: ToastrService) { }
+  calificacion: Calificacion;
+ 
+  @Output() cancel = new EventEmitter();
 
-  getCalificaciones(): void {
-    this.calificacionService.getCalificaciones().subscribe(calificaciones => {
-        this.calificaciones = calificaciones;
-        console.table(this.calificaciones);
-    });
+  @Output() create = new EventEmitter();
+
+
+  getCalificaciones(): Calificacion {
+    this.calificacionService.createCalificacion(this.calificacion).subscribe((calificacion) => {
+      this.calificacion = calificacion;
+      this.create.emit();
+      this.toastService.success("La calificación fue creada","Creacion de Calificacion");
+  }, err => {
+      this.toastService.error(err,"Error");
+  });
+  return this.calificacion;
 }
 
-showHideCreate(): void {
-  this.showCreate = !this.showCreate!
+cancelCreation(): void {
+  this.cancel.emit();
 }
 
-  ngOnInit() {
-    this.showCreate = false;
-    this.getCalificaciones();
-    this.calificacion = new Calificacion ();
-  }
-
-  registrar(): void{
-     
-    console.log('id calificacion', this.calificacion);
-  }
+ngOnInit() {
+  this.calificacion = new Calificacion();
+}
 }

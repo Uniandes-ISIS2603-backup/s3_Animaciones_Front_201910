@@ -6,14 +6,15 @@ import { CalificacionEditComponent } from './calificacion-edit/calificacion-edit
 import {CalificacionService} from './calificacion.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CalificacionListComponent } from './calificacion-list/calificacion-list.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   declarations: [ CalificacionDetailComponent, CalificacionCreateComponent, CalificacionEditComponent, CalificacionListComponent],
   providers:[CalificacionService],

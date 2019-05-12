@@ -1,16 +1,39 @@
 
-<form>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Usuario</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
-      </div>
-  <div class="form-group">
-    <label for="exampleInputPassword2">Comentario</label>
-    <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Comentario">
-  </div>
-  <div class="form-group">
-      <label for="exampleInputPassword1">Calificación</label>
-      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Calificación (de 1 a 10)">
-    </div>
 
-  <button type="submit" class="btn btn-primary">Agregar Calificación</button>
+  <div class="row">
+      <br>
+      <h2 class="text-center">Crear una Calificación</h2>
+      <br><br>
+      <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="calificacionComentario"><b>Comentario</b></label>
+              <input type="text" name="calificacionComentario" class="form-control" id="calificacionComentario"
+               [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{'is-invalid': f.submitted && comentario.invalid}" required>
+              <div class="invalid-feedback">
+                  <p>Falta el comentario de la calificación</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="calificacionUsuario"><b>Usuario</b></label>
+              <input type="text" name="calificacionUsuario" class="form-control" id="calificacionUsuario"
+               [(ngModel)]="calificacion.usuario" #calificacionUsuario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionUsuario.invalid}" required>
+              <div class="invalid-feedback">
+                  <p>Falta el usuario</p>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="calificacion"><b>Calificacion</b></label>
+              <input type="Number" name="calificacion" class="form-control" id="calificacion"
+               [(ngModel)]="calificacion.calificacion" #calificacion="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacion.invalid}" required>
+              <div class="invalid-feedback">
+                  <p>Falta la contrasenia</p>
+              </div>
+          </div>
+          <div class="row from-inline">
+              <button type="submit" class="btn btn-primary">Crear</button>
+              <div class="divider"></div>
+              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+          </div>
+      </form>
+  </div>
+  
