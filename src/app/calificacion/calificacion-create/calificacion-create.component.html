@@ -2,7 +2,6 @@
 
   <div class="row">
       <br>
-      <h2 class="text-center">Crear una Calificación</h2>
       <br><br>
       <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
           <div class="form-group">
@@ -21,13 +20,37 @@
                   <p>Falta el usuario</p>
               </div>
           </div>
-          <div class="form-group">
-              <label for="calificacion"><b>Calificacion</b></label>
-              <input type="Number" name="calificacion" class="form-control" id="calificacion"
-               [(ngModel)]="calificacion.calificacion" #calificacion="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacion.invalid}" required>
-              <div class="invalid-feedback">
-                  <p>Falta la contrasenia</p>
-              </div>
+          <div class="star-rating">
+              <label for="Calificacion"><b>Calificacion</b></label><br>
+
+              <form>
+                  <a class="clasificacion">
+                    <input id="radio1" type="radio" tittle="Votar con 1 estrella" name="estrellas" value="1"><!--
+                    --><label for="radio1">&#9733;</label><!--
+                    --><input id="radio2" type="radio" name="estrellas" value="2"><!--
+                    --><label for="radio2">&#9733;</label><!--
+                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                    --><label for="radio3">&#9733;</label><!--
+                    --><input id="radio4" type="radio" name="estrellas" value="4"><!--
+                    --><label for="radio4">&#9733;</label><!--
+                    --><input id="radio5" type="radio" name="estrellas" value="5"><!--
+                    --><label for="radio5">&#9733;</label><!--
+                  --><input id="radio6" type="radio" name="estrellas" value="6"><!--
+                  --><label for="radio6">&#9733;</label><!--
+                  --><input id="radio7" type="radio" name="estrellas" value="7"><!--
+                  --><label for="radio7">&#9733;</label><!--
+                  --><input id="radio8" type="radio" name="estrellas" value="8"><!--
+                  --><label for="radio8">&#9733;</label><!--
+                  --><input id="radio9" type="radio" name="estrellas" value="9"><!--
+                  --><label for="radio9">&#9733;</label><!--
+                    --><input id="radio10" type="radio" name="estrellas" value="10"><!--
+                    --><label for="radio10">&#9733;</label>
+                  </a>
+                </form>
+
+
+            
+
           </div>
           <div class="row from-inline">
               <button type="submit" class="btn btn-primary">Crear</button>

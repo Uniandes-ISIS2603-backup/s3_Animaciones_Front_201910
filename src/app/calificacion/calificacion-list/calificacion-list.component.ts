@@ -17,7 +17,7 @@ export class CalificacionListComponent implements OnInit {
     private route : ActivatedRoute
         ) { }
 
-  
+        public isCollapsed = false;
     @Input() calificaciones:Calificacion[];
   
         getCalificaciones():void
