@@ -1,0 +1,62 @@
+.star-rating a {
+    display: inline-block;
+    color: #95a5a6; /* gris (normal) */
+    text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 32px;
+    font-size: 2rem;
+    direction: rtl;/* right to left */
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+
+  }
+  .star-rating:hover a {
+    color: #f39c12; /* amarillo (seleccionado) */
+  }
+    .star-rating:hover a:hover ~ a {
+      color: #95a5a6; /* gris (normal) */
+    }
+
+
+    #form {
+        width: 250px;
+        margin: 0 auto;
+        height: 50px;
+        direction: ltr;
+      }
+      
+      #form a {
+        text-align: center;
+        display: inline-block;
+        direction: ltr;
+      }
+      
+      #form label {
+        font-size: 20px;
+        direction: ltr;
+      }
+      
+      input[type="radio"] {
+        display: none;
+        direction: ltr;
+      }
+      
+      label {
+        color: grey;
+        direction: ltr;
+      }
+      .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+      
+      label:hover,
+      label:hover ~ label {
+        color: rgb(14, 86, 145);
+        direction: ltr;
+      }
+      
+      input[type="radio"]:checked ~ label {
+        color: orange;
+        direction: ltr;
+      }
