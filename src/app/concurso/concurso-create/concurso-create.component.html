@@ -1,5 +1,4 @@
 <div class="row">
-    
     <div class="container-fluid">
         <div class="row">
             <h1 class="text-center" style="color:#313a87">Creando tu concurso</h1>
@@ -7,11 +6,10 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div clss="row" style="background-color:#b6dbf2;">
-            <br>
+        <div clss="row">
             <div class="row">
                 <div class="col-2">
-                    <img class="col" src="https://img1.freepng.es/20180130/rtw/kisspng-trophy-cartoon-comics-cartoon-trophies-5a713c1cb19340.6013151015173703967274.jpg" alt="trofeo" />
+                    <img class="col mt-4" src="../../../assets/img/trophy.png" alt="trofeo" />
                 </div>
                 <div class="col-9">
                     <form name="concurso" (ngSubmit)="f.form.valid && concursoArtista()" #f="ngForm" novalidate>
@@ -35,7 +33,7 @@
                                     <label for="concursoTecnica"><b> Tecnica   </b></label>
                                 </div>
                                 <div class="col">
-                                    <select name="select">
+                                    <select class="form-control" name="select">
                                         <option value="value1" selected>Libre</option> 
                                         <option value="value1" >Aniamcion completa</option> 
                                         <option value="value2">Animacion limitada</option>
@@ -67,14 +65,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="color:#313a87" class="form-group">
+                   <!--     <div style="color:#313a87" class="form-group">
                             <label for="concursoReglas"><b>Rondas </b></label>
                         </div>
                         <div style="color:#313a87" class="form-group">
                             <label for="concursoReglas"><b>Jurados </b></label>
-                        
-                           <!-- <div> <app-jurado-create> d</app-jurado-create> </div>-->
-                        </div>
+
+                        <div> <app-jurado-create> d</app-jurado-create> </div>
+                        </div>-->
                         <div class="row from-inline">
                             <button type="submit"  style="margin-left: 10px" class="btn btn-primary mb1 bg-blue">Create</button>
                             <div class="divider">   </div>

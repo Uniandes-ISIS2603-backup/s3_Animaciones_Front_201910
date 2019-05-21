@@ -41,6 +41,8 @@ import {FacturaCreateComponent} from '../factura/factura-create/factura-create.c
 import {ConcursoListComponent} from '../concurso/concurso-list/concurso-list.component';
 import {ConcursoDetailComponent} from '../concurso/concurso-detail/concurso-detail.component';
 import {ConcursoCreateComponent} from '../concurso/concurso-create/concurso-create.component';
+import {ListComponent} from "../medio-de-pago/list/list.component";
+import {EditComponent} from "../medio-de-pago/edit/edit.component";
 
 const routes: Routes = [
 
@@ -361,7 +363,26 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['CLIENT']
+                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
+                    }
+                }
+            },{
+                path: 'list',
+                component: ListComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
+                    }
+                }
+            },
+            {
+                path: 'detail/:id',
+                component: EditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
                     }
                 }
             },

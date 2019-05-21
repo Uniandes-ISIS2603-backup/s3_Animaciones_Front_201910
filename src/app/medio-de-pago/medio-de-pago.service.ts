@@ -11,17 +11,12 @@ const API_URL = environment.apiURL;
 /**
  * Constante que modela la direccion de mediosDePago
  */
-const metodoDePago = "mediodepago"
+const metodoDePago = "mediosDePago"
 /**
  * Constante que modela la direccion
  *  json de medioDePago 
  */
-const medioPago = 'medioDePago.json';
-/** 
-@Injectable({
-  providedIn: 'root'
-})
-*/
+const medioPago = 'mediosDePago';
 
 /**
  * Clase que modela el servicio de medioDePago
@@ -44,13 +39,16 @@ export class MedioDePagoService {
       codigo: medioDePago.codigo,
       fechaVencimiento: medioDePago.fechaVencimiento,
       formaDepago: medioDePago.formaDepago
-
-
     }
-
-
-
-
     return this.http.post<MedioDePago>(API_URL + metodoDePago, params);
   }
+
+  getMediosdePago(): Observable<MedioDePago[]> {
+    return this.http.get<MedioDePago[]>(API_URL+medioPago+"/all");
+  }
+
+  update(medioPago:MedioDePago): Observable<MedioDePago>{
+    return this.http.put<MedioDePago>(API_URL+medioPago+"/"+medioPago.id,medioPago);
+  }
+
 }

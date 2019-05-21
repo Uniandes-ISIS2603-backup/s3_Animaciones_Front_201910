@@ -1,0 +1,22 @@
+<div class="row col-12 my-4">
+  <h4 class="text-left col-6 ">Medios de pago</h4>
+  <a class="btn btn-info" routerLink="/mediodepago/create">Crear</a>
+  <table class="table mt-4">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Fecha de Vencimiento</th>
+      <th scope="col"># Tarjeta</th>
+      <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let f of mediosPago">
+      <td>{{ f.codigo}}</td>
+      <td>{{ f.fechaVencimiento}}</td>
+      <td>{{f.numeroTarjeta}}</td>
+      <td> <a class="btn btn-info" [routerLink]="['/mediodepago/detail/', f.id]">Detail</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

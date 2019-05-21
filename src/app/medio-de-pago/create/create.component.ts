@@ -24,7 +24,7 @@ export class CreateComponent implements OnInit {
    */
   registrar (){
     this.medioPagoService.createMedioDePago(this.medioDePago).subscribe((rs)=>{console.log('http medioDepago', rs)})
-     console.log (this.medioDePago)
+
   }
 
 }
