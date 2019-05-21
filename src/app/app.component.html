@@ -35,7 +35,7 @@
     </div><!-- horizontal navbar ends-->
 
 
-    <div class="row" >
+    <div class="row" style="height: 85vh;">
         <div class="col-2" *ngxPermissionsOnly="['CLIENT', 'ADMIN', 'ARTISTA']" id="col-navV">  <!-- vertical navbar begin-->
             <nav class="navbar navbar-expand-lg" >
 
@@ -96,9 +96,12 @@
             </div>
         </div>
     </div>
-    <footer class="footer bg-light row" id="footer" style="background-color: aliceblue">
-        <div class="col-12 justify-content-center d-flex">
+    <div class="row col-12 justify-content-center">
+        <footer class="footer bg-light row col-12" id="footer" style="background-color: aliceblue">
+            <div class="col-12 justify-content-center d-flex">
                 <img src="../assets/img/bunny.png" alt="logo" height="80px" /><span id="footer-text"></span>
-        </div>
-    </footer>
+            </div>
+        </footer>
+    </div>
+</div>
 

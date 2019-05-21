@@ -27,11 +27,13 @@ import {FacturaModule} from './factura/factura.module';
 import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
 import {ConcursoModule} from './concurso/concurso.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

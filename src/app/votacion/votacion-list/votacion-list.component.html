@@ -1,42 +1,41 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<table class="table table-striped">
-				<thead class="table-info">
-					<tr>
-            <th>ID</th>
-						<th>ID ANIMACION</th>
-            <th>PUNTOS</th>
-            <th>RONDA</th>
-            
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let i of votaciones">
-            <td>
-            <p class = "figure-caption"> {{i.id}}</p>
-            </td>
-            	<td>
-							<a class="figure-caption" >{{i.idAnimacion}}</a>
-						</td>
-          <td>
-            <p class = "figure-caption"> {{i.puntos}}</p>
-            </td>
-            <td>
-            <p class = "figure-caption"> {{i.idRonda}}</p>
-            </td>        
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="border row">
-			<ul class="nav row">
-						<li class="nav-item col">
-						<button type= "button" class="btn btn-success" 
-							 routerLink="rondas/create" 
-							 routerLinkActive="active">Add Votacion</button>
-					</li>
-				</ul>
-	</div>
-</div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>ID ANIMACION</th>
+                    <th>PUNTOS</th>
+                    <th>RONDA</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of votaciones">
+                    <td>
+                        <p class="figure-caption"> {{i.id}}</p>
+                    </td>
+                    <td>
+                        <a class="figure-caption">{{i.idAnimacion}}</a>
+                    </td>
+                    <td>
+                        <p class="figure-caption"> {{i.puntos}}</p>
+                    </td>
+                    <td>
+                        <p class="figure-caption"> {{i.idRonda}}</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="border row">
+            <ul class="nav row">
+                <li class="nav-item col">
+                    <button type="button" class="btn btn-success"
+                            routerLink="rondas/create"
+                            routerLinkActive="active">Add Votacion
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
