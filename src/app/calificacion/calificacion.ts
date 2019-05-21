@@ -8,22 +8,19 @@ export class Calificacion {
     * The Calificacion's comentario
     */
    comentario:String;
-    /**
-    * The calificacion's user
-    */
-   usuario:String;
+
    /**
    * The Calificacion's calificacion
    */
    calificacion:number;    
 
   /**
-   * The Animacion's calificacion
+   * The Calificacion's animacion
    */
   animacion:Animacion;  
 
    /**
-   * The Cliente's calificacion
+   * The Calificacion's cliente
    */
   cliente:Cliente;  
 
