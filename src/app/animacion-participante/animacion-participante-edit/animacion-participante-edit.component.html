@@ -1,0 +1,36 @@
+<div class="row">
+    <br>
+    <h2 class="text-cennter">Editar Animacion</h2>
+    <br>
+    <form name="animacionanimacionParticipante" (ngSubmit)="f.form.valid && editAnimacion()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="animPuntaje"><b>Puntaje</b></label>
+            <input type="text" name="animPuntaje" class="form-control" id="animPuntaje" [(ngModel)]="animacionP.puntaje" #animPuntaje="ngModel" [ngClass]="{'is-invalid': f.submitted && animPuntje.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el puntaje</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="aninmPuesto"><b>Puesto</b></label>
+            <input type="text" name="aninmPuesto" class="form-control" id="aninmPuesto" [(ngModel)]="animacionP.puesto" #aninmPuesto="ngModel" [ngClass]="{'is-invalid': f.submitted && aninmPuesto.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el puesto</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animDinero"><b>Premio</b></label>
+            <input type="text" name="animDinero" class="form-control" id="animDinero" [(ngModel)]="animacionP.dinero" #animDinero="ngModel" [ngClass]="{'is-invalid': f.submitted && animDinero.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta el Premio</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animF"><b>Finalista</b></label>
+            <input type="text" name="animF" class="form-control" id="animF" [(ngModel)]="animacionP.finalista" #animacionNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && animF.invalid}" required>
+            <div class="invalid-feedback">
+                <div>Falta atributo finalista de la animacion</div>
+            </div>
+        </div>
+        
+    </form>
+</div> 
