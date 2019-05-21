@@ -10,7 +10,7 @@ import {CalificacionService} from '../calificacion.service';
 })
 export class CalificacionDetailComponent implements OnInit {
 
-  id = 0;
+    id: number;
 
     calificacion :Calificacion ;
   
@@ -23,12 +23,8 @@ export class CalificacionDetailComponent implements OnInit {
   
     
        getCalificacion(): void {
-      this.calificacionService.getCalificaciones().subscribe(calificaciones => {
-        calificaciones.forEach(calificaciones => {
-          if(calificaciones.id == this.id){
+           this.calificacionService.getCalificacionDetail(this.id).subscribe(calificaciones => {
             this.calificacion =calificaciones;
-          }
-        });
   
       });
   }
@@ -41,7 +37,8 @@ export class CalificacionDetailComponent implements OnInit {
     this.showEdit = !this.showEdit!
   }
   
-  ngOnInit() {
+    ngOnInit() {
+      this.id = +this.activateRoute.snapshot.paramMap.get('id');
     this.getCalificacion();
   }
   
