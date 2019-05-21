@@ -1,0 +1,32 @@
+<div class="row">
+    <br>
+    <h2 class="text-center">Agregar Animacion</h2>
+    <br>
+    <form name="animacionParticipante" (ngSubmit)="f.form.valid && createAnimacion()" #f="ngForm" novalidate>
+        
+        <div class="form-group">
+            <label for="animacionParticipanteArtista"><b>Artista</b></label>
+            <select class="custom-select" name="animacionParticipanteArtista" id="animacionParticipanteArtista" [(ngModel)]="animacionParticipante.artista.id" #animacionParticipanteArtista="ngModel" [ngClass]="{'is-invalid': f.submitted && animacionParticipanteArtista.invalid}" required>
+                <option [value]="artista.id" *ngFor="let artista of artistas">{{artista.nombre}}</option>
+            </select>
+            <div class="invalid-feedback">
+                <div>Falta el artista</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="animacionFecha"><b>Fecha</b></label>
+            <div [ngClass]="{'is-invalid': f.submitted && animacionParticipanteFecha.invalid}">
+                <input name="animacionFecha" class="form-control" id="animcionFecha" [(ngModel)]="animacionParticipante.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #animacionParticipanteFecha="ngModel" [ngClass]="{'is-invalid': (animacionParticipanteFecha.untouched || animacionParticipanteFecha.invalid)}" required>
+                <div class="invalid-feedback">
+                    <div>Falta la fecha</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row form-inline">
+            <button type="submit" class="btn">Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelCreation()">Cancel</button>
+        </div>
+    </form>
+</div> 

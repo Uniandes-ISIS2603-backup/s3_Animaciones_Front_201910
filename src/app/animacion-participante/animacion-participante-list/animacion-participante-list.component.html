@@ -1,0 +1,11 @@
+<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()" *ngxPermissionsOnly="['ARTISTA']">Crear Animacion</button>
+<div *ngIf="showCreate">
+    <app-animacion-participante-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-animacion-participante-create>
+</div>
+<br>
+<br>
+<div class="galeria">
+     <div class="cuadro" *ngFor="let animP of animacionesParticipantes">
+         <a routerLink="/animaciones/{{animP.id}}"><dd>{{animP.nombre}}</dd></a>
+    </div>
+</div>

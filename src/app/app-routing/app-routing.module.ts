@@ -225,14 +225,9 @@ const routes: Routes = [
           
             {
                 path: 'detail/:id',
-                component: CalificacionDetailComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
+                component: CalificacionDetailComponent
             }
+
         ]
     },
 

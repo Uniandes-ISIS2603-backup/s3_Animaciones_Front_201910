@@ -1,0 +1,13 @@
+.cuadro {
+    width: 23%;
+    /*height: 23%;*/
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+
+.cuadro:hover {
+    border: 1px solid #777;
+}

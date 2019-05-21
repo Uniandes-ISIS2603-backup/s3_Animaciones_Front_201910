@@ -6,20 +6,13 @@
       <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
           <div class="form-group">
               <label for="calificacionComentario"><b>Comentario</b></label>
-              <input type="text" name="calificacionComentario" class="form-control" id="calificacionComentario"
+              <input type="textarea" rows="3" name="calificacionComentario" class="form-control" id="calificacionComentario"
                [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{'is-invalid': f.submitted && comentario.invalid}" required>
               <div class="invalid-feedback">
                   <p>Falta el comentario de la calificación</p>
               </div>
           </div>
-          <div class="form-group">
-              <label for="calificacionUsuario"><b>Usuario</b></label>
-              <input type="text" name="calificacionUsuario" class="form-control" id="calificacionUsuario"
-               [(ngModel)]="calificacion.usuario" #calificacionUsuario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionUsuario.invalid}" required>
-              <div class="invalid-feedback">
-                  <p>Falta el usuario</p>
-              </div>
-          </div>
+        
           <div class="star-rating">
               <label for="Calificacion"><b>Calificacion</b></label><br>
 
