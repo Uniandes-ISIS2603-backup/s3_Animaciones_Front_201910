@@ -43,6 +43,7 @@ import {ConcursoDetailComponent} from '../concurso/concurso-detail/concurso-deta
 import {ConcursoCreateComponent} from '../concurso/concurso-create/concurso-create.component';
 import {ListComponent} from "../medio-de-pago/list/list.component";
 import {EditComponent} from "../medio-de-pago/edit/edit.component";
+import {HomeComponent} from "../home/home.component";
 
 const routes: Routes = [
 
@@ -442,7 +443,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'home',
+        component: HomeComponent,
     },
 ];
 
