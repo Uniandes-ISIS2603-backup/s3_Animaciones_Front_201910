@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import {Calificacion} from './calificacion';
 
 import { environment } from '../../environments/environment';
-const API_URL =  environment.apiLocal;
-const calificaciones = 'calificaciones.json';
+const API_URL =  environment.apiURL;
+const calificaciones = 'calificaciones';
 
 @Injectable({
   providedIn: 'root'

@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente';
 
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiLocal;
-const clientes = 'clientes.json';
+const API_URL = environment.apiURL;
+const clientes = 'clientes';
 
 @Injectable({
   providedIn: 'root'
