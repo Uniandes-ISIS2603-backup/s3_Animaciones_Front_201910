@@ -1,24 +1,24 @@
-<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Crea Artista</button>
-<div *ngIf="showCreate">
-    <app-artista-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artista-create>
-</div>
-<br>
-<br>
-<table class="table">
-    <thead>
+<div class="row col-12 mt-3 justify-content-center">
+    <h4 class="text-left col-2">Artistas</h4>
+    <button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crea Artista</button>
+    <div class="col-10 row container-fluid" *ngIf="showCreate">
+        <app-artista-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artista-create>
+    </div>
+    <table class="table col-md-10 col-xs-12 mt-4">
+        <thead>
         <tr>
-            <th>
-                Artistas
-            </th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr *ngFor="let artista of artistas">
-            <td style="cursor: pointer;">
-                <a routerLink="/artistas/{{artista.id}}">
-                    <dd>{{artista.nombre}}</dd>
-                </a>
+            <td>{{artista.nombre}}</td>
+            <td>
+                <a class="btn btn-info" routerLink="/artistas/{{artista.id}}">Detalle</a>
             </td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row " >  <!-- horizontal navbar begin aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+    <div class="row " >  <!-- horizontal navbar begin-->
         <div class="col-12" style="background-color:#313a87"> 
             <nav class="navbar navbar-expand-lg" style="color:#313a87" >
 
@@ -32,11 +32,11 @@
                 </div>
             </nav> 
         </div>
-    </div><!-- horizontal navbar end aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+    </div><!-- horizontal navbar ends-->
 
 
     <div class="row" >
-        <div class="col-2" id="col-navV">  <!-- vertical navbar begin aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
+        <div class="col-2" *ngxPermissionsOnly="['CLIENT', 'ADMIN', 'ARTISTA']" id="col-navV">  <!-- vertical navbar begin-->
             <nav class="navbar navbar-expand-lg" >
 
                 <div class="collapse navbar-collapse" >
@@ -84,29 +84,21 @@
                                 <a class="nav-link" routerLink="/rondas/list">Rondas</a>
                             </li>
                             <li>
-                                <a class="nav-link" routerLink="/mediosDePago">Medio de pago</a>
+                                <a class="nav-link" routerLink="/mediodepago/list">Medio de pago</a>
                             </li>
                         </ul> 
                 </div>
             </nav> 
-        </div><!-- vertical navbar end aksdjfkladjfkljaskldfjklasdfjklasdfjlkas-->
-
-        <div class="col">
+        </div><!-- vertical navbar end-->
+        <div class="col-10">
             <div class="container-fluid">
-
                 <router-outlet></router-outlet>
             </div>
         </div>
     </div>
-
-
-
-    <footer class="footer bg-light" id="footer">
-        <div class="container">
-            <p class="navbar-text text-center">
-                <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
-                <a routerLink="/home"> s3_Animaciones-Front</a>
-            </p>
+    <footer class="footer bg-light row" id="footer" style="background-color: aliceblue">
+        <div class="col-12 justify-content-center d-flex">
+                <img src="../assets/img/bunny.png" alt="logo" height="80px" /><span id="footer-text"></span>
         </div>
     </footer>
 

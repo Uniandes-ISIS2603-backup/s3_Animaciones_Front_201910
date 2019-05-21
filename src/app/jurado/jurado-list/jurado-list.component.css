@@ -1,9 +1,5 @@
 .jurados-container{
-    widows: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-flow: row;
+
 }
 .jurado-item{
     width: 20%;

@@ -1,19 +1,20 @@
-<button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()" *ngxPermissionsOnly="['ADMIN', 'ARTISTA']">Editar Artista</button>
-<div *ngIf="showEdit">
-<app-artista-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-artista-edit>
-</div>
-<br>
-<br>
-<div class="panel-body">
-    <div class="border">
-        <h3>{{artistaDetail.nombre}}</h3>
-        <dl>
-            <dt>Usuario</dt>
-            <dd>{{artistaDetail.usuario}}</dd>
-            <dt>Tecnica</dt>
-            <dd>{{artistaDetail.tecnica}}</dd>
-        </dl>
+<div class="justify-content-center col-12 row">
+    <button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()" *ngxPermissionsOnly="['ADMIN', 'ARTISTA']">Editar Artista</button>
+    <div *ngIf="showEdit">
+        <app-artista-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-artista-edit>
     </div>
-    <h3>Animaciones de este artista: </h3>
-    <app-animacion-list [animaciones]="artistaDetail.animaciones"></app-animacion-list>
+    <br>
+    <br>
+    <div class="card mt-3 col-12 row">
+        <div class="card-content m-4">
+            <h4 class="text-center col-12">{{artistaDetail.nombre}}</h4>
+            <article>
+                <p><b>Usuario:</b> {{artistaDetail.usuario}}</p>
+                <p><b>Tecnica:</b> {{artistaDetail.tecnica}}</p>
+            </article>
+        </div>
+        <h6 class="text-left mt-4">Animaciones de este artista: </h6>
+        <app-animacion-list [animaciones]="artistaDetail.animaciones"></app-animacion-list>
+    </div>
 </div>
+

@@ -1,6 +1,6 @@
 <h4 class="text-left my-4">Jurados</h4>
-    <div class="col-12 jurados-container">
-        <a class="jurado-item" *ngFor="let jurado of jurados" [routerLink]="['/jurados/detail/', jurado.id]" >
+    <div class="col-12 row jurados-container">
+        <a class="col-2 jurado-item" *ngFor="let jurado of jurados" [routerLink]="['/jurados/detail/', jurado.id]" >
             <img src="../../../assets/img/user.png" alt="usuario"> 
             <p>{{jurado.usuario}}</p>
         </a>    
