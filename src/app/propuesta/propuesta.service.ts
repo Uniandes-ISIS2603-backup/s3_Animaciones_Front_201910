@@ -7,9 +7,11 @@ import {Factura} from '../factura/factura';
 import {environment} from '../../environments/environment';
 
 const API_URL = environment.apiURL;
-const prop = '/propuestas';
+const prop = 'propuestas';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class PropuestaService {
 
   constructor(private http: HttpClient) { }
