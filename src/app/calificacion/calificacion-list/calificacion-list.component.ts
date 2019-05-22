@@ -81,8 +81,8 @@ showHideCreate(): void {
       this.calificacionService.getCalificaciones().subscribe(calificaciones => {this.calificaciones=calificaciones;});
   }
   ngOnInit() {
-      this.getCalificaciones();
-      this.showCreate = false;
+      //this.getCalificaciones();
+      this.showCreate=false;
   }
 
 
