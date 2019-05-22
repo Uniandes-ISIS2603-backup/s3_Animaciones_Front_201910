@@ -1,14 +1,14 @@
-<div class="row">
-    <div class="col-3"></div>
+<div class="row col-12">
+  
     <div class="col-6">
         <br>
-        <h4 class="text-center">Editar Cliente:</h4>
+        <h5 class="col-12 my-4 text-center">Editar Cliente</h5>
 
         <br>
         <form class="col-12 row" name="cliente" (ngSubmit)="f.form.valid && editCliente()" #f="ngForm" novalidate>
              
                 <div class="form-group col-md-6 col-xs-12">
-                        <label for="nombresito"><b>Nombre nuevo</b></label>
+                        <label for="nombresito"><b class="text-left">Nombre nuevo</b></label>
                         <input type="text" name="nombresito" class="form-control" id="nombresito" [(ngModel)]="cliente.nombre"
                             #nombresito="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombresito.invalid }"
                             required>
