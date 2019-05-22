@@ -1,0 +1,33 @@
+<div class="row">
+    <br>
+    <h2 class="text-center">Editar un artista</h2>
+    <br>
+    <form name="artista" (ngSubmit)="f.form.valid && editArtista()" #f="ngForm" novalidate>
+          <div class="form-group">
+            <label for="concursoNombre"><b>Tema</b></label>
+            <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoTema.invalid}" required>
+                   <div class="invalid-feedback">
+                <p>Falta el tema del artista</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tecnica"><b>Técnica</b></label>
+            <select class="custom-select" name="tecnica" id="tecnica" [(ngModel)]="concurso.tecnica" required>
+                <option [value]="tecnica" *ngFor="let tecnica of tecnicas">{{tecnica}}</option>
+            </select>
+        </div>
+       <div class="form-group">
+            <label for="concursoReglas"><b>Reglas</b></label>
+            <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
+                   <div class="invalid-feedback">
+                <p>Faltan las reglas</p>
+            </div>
+        </div>
+         <div class="row from-inline">
+            <button type="submit" class="btn">Update</button>
+            <div class="divider"></div>
+            <button type="button" class="btn" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </form>
+</div>
+

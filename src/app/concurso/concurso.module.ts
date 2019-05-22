@@ -4,11 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { ConcursoListComponent } from './concurso-list/concurso-list.component';
 import { ConcursoService } from './concurso.service';
 import { ConcursoDetailComponent } from './concurso-detail/concurso-detail.component';
 import { ConcursoCreateComponent } from './concurso-create/concurso-create.component';
+import { ConcursoEditComponent } from './concurso-edit/concurso-edit.component';
+import {AnimacionParticipanteModule} from '../animacion-participante/animacion-participante.module';
 
 
 @NgModule({
@@ -17,9 +20,11 @@ import { ConcursoCreateComponent } from './concurso-create/concurso-create.compo
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
+      AnimacionParticipanteModule,
       FormsModule,
+      NgxPermissionsModule
   ],
-    declarations: [ConcursoListComponent, ConcursoDetailComponent, ConcursoCreateComponent],
+    declarations: [ConcursoListComponent, ConcursoDetailComponent, ConcursoCreateComponent, ConcursoEditComponent],
     providers: [ConcursoService],
     exports: [ConcursoListComponent]
 })
