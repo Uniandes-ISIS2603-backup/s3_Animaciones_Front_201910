@@ -15,7 +15,7 @@ export class ConcursoEditComponent implements OnInit, OnChanges {
 
     @Input() concurso: ConcursoDetail;
     concurso_id: number;
-    tecnicas: tecnicas[];
+    tecnicas: String[];
 
     @Output() cancel = new EventEmitter();
 
