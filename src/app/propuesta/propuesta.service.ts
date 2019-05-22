@@ -4,6 +4,10 @@ import {HttpClient} from '@angular/common/http';
 
 import {Propuesta} from './propuesta';
 import {Factura} from '../factura/factura';
+import {environment} from '../../environments/environment';
+
+const API_URL = environment.apiURL;
+const prop = '/propuestas';
 
 @Injectable()
 export class PropuestaService {
@@ -11,15 +15,16 @@ export class PropuestaService {
   constructor(private http: HttpClient) { }
 
   getPropuestas(): Observable<Propuesta[]>{
-    return this.http.get<Propuesta[]>('../../assets/propuestas.json');
+    return this.http.get<Propuesta[]>(API_URL+prop);
   }
 
   getPropuestaDetail(id): Observable<Propuesta>{
-    return this.http.get<Propuesta>('../../assets/propuesta'+id+'.json');
+    return this.http.get<Propuesta>(API_URL+prop+"/"+id);
   }
 
   createPropuesta(yo): Observable<Propuesta>{
-    return this.http.post<Propuesta>('../../assets',yo);
+     // this.http.post<Factura>('');
+    return this.http.post<Propuesta>(API_URL + prop,yo);
   }
 
 }
