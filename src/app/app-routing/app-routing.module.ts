@@ -150,7 +150,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['GUEST']
+                        
                     }
                 }
             },
@@ -160,7 +160,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['GUEST']
+                        
                     }
                 }
             },
@@ -182,7 +182,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['GUEST']
+                        
                     }
                 }
             }
@@ -198,7 +198,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['GUEST']
+                    
                     }
                 }
             },
@@ -208,7 +208,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['GUEST']
+                        
                     }
                 }
             },

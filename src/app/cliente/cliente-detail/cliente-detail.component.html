@@ -1,4 +1,6 @@
-
+<div class="text-center col-12">
+        <button routerLink="/clientes/edit" class="btn btn-info">Editar Cliente</button>
+    </div>
 
 <div class="panel-body">
     <div class="border">
@@ -19,8 +21,6 @@
         </dl>
     </div>
 </div>
-<br>
-<br>
-<div class="text-center col-12">
-        <button routerLink="/clientes/edit" class="btn btn-info">Editar Cliente</button>
-    </div>
+<h4>Propuestas: </h4>
+<app-propuesta-list [propuestas]="clienteDetail.propuestas"></app-propuesta-list>
+

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClienteListComponent } from './cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
-
+import { PropuestaModule } from '../propuesta/propuesta.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {BrowserModule} from '@angular/platform-browser';
@@ -25,7 +25,7 @@ import { ClienteEditComponent } from './cliente-edit/cliente-edit.component';
       CommonModule,
       NgxPermissionsModule,
       FormsModule,
-  
+      PropuestaModule,
       NgbModule
   ],
       declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent, ClienteEditComponent],
