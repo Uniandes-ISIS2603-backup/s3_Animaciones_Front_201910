@@ -5,22 +5,20 @@
 <div class="panel-body">
     <div class="border">
         
-        <h3>{{cliente.nombre}}</h3>
+        <h4 class="text-center col-12" >{{cliente.nombre}}</h4>
         <dl>
-                <dt>Id:</dt>
-                <dd>{{cliente.id}}</dd>
-            <dt>Nombre:</dt>
-            <dd>{{cliente.nombre}}</dd>
-            <dt>Información:</dt>
-            <dd>{{cliente.informacion}}</dd>
-            <dt>Usuario:</dt>
-            <dd>{{cliente.usuario}}</dd>
-            <dt>Contraseña:</dt>
-            <dd>{{cliente.contrasenia}}</dd>
-
+                <article>
+                        <p><b>Id:</b> {{cliente.id}}</p>
+                
+                        <p><b>Nombre:</b> {{cliente.nombre}}</p>
+                        <p><b>Información:</b> {{cliente.informacion}}</p>
+                        <p><b>Usuario:</b> {{cliente.usuario}}</p>
+                       
+                        <p><b>Contraseña:</b> {{cliente.contrasenia}}</p>
+        </article>
         </dl>
-    </div>
-</div>
-<h4>Propuestas: </h4>
+    
+        <h6 class="text-left mt-4">Propuestas de este cliente: </h6>
 <app-propuesta-list [propuestas]="clienteDetail.propuestas"></app-propuesta-list>
-
+</div>
+</div>

@@ -17,7 +17,7 @@
               
                 <tr *ngFor="let calificacion of calificaciones">
                     <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.cliente.usuario}}</a>
+                            <a class="figure-caption" [routerLink]="['/clientes/detail/', calificacion.cliente.id]"> {{calificacion.cliente.usuario}}</a>
                       </td>
                       <td style="cursor: pointer;">
                           <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.comentario}}</a>
