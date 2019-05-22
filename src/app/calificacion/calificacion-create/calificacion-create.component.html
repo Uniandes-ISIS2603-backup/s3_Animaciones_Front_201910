@@ -6,8 +6,8 @@
       <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
             <div class="form-group">
                     <label for="calificacionUsuario"><b>Usuario</b></label>
-            <select class="custom-select" name="calificacionUsuario" id="calificacionUsuario" [(ngModel)]="calificacion.cliente.usuario" #calificacionUsuario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionUsuario.invalid}" required>
-                <option [value]="cliente.usuario" *ngFor="let cliente of clientes">{{cliente.usuario}}</option>
+            <select class="custom-select" name="calificacionUsuario" id="calificacionUsuario" [(ngModel)]="calificacion.cliente.id" #calificacionUsuario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionUsuario.invalid}" required>
+                <option [value]="cliente.id" *ngFor="let cliente of clientes">{{cliente.usuario}}</option>
             </select>
             <div class="invalid-feedback">
                 <div>Falta el usuario</div>
@@ -22,59 +22,42 @@
                   <p>Falta el comentario de la calificación</p>
               </div>
           </div>
-        
-          <div class="star-rating">
-              <label for="Calificacion"><b>Calificacion</b></label><br>
-
-              <form>
-                  <a class="clasificacion">
-                    <input id="radio1" type="radio" tittle="Votar con 10 estrella" name="estrellas" value="10"  class="form-control" id="radio1"
-                    [(ngModel)]="calificacion.calificacion" #radio1="ngModel" [ngClass]="{'is-invalid': f.submitted && radio1.invalid}" required>
-                  <!--
-                    --><label for="radio1">&#9733;</label><!--
-                    -->
-                    <input id="radio2" type="radio" name="estrellas" value="9"  class="form-control" id="radio2"
-                    [(ngModel)]="calificacion.calificacion" #radio2="ngModel" [ngClass]="{'is-invalid': f.submitted && radio2.invalid}" required><!--
-                    --><label for="radio2">&#9733;</label><!--
-                    -->
-                    <input id="radio3" type="radio" name="estrellas" value="8"  class="form-control" id="radio3"
-                    [(ngModel)]="calificacion.calificacion" #radio3="ngModel" [ngClass]="{'is-invalid': f.submitted && radio3.invalid}" required><!--
-                    --><label for="radio3">&#9733;</label><!--
-                    -->
-                    <input id="radio4" type="radio" name="estrellas" value="7"  class="form-control" id="radio4"
-                    [(ngModel)]="calificacion.calificacion" #radio4="ngModel" [ngClass]="{'is-invalid': f.submitted && radio4.invalid}" required><!--
-                    --><label for="radio4">&#9733;</label><!--
-                    -->
-                    <input id="radio5" type="radio" name="estrellas" value="6"  class="form-control" id="radio5"
-                    [(ngModel)]="calificacion.calificacion" #radio5="ngModel" [ngClass]="{'is-invalid': f.submitted && radio5.invalid}" required><!--
-                    --><label for="radio5">&#9733;</label><!--
-                  -->
-                  <input id="radio6" type="radio" name="estrellas" value="5"  class="form-control" id="radio6"
-                  [(ngModel)]="calificacion.calificacion" #radio6="ngModel" [ngClass]="{'is-invalid': f.submitted && radio6.invalid}" required><!--
-                  --><label for="radio6">&#9733;</label><!--
-                  -->
-                  <input id="radio7" type="radio" name="estrellas" value="4"  class="form-control" id="radio7"
-                  [(ngModel)]="calificacion.calificacion" #radio7="ngModel" [ngClass]="{'is-invalid': f.submitted && radio7.invalid}" required><!--
-                  --><label for="radio7">&#9733;</label><!--
-                  -->
-                  <input id="radio8" type="radio" name="estrellas" value="3"  class="form-control" id="radio8"
-                  [(ngModel)]="calificacion.calificacion" #radio8="ngModel" [ngClass]="{'is-invalid': f.submitted && radio8.invalid}" required><!--
-                  --><label for="radio8">&#9733;</label><!--
-                  -->
-                  <input id="radio9" type="radio" name="estrellas" value="2"  class="form-control" id="radio9"
-                  [(ngModel)]="calificacion.calificacion" #radio9="ngModel" [ngClass]="{'is-invalid': f.submitted && radio9.invalid}" required><!--
-                  --><label for="radio9">&#9733;</label><!--
-                    -->
-                    <input id="radio10" type="radio" name="estrellas" value="1"  class="form-control" id="radio10"
-                    [(ngModel)]="calificacion.calificacion" #radio10="ngModel" [ngClass]="{'is-invalid': f.submitted && radio10.invalid}" required><!--
-                    --><label for="radio10">&#9733;</label>
-                  </a>
-                </form>
 
 
-            
+          <div class="form-group">
+                <label for="calificacionCalificacion"><b>Calificación</b></label>
+        <input class="custom-select" type="number" name="calificacionCalificacion" list="listacalificaciones" step="1" id="calificacionCalificacion" [(ngModel)]="calificacion.calificacion" #calificacionCalificacion="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionCalificacion.invalid}" required>
+                <datalist id="listacalificaciones">
 
-          </div>
+                        <option value="1">
+                      
+                        <option value="2">
+                      
+                        <option value="3">
+                      
+                        <option value="4">
+                     <option value="5">
+                      
+                      <option value="6">
+                                      
+                      <option value="7">
+                            <option value="8">
+                      
+                        <option value="9">
+                                                    
+                  <option value="10">
+                      
+                      </datalist>
+       
+        <div class="invalid-feedback">
+            <div>Falta el usuario</div>
+        </div>
+            </div> 
+   
+
+
+
+
           <div class="col-12 row justify-content-center my-3e">
               <button type="submit" class="btn btn-primary">Crear</button>
               <div class="divider"></div>

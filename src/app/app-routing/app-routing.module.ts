@@ -207,7 +207,7 @@ const routes: Routes = [
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
-                        only: ['ADMIN']
+                      
                     }
                 }
                 
