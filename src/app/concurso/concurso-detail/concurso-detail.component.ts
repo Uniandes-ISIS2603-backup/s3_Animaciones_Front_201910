@@ -16,14 +16,21 @@ export class ConcursoDetailComponent implements OnInit {
     constructor(private route: ActivatedRoute, private concursoService: ConcursoService) { }
 
     concurso_id: number;
-
+    
+    showEdit: boolean;
 
     getConcursoDetail(): void {
         this.concursoService.getConcursoDetail(this.concurso_id).subscribe(concursoDetail => {
             this.concursoDetail = concursoDetail
         });
     }
+    
+     showHideEdit(): void {
+        this.showEdit = !this.showEdit!
+    }
+    
     ngOnInit() {
+         this.showEdit = false;
         this.concurso_id = +this.route.snapshot.paramMap.get('id');
         if(this.concurso_id){
             this.concursoDetail = new ConcursoDetail();

@@ -23,6 +23,7 @@ import { ClienteModule } from './cliente/cliente.module';
 import { CalificacionModule } from './calificacion/calificacion.module';
 import {PropuestaModule} from './propuesta/propuesta.module';
 import {FacturaModule} from './factura/factura.module';
+import {AnimacionParticipanteModule} from './animacion-participante/animacion-participante.module';
 
 import { MedioDePagoModule } from './medio-de-pago/medio-de-pago.module';
 
@@ -59,7 +60,8 @@ import {ConcursoModule} from './concurso/concurso.module';
         JuradoModule,
         MedioDePagoModule,
         PropuestaModule,
-        FacturaModule
+        FacturaModule,
+        AnimacionParticipanteModule
     ],
     bootstrap: [AppComponent],
     providers: [

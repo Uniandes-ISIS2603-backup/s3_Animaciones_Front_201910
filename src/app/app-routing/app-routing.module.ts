@@ -41,8 +41,13 @@ import {FacturaCreateComponent} from '../factura/factura-create/factura-create.c
 import {ConcursoListComponent} from '../concurso/concurso-list/concurso-list.component';
 import {ConcursoDetailComponent} from '../concurso/concurso-detail/concurso-detail.component';
 import {ConcursoCreateComponent} from '../concurso/concurso-create/concurso-create.component';
+
 import {ListComponent} from "../medio-de-pago/list/list.component";
 import {EditComponent} from "../medio-de-pago/edit/edit.component";
+
+import {AnimacionParticipanteListComponent} from '../animacion-participante/animacion-participante-list/animacion-participante-list.component';
+import {AnimacionParticipanteEditComponent} from '../animacion-participante/animacion-participante-edit/animacion-participante-edit.component';
+import {AnimacionParticipanteCreateComponent} from '../animacion-participante/animacion-participante-create/animacion-participante-create.component';
 
 const routes: Routes = [
 
@@ -310,8 +315,23 @@ const routes: Routes = [
             path: 'create',
             component: ConcursoCreateComponent
         }
+        
         ]
-    },
+    }
+   ,
+    {
+        path: 'animacionesParticipantes',
+        children: [{
+            path: 'list',
+            component: AnimacionParticipanteListComponent
+        },
+        {
+            path: 'create',
+            component: AnimacionParticipanteCreateComponent
+        }
+        ]
+    }
+    ,
     {
         path: 'jurados',
         children: [

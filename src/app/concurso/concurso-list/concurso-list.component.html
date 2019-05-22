@@ -9,12 +9,10 @@
         <div class="col-6">
             <div class="col">
                 <div class="card-concurso" *ngFor="let i of concursos" >
-                    <a (click)="onSelected(i.id)"><p>{{i.tema}}</p></a>
+                     <a class="btn btn-info" routerLink="/concursos/{{i.id}}">{{i.tema}}</a>
+                    
                 </div>
             </div>
-        </div>
-        <div class="col-6 justify-content-center align-content-center d-flex" *ngIf="selectedConcurso" >
-                <app-concurso-detail  [concursoDetail]="selectedConcurso"> </app-concurso-detail>
         </div>
     </div>
 </div>
