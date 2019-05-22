@@ -5,7 +5,7 @@
     <form name="propuesta" (ngSubmit)="f.form.valid && crearPropuesta()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="precio"><b>Precio inicial</b></label>
-        <input type="number" min="0" name="precio" class="form-control" id="precio" [(ngModel)]="factura.precio"             #precio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precio.invalid }" required>
+        <input type="number" min="0" name="precio" class="form-control" id="precio" [(ngModel)]="propuesta.precio" #precio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precio.invalid }" required>
         <div class="invalid-feedback">
           <div>Falta el precio</div>
         </div>
