@@ -1,5 +1,8 @@
 <div class="text-center col-12">
-        <button routerLink="/clientes/edit" class="btn btn-info">Editar Cliente</button>
+        <button [ngClass]="{'btn-primary': !showEdit, 'btn-outline-dark': showEdit}" type="button" class="btn" (click)="showHideEdit()" >Editar Cliente</button>
+        <div *ngIf="showEdit">
+            <app-cliente-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-cliente-edit>
+        </div>
     </div>
 
 <div class="panel-body">

@@ -164,18 +164,7 @@ const routes: Routes = [
                     }
                 }
             },
-            {
-                path: 'edit/:id',
-                component: ClienteEditComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN']
-                    }
-                }
-                
-            },
-          
+        
             {
                 path: 'detail/:id',
                 component:ClienteDetailComponent,
