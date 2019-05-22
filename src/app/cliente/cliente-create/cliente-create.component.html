@@ -1,35 +1,39 @@
-<div class="col-12">
-
-    <form role="form" (ngSubmit)= "registrar()" #f="ngForm"> 
-        <div class="form-group">
-          <label for="text">Nombre:</label>
-          <input type="text" name="nombre" class="form-control" [(ngModel)]= "cliente.nombre" id="nombre">
+<div class="row col-12">
+    <br>
+    <h5 class="col-12 my-4 text-center">Crear Cliente</h5>
+    <br>
+    <form class="col-12 row" name="cliente" (ngSubmit)="f.form.valid && createCliente()" #f="ngForm" novalidate>
+        <div class="form-group col-md-6 col-xs-12">
+            <label for="clienteNombre"><b>Nombre</b></label>
+            <input type="text" name="clienteNombre" class="form-control" id="clienteNombre" [(ngModel)]="cliente.nombre" #clienteNombre="ngModel" [ngClass]="{'is-invalid': f.submitted && clienteNombre.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el nombre del cliente</p>
+            </div>
         </div>
-
-        <div class="form-group">
-          <label for="text">Información:</label>
-          <input type="text" name="informacion" class="form-control" [(ngModel)]= "cliente.informacion" id="informacion">
+        <div class="form-group col-md-6 col-xs-12">
+            <label for="clienteInformacion"><b>Informacion</b></label>
+            <input type="text" name="clienteInformacion" class="form-control" id="clienteInformacion" [(ngModel)]="cliente.informacion" #clienteInformacion="ngModel" [ngClass]="{'is-invalid': f.submitted && clienteInformacion.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta la información</p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="text">Usuario:</label>
-            <input type="text" name="usuario" class="form-control" [(ngModel)]= "cliente.usuario" id="usuario">
-          </div>
-
-        <div class="form-group">
-            <label for="pwd">Contraseña:</label>
-            <input type="password" name="contrasenia" class="form-control" [(ngModel)]= "cliente.contrasenia" id="contrasenia">
-          </div>
-
-        <button type="submit" class="btn btn-primary mb-2">crear</button>
-      </form>
-
-  <form (ngSubmit)="registrar()" #f="ngForm">
-      <div class="form-group">
-          <label for="cliente">Agregar Cliente Existente  </label>
-          <select class="form-control" name="cliente" id="cliente" [(ngModel)]="cliente_id">
-            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">{{cliente.nombre}}</option>
-          </select>
+        <div class="form-group col-md-6 col-xs-12">
+            <label for="clienteUsusario"><b>Usuario</b></label>
+            <input type="text" name="clienteUsusario" class="form-control" id="clienteUsusario" [(ngModel)]="cliente.usuario" #clienteUsusario="ngModel" [ngClass]="{'is-invalid': f.submitted && clienteUsusario.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta el usuario</p>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Agregar</button>
-  </form>
+        <div class="form-group col-md-6 col-xs-12">
+            <label for="clienteContrasenia"><b>Contraseña</b></label>
+            <input type="text" name="clienteContrasenia" class="form-control" id="clienteContrasenia" [(ngModel)]="cliente.contrasenia" #clienteContrasenia="ngModel" [ngClass]="{'is-invalid': f.submitted && clienteContrasenia.invalid}" required>
+            <div class="invalid-feedback">
+                <p>Falta la contrasenia</p>
+            </div>
+        </div>
+        <div class="col-12 row justify-content-center my-3">
+            <button type="submit" class="btn btn-primary col-md-2">Crear</button>
+            <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+        </div>
+    </form>
 </div>
