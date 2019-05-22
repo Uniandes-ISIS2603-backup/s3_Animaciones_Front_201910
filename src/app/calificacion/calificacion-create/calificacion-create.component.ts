@@ -2,6 +2,9 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import {CalificacionService} from '../calificacion.service';
 import {Calificacion} from '../calificacion';
+import {Cliente} from '../../cliente/cliente';
+import {ClienteService} from '../../cliente/cliente.service';
+
 
 @Component({
   selector: 'app-calificacion-create',
@@ -15,15 +18,19 @@ export class CalificacionCreateComponent implements OnInit {
   calificacion_id: any;
 
   
-  constructor(private calificacionService: CalificacionService,private toastService: ToastrService) { }
+  constructor(private calificacionService: CalificacionService,private toastService: ToastrService, private clienteService: ClienteService) { }
   calificacion: Calificacion;
+  cliente: Cliente;
+
+  clientes: Cliente[];
+
  
   @Output() cancel = new EventEmitter();
 
   @Output() create = new EventEmitter();
 
 
-  getCalificaciones(): Calificacion {
+  createCalificacion(): Calificacion {
     this.calificacionService.createCalificacion(this.calificacion).subscribe((calificacion) => {
       this.calificacion = calificacion;
       this.create.emit();
@@ -34,11 +41,21 @@ export class CalificacionCreateComponent implements OnInit {
   return this.calificacion;
 }
 
+
+getClientes(): void {
+  this.clienteService.getClientes().subscribe(clientes => {
+      this.clientes = clientes;
+  }, err => {
+      this.toastService.error(err, 'Error');
+  });
+}
 cancelCreation(): void {
   this.cancel.emit();
 }
 
 ngOnInit() {
   this.calificacion = new Calificacion();
+  this.calificacion.cliente = new Cliente();
+  this.getClientes();
 }
 }

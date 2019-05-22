@@ -1,4 +1,8 @@
-<button routerLink="/calificaciones/create" class="btn btn-info">Agregar Calificación</button>
+<button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn btn-primary" (click)="showHideCreate()">Agregar calificación</button>
+<div class="col-10 row container-fluid" *ngIf="showCreate">
+        <app-calificacion-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-calificacion-create>
+    </div>
+
     <div class="row">
         
     <div class="col-md-3">
