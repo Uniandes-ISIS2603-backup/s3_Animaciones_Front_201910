@@ -48,7 +48,7 @@ export class ClienteService {
     * @returns The confirmation that the cliente was updated
     */
    updateCliente(cliente : Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(API_URL+ clientes + '/' + cliente.id, cliente);
+    return this.http.put<Cliente>(API_URL+ clientes + '/' + cliente.id, cliente);
 
 }
 
