@@ -47,7 +47,7 @@ export class CalificacionListComponent implements OnInit {
       this.calificacionService.getCalificaciones().subscribe(calificaciones => {this.calificaciones=calificaciones;});
   }
   ngOnInit() {
-      this.getCalificaciones();
+      //this.getCalificaciones();
   }
 
 
