@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {CalificacionService} from '../calificacion.service';
 import {Calificacion} from '../calificacion';
@@ -18,11 +19,12 @@ export class CalificacionCreateComponent implements OnInit {
   calificacion_id: any;
 
   
-  constructor(private calificacionService: CalificacionService,private toastService: ToastrService, private clienteService: ClienteService) { }
+    constructor(private calificacionService: CalificacionService,private toastService: ToastrService, private clienteService: ClienteService, private route: ActivatedRoute) { }
   calificacion: Calificacion;
   cliente: Cliente;
 
-  clientes: Cliente[];
+    clientes: Cliente[];
+    id_animacion: number;
 
  
   @Output() cancel = new EventEmitter();
@@ -31,7 +33,7 @@ export class CalificacionCreateComponent implements OnInit {
 
 
   createCalificacion(): Calificacion {
-    this.calificacionService.createCalificacion(this.calificacion).subscribe((calificacion) => {
+      this.calificacionService.createCalificacion(this.calificacion, this.id_animacion).subscribe((calificacion) => {
       this.calificacion = calificacion;
       this.create.emit();
       this.toastService.success("La calificación fue creada","Creacion de Calificacion");
@@ -53,7 +55,8 @@ cancelCreation(): void {
   this.cancel.emit();
 }
 
-ngOnInit() {
+    ngOnInit() {
+    this.id_animacion = +this.route.snapshot.paramMap.get('id');
   this.calificacion = new Calificacion();
   this.calificacion.cliente = new Cliente();
   this.getClientes();
