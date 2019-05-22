@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
-import {Factura} from './factura';
+import {Factura} from './factura';import {environment} from '../../environments/environment';
+
+const API_URL = environment.apiURL;
+const prop = '/facturas';
 
 @Injectable()
 export class FacturaService {
@@ -19,7 +22,7 @@ export class FacturaService {
    * @return La factura, si la encontró
    */
   getFactura(id): Observable<Factura>{
-    return this.http.get<Factura>('../../assets/factura'+id+'.json');
+    return this.http.get<Factura>(API_URL+prop+"/"+id);
   }
 
   /**
@@ -28,7 +31,7 @@ export class FacturaService {
    * @return La factura creada, si fue posible
    */
   createFactura(yo): Observable<Factura>{
-    return this.http.post<Factura>('../../assets',yo);
+    return this.http.post<Factura>(API_URL+prop,yo);
   }
 
 }
