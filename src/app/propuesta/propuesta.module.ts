@@ -9,12 +9,13 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PropuestaEditComponent } from './propuesta-edit/propuesta-edit.component';
 
 @NgModule({
   imports: [
     CommonModule, BrowserModule,  HttpClientModule, RouterModule, AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
-  declarations: [PropuestaListComponent, PropuestaDetailComponent, PropuestaCreateComponent],
+  declarations: [PropuestaListComponent, PropuestaDetailComponent, PropuestaCreateComponent, PropuestaEditComponent],
   providers: [PropuestaService],
   exports: [PropuestaListComponent, PropuestaDetailComponent, PropuestaCreateComponent]
 })
