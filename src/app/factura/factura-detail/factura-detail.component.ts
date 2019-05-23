@@ -21,6 +21,8 @@ export class FacturaDetailComponent implements OnInit, OnDestroy {
    * La factura a desplegarse
    */
   factura: Factura;
+  
+  para: any;
 
   /**
    * La suscripción a la navegación
@@ -52,7 +54,8 @@ export class FacturaDetailComponent implements OnInit, OnDestroy {
    * Método que se ejecuta al invocar al componente
    */
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+     // this.para = this.route.parent.
+      this.id = +this.route.parent.snapshot.paramMap.get('id');
     this.factura = new Factura();
     this.getFacturaDetail();
   }
