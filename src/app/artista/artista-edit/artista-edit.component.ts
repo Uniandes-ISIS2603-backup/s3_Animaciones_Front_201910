@@ -33,7 +33,8 @@ export class ArtistaEditComponent implements OnInit, OnChanges {
 
     getArtistaDetail(): void {
         this.artistaService.getArtistaDetail(this.artista_id).subscribe(artistaDetail => {
-            this.artista = artistaDetail
+            this.artista = artistaDetail;
+            this.artista.animaciones = artistaDetail.animaciones;
         });
     }
 

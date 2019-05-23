@@ -1,7 +1,8 @@
-<button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn" (click)="showHideCreate()">Agregar calificación</button>
-<div *ngIf="showCreate">
-    <app-calificacion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-calificacion-create>
-</div>
+<button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn btn-primary" (click)="showHideCreate()">Agregar calificación</button>
+<div class="col-10 row container-fluid" *ngIf="showCreate">
+        <app-calificacion-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-calificacion-create>
+    </div>
+
     <div class="row">
         
     <div class="col-md-3">
@@ -20,7 +21,7 @@
               
                 <tr *ngFor="let calificacion of calificaciones">
                     <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.cliente.usuario}}</a>
+                            <a class="figure-caption" [routerLink]="['/clientes/detail/', calificacion.cliente.id]"> {{calificacion.cliente.usuario}}</a>
                       </td>
                       <td style="cursor: pointer;">
                           <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.comentario}}</a>

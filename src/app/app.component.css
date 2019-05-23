@@ -35,3 +35,20 @@ li a:active{
     background-color: #313a87;
     width: 15%
 }
+
+#footerDiv {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.container-fluid::after {
+    content: '';
+    display: block;
+    height: 70px;
+}

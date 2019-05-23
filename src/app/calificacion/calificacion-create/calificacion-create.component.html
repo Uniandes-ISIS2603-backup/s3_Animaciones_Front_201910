@@ -1,54 +1,66 @@
 
 
-  <div class="row">
+  <div class="col-10 row container-fluid">
       <br>
       <br><br>
       <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
-          <div class="form-group">
+            <div class="form-group">
+                    <label for="calificacionUsuario"><b>Usuario</b></label>
+            <select class="custom-select" name="calificacionUsuario" id="calificacionUsuario" [(ngModel)]="calificacion.cliente.id" #calificacionUsuario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionUsuario.invalid}" required>
+                <option [value]="cliente.id" *ngFor="let cliente of clientes">{{cliente.usuario}}</option>
+            </select>
+            <div class="invalid-feedback">
+                <div>Falta el usuario</div>
+            </div>
+                </div> 
+        
+        <div class="form-group">
               <label for="calificacionComentario"><b>Comentario</b></label>
               <input type="textarea" rows="3" name="calificacionComentario" class="form-control" id="calificacionComentario"
-               [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{'is-invalid': f.submitted && comentario.invalid}" required>
+               [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionComentario.invalid}" required>
               <div class="invalid-feedback">
                   <p>Falta el comentario de la calificación</p>
               </div>
           </div>
-        
-          <div class="star-rating">
-              <label for="Calificacion"><b>Calificacion</b></label><br>
-
-              <form>
-                  <a class="clasificacion">
-                    <input id="radio1" type="radio" tittle="Votar con 1 estrella" name="estrellas" value="1"><!--
-                    --><label for="radio1">&#9733;</label><!--
-                    --><input id="radio2" type="radio" name="estrellas" value="2"><!--
-                    --><label for="radio2">&#9733;</label><!--
-                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                    --><label for="radio3">&#9733;</label><!--
-                    --><input id="radio4" type="radio" name="estrellas" value="4"><!--
-                    --><label for="radio4">&#9733;</label><!--
-                    --><input id="radio5" type="radio" name="estrellas" value="5"><!--
-                    --><label for="radio5">&#9733;</label><!--
-                  --><input id="radio6" type="radio" name="estrellas" value="6"><!--
-                  --><label for="radio6">&#9733;</label><!--
-                  --><input id="radio7" type="radio" name="estrellas" value="7"><!--
-                  --><label for="radio7">&#9733;</label><!--
-                  --><input id="radio8" type="radio" name="estrellas" value="8"><!--
-                  --><label for="radio8">&#9733;</label><!--
-                  --><input id="radio9" type="radio" name="estrellas" value="9"><!--
-                  --><label for="radio9">&#9733;</label><!--
-                    --><input id="radio10" type="radio" name="estrellas" value="10"><!--
-                    --><label for="radio10">&#9733;</label>
-                  </a>
-                </form>
 
 
-            
+          <div class="form-group">
+                <label for="calificacionCalificacion"><b>Calificación</b></label>
+        <input class="custom-select" type="number" name="calificacionCalificacion" list="listacalificaciones" step="1" id="calificacionCalificacion" [(ngModel)]="calificacion.calificacion" #calificacionCalificacion="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionCalificacion.invalid}" required>
+                <datalist id="listacalificaciones">
 
-          </div>
-          <div class="row from-inline">
-              <button type="submit" class="btn btn-primary">Crear</button>
-              <div class="divider"></div>
-              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+                        <option value="1">
+                      
+                        <option value="2">
+                      
+                        <option value="3">
+                      
+                        <option value="4">
+                     <option value="5">
+                      
+                      <option value="6">
+                                      
+                      <option value="7">
+                            <option value="8">
+                      
+                        <option value="9">
+                                                    
+                  <option value="10">
+                      
+                      </datalist>
+       
+        <div class="invalid-feedback">
+            <div>Falta el usuario</div>
+        </div>
+            </div> 
+   
+
+
+
+
+          <div class="col-12 row justify-content-center my-3e">
+                <button type="submit" class="btn btn-primary"  onclick="location.reload()">Agregar </button>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
           </div>
       </form>
   </div>

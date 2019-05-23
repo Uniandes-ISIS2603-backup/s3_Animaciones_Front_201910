@@ -3,7 +3,7 @@ import { Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Cliente } from './cliente';
-
+import { ClienteDetail } from './cliente-detail';
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
 const clientes = 'clientes';
@@ -31,14 +31,13 @@ export class ClienteService {
        return this.http.get<Cliente[]>(API_URL + clientes);
    }
 
-   /**
-    * Returns the Observable object containing the cliente retrieved from the API
-    * @returns The cliente
-    */
-   getClienteDetail(clienteId): Observable<Cliente> {
-    return this.http.get<Cliente>(API_URL + clientes + '/' + clienteId);
-}
-
+    /**
+     * Metodo para obtener un cliente
+     */
+    getClienteDetail(clienteId): Observable<ClienteDetail> {
+        return this.http.get<ClienteDetail>(API_URL + clientes + '/' + clienteId);
+    }
+   
 
    createCliente(cliente : Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(API_URL + clientes, cliente);
@@ -49,7 +48,7 @@ export class ClienteService {
     * @returns The confirmation that the cliente was updated
     */
    updateCliente(cliente : Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(API_URL+ clientes + '/' + cliente.id, cliente);
+    return this.http.put<Cliente>(API_URL+ clientes + '/' + cliente.id, cliente);
 
 }
 

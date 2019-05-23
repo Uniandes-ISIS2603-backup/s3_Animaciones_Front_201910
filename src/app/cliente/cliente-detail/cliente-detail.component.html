@@ -1,26 +1,27 @@
-
+<div class="text-center col-12">
+        <button [ngClass]="{'btn-primary': !showEdit, 'btn-outline-dark': showEdit}" type="button" class="btn" (click)="showHideEdit()" >Editar Cliente</button>
+        <div *ngIf="showEdit">
+            <app-cliente-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-cliente-edit>
+        </div>
+    </div>
 
 <div class="panel-body">
     <div class="border">
         
-        <h3>{{cliente.nombre}}</h3>
+        <h4 class="text-center col-12" >{{cliente.nombre}}</h4>
         <dl>
-                <dt>Id:</dt>
-                <dd>{{cliente.id}}</dd>
-            <dt>Nombre:</dt>
-            <dd>{{cliente.nombre}}</dd>
-            <dt>Información:</dt>
-            <dd>{{cliente.informacion}}</dd>
-            <dt>Usuario:</dt>
-            <dd>{{cliente.usuario}}</dd>
-            <dt>Contraseña:</dt>
-            <dd>{{cliente.contrasenia}}</dd>
-
+                <article>
+                        <p><b>Id:</b> {{cliente.id}}</p>
+                
+                        <p><b>Nombre:</b> {{cliente.nombre}}</p>
+                        <p><b>Información:</b> {{cliente.informacion}}</p>
+                        <p><b>Usuario:</b> {{cliente.usuario}}</p>
+                       
+                        <p><b>Contraseña:</b> {{cliente.contrasenia}}</p>
+        </article>
         </dl>
-    </div>
+    
+        <h6 class="text-left mt-4">Propuestas de este cliente: </h6>
+<app-propuesta-list [propuestas]="clienteDetail.propuestas"></app-propuesta-list>
 </div>
-<br>
-<br>
-<div class="text-center col-12">
-        <button routerLink="/clientes/edit" class="btn btn-info">Editar Cliente</button>
-    </div>
+</div>
