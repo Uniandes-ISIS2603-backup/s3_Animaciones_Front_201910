@@ -31,7 +31,7 @@ export class PropuestaCreateComponent implements OnInit {
      */
   cancelCreation(): void {
         this.toastrService.warning('No se creó la Propuesta', 'Crear propuesta');
-        this.router.navigate(['/propuestas']);
+       // this.router.navigate(['/propuestas']);
   }
 
     /**
