@@ -14,7 +14,8 @@ export class ConcursoCreateComponent implements OnInit {
     constructor(private concursoService: ConcursoService, private toastService: ToastrService) { }
 
     concurso: Concurso;
-
+    tecnicas: String[];
+    
     @Output() cancel = new EventEmitter();
 
     @Output() create = new EventEmitter();
@@ -36,6 +37,8 @@ export class ConcursoCreateComponent implements OnInit {
 
     ngOnInit() {
         this.concurso = new Concurso();
+        this.tecnicas = ['Libre', 'Animacion Completa', 'Animacion Limitada', 'live-Action', 'Claymotion', 'Pixelation', 'Go-Motion', 'Con Recortes', 'Flash', 'Captura de Movimiento', 'Modelado 3D', 'Animacion con Arena', 'Pinscreen'];
+   
   }
 
 }

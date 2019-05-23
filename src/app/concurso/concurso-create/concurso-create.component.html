@@ -12,74 +12,31 @@
                     <img class="col mt-4" src="../../../assets/img/trophy.png" alt="trofeo" />
                 </div>
                 <div class="col-9">
-                    <form name="concurso" (ngSubmit)="f.form.valid && concursoArtista()" #f="ngForm" novalidate>
-
+                    <form name="concurso" (ngSubmit)="f.form.valid && createConcurso()" #f="ngForm" novalidate>
                           <div class="form-group">
-                            <div class="row">
-                                <div class="col-1">
-                                    <label for="concursoNombre" style="color:#313a87"><b>Tema</b></label>
-                                </div>
-                                <div class="col-8">
-                                    <input style="color:#313a87" type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
-                                           <div class="invalid-feedback">
-                                        <p>Falta el tema del concurso</p>
-                                    </div>
-                                </div>                            
+                            <label for="concursoTema"><b>Tema</b></label>
+                            <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoTema.invalid}" required>
+                                   <div class="invalid-feedback">
+                                <p>Falta el tema del concurso</p>
                             </div>
                         </div>
-                        <div style="color:#313a87" class="form-group">
-                            <div class="row">
-                                <div class="col-1"> 
-                                    <label for="concursoTecnica"><b> Tecnica   </b></label>
-                                </div>
-                                <div class="col-8">
-                                    <select class="form-control" name="select">
-                                        <option value="value1" selected>Libre</option> 
-                                        <option value="value1" >Aniamcion completa</option> 
-                                        <option value="value2">Animacion limitada</option>
-                                        <option value="value3">Rotoscopia</option>
-                                        <option value="value2">Live-Action</option>
-                                        <option value="value3">Claymotion</option>
-                                        <option value="value2">Pixelation</option>
-                                        <option value="value3">Go-Motion</option>
-                                        <option value="value2">Con Recortes</option>
-                                        <option value="value3">Flash</option>
-                                        <option value="value2">Captura de movimiento</option>
-                                        <option value="value3">Modelado 3D</option>
-                                        <option value="value2">Animacion con Arena</option>
-                                        <option value="value3">Pinscreen</option>
-                                    </select>
-                                </div>
+                        <div class="form-group">
+                            <label for="tecnica"><b>Técnicas</b></label>
+                            <select class="custom-select" name="tecnica" id="tecnica" [(ngModel)]="concurso.tecnica" required>
+                                <option [value]="tecnica" *ngFor="let tecnica of tecnicas">{{tecnica}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="concursoReglas"><b>Reglas</b></label>
+                            <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
+                                   <div class="invalid-feedback">
+                                <p>Faltan las reglas del concurso</p>
                             </div>
                         </div>
-                        <div style="color:#313a87" class="form-group">
-                            <div class="row">
-                                <div class="col-1">
-                                    <label for="concursoReglas"><b>Reglas </b></label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
-                                           <div class="invalid-feedback">
-                                        <p>Faltan las reglas</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12 row justify-content-center my-3">
+                            <button type="submit" class="btn btn-primary col-md-2">Create</button>
+                            <button type="button" class="btn btn-outline-dark col-md-2 ml-4" (click)="cancelCreation()">Cancel</button>
                         </div>
-                   <!--     <div style="color:#313a87" class="form-group">
-                            <label for="concursoReglas"><b>Rondas </b></label>
-                        </div>
-                        <div style="color:#313a87" class="form-group">
-                            <label for="concursoReglas"><b>Jurados </b></label>
-
-                        <div> <app-jurado-create> d</app-jurado-create> </div>
-                        </div>-->
-                        <div class="row from-inline">
-                            <button type="submit"  style="margin-left: 10px" class="btn btn-primary mb1 bg-blue">Create</button>
-                            <div class="divider">   </div>
-                            <button type="button" style="margin-left: 10px"  class="btn btn-primary mb1 bg-black" (click)="cancelCreation()">Cancel</button>
-                            
-                        </div>
-                          <br>
                     </form>
                 </div>
             </div>            
