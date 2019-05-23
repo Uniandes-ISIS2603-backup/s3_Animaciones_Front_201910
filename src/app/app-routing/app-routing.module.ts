@@ -201,17 +201,7 @@ const routes: Routes = [
                     }
                 }
             },
-            {
-                path: 'edit/:id',
-                component: CalificacionEditComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN']
-                    }
-                }
 
-            },
 
             {
                 path: 'detail/:id',

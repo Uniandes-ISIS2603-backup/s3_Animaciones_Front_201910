@@ -1,5 +1,5 @@
-<div class = "container-fluid">
-  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+<div class = "container-fluid col-12">
+  <div class="card mb-3" style="width: 95%">
   <div class="card-header">Crear Propuesta</div>
   <div class="card-body">
     <form name="propuesta" (ngSubmit)="f.form.valid && crearPropuesta()" #f="ngForm" novalidate>
@@ -12,8 +12,8 @@
         <p class="card-text">Inserte aquí el precio deseado para la propuesta.</p>
         </div>
         <div class="row form-inline justify-content-center align-self-center">
-          <button type="submit" class="btn btn-dark">Crear</button>                    
-          <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Crear</button>
+          <button type="button" class="btn btn-danger ml-2" (click)="cancelCreation()">Cancelar</button>
         </div>
     </form> 
   </div>

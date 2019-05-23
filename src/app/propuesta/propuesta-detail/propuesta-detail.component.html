@@ -1,22 +1,21 @@
-<div class = "container-fluid">
+<div class= "container-fluid">
   <div class="card">
     <h3 class ="card-header">Propuesta #{{id}}</h3>
     <div class="card-body">
-      <br>
-      <p>Estado:</p>
+      <h5>Estado:</h5>
       <p><marquee>{{propuesta.estado}}</marquee></p>
       <br>
-      <p>Precio:</p>
-      <p>{{propuesta.precio}}</p>
+      <h5>Precio:</h5>
+      <p>{{propuesta.precio | currency}}</p>
       <br>
-      <div *ngIf = "propuesta.factura; else noblock">
-        <button class="btn btn-secondary" type="button" routerLink="/propuestas/{{propuesta.id}}/factura">Ver Factura</button>
-      </div>  
-      <ng-template #noblock>
-        <button class="btn btn-secondary" type="button" routerLink="/propuestas/{{propuesta.id}}/factura/createF">Crear Factura</button>
-      </ng-template>  
-      <br>
-      <br>
+      <div class="justify-content-center row my-3 mx-2">
+        <div *ngIf = "propuesta.factura; else noblock">
+          <button class="btn btn-secondary col" type="button" routerLink="/propuestas/{{propuesta.id}}/factura">Ver Factura</button>
+        </div>
+        <ng-template #noblock>
+          <button class="btn btn-primary col" type="button" routerLink="/propuestas/{{propuesta.id}}/factura/createF">Crear Factura</button>
+        </ng-template>
+      </div>
       <router-outlet></router-outlet>
     </div>     
   </div> 

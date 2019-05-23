@@ -1,10 +1,14 @@
 <div class="panel-body">
     <div class="border">
-        
+        <h4>Detalles de esta calificación:  </h4> 
      
         <dl>
             <dt>Id:</dt>
             <dd>{{calificacion.id}}</dd>
+            <dt>Id animación:</dt>
+            <dd>{{calificacion.animacion.id}}</dd>
+            <dt>Título de la animación:</dt>
+            <dd>{{calificacion.animacion.nombre}}</dd>
             <dt>Usuario:</dt>
             <dd>{{calificacion.cliente.usuario}}</dd>
             <dt>Comentario:</dt>
@@ -18,5 +22,8 @@
 <br>
 <br>
 <div class="text-center col-12">
-        <button routerLink="/calificaciones/edit" class="btn btn-info">Editar Calificación</button>
+        <button [ngClass]="{'btn-primary': !showEdit, 'btn-outline-dark': showEdit}" type="button" class="btn" (click)="showHideEdit()" >Editar </button>
+        <div *ngIf="showEdit">
+            <app-calificacion-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-calificacion-edit>
+        </div>
     </div>

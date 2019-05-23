@@ -1,25 +1,59 @@
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <br>
-        <h2 class="text-center">Editar Cliente:</h2>
+<div class="col-10 row container-fluid">
 
-<form>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Usuario</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
+  <div class="col-6">
+    <br>
+    <h4 class="text-center">Editar Calificación:</h4>
+
+    <form name="Calificacion" (ngSubmit)="f.form.valid && editCalificacion()" #f="ngForm" novalidate>
+
+     
+    
+      <div class="form-group">
+          <label for="calificacionComentario"><b>Comentario</b></label>
+          <input  type="text" name="calificacionComentario" class="form-control" id="calificacionComentario" [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{'is-invalid': f.submitted && calificacionComentario.invalid}" required>
+          <div class="invalid-feedback">
+              <div>No puede dejar este campo vacío</div>
+          </div>
       </div>
-  <div class="form-group">
-    <label for="exampleInputPassword2">Comentario</label>
-    <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Comentario">
-  </div>
-  <div class="form-group">
-      <label for="exampleInputPassword1">Calificación</label>
-      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Calificación (de 1 a 10)">
-    </div>
 
-  <button type="submit" class="btn btn-primary">Agregar Calificación</button>
-</form>
-</div>
-<div class="col-3"></div>
+      <div class="form-group">
+          <label for="calificacionNueva"><b>Calificación</b></label>
+          <input  class="custom-select" type="number" name="calificacionNueva" class="form-control"list="listacalificaciones" step="1" id="calificacionNueva" [(ngModel)]="calificacion.calificacion" #calificacionNueva="ngModel" [ngClass]="{'is-invallid': f.submitted && calificacionNueva.invalid}" required>
+          <datalist id="listacalificaciones">
+
+              <option value="1">
+
+                  <option value="2">
+
+                      <option value="3">
+
+                          <option value="4">
+                              <option value="5">
+
+                                  <option value="6">
+
+                                      <option value="7">
+                                          <option value="8">
+
+                                              <option value="9">
+
+                                                  <option value="10">
+
+          </datalist>
+        
+          <div class="invalid-feedback">
+              <div>No puede dejar este campo vacío</div>
+          </div>
+      </div>
+
+
+
+      <div class="col-12 row justify-content-center my-3">
+          <button type="submit" class="btn btn-primary" >Editar</button>
+         
+          <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-3"></div>
 </div>
