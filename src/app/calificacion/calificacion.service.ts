@@ -48,7 +48,7 @@ export class CalificacionService {
     * @returns The confirmation that the calificacion was updated
     */
    updateCalificacion(calificacion : Calificacion): Observable<Calificacion> {
-    return this.http.post<Calificacion>(API_URL+ calificaciones + '/' + calificacion.id, calificacion);
+    return this.http.put<Calificacion>(API_URL+ calificaciones + '/' + calificacion.id, calificacion);
 
 }
  }
