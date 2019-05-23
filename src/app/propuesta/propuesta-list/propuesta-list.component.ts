@@ -15,6 +15,11 @@ export class PropuestaListComponent implements OnInit {
    * La lsta de propuestas a desplegarse
    */  
   @Input() propuestas: Propuesta[];
+  
+  /**
+   * El ID del cliente ese a quien le pertenecen las propuestas
+   */
+  idCliente: number;
 
     /**
      * Método constructor de la clase
@@ -28,6 +33,7 @@ export class PropuestaListComponent implements OnInit {
    */
   ngOnInit() {
     this.getPropuestas();
+    this.idCliente = +this.route.parent.snapshot.paramMap.get('id'); 
   }
 
     /**
