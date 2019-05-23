@@ -10,8 +10,8 @@ import { ConcursoListComponent } from './concurso-list/concurso-list.component';
 import { ConcursoService } from './concurso.service';
 import { ConcursoDetailComponent } from './concurso-detail/concurso-detail.component';
 import { ConcursoCreateComponent } from './concurso-create/concurso-create.component';
-import { ConcursoEditComponent } from './concurso-edit/concurso-edit.component';
-import {AnimacionParticipanteModule} from '../animacion-participante/animacion-participante.module';
+import {ConcursoEditComponent} from './concurso-edit/concurso-edit.component';
+import { RondaModule } from '../ronda/ronda.module';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import {AnimacionParticipanteModule} from '../animacion-participante/animacion-p
       HttpClientModule,
       AnimacionParticipanteModule,
       FormsModule,
+      RondaModule,
       NgxPermissionsModule
   ],
     declarations: [ConcursoListComponent, ConcursoDetailComponent, ConcursoCreateComponent, ConcursoEditComponent],

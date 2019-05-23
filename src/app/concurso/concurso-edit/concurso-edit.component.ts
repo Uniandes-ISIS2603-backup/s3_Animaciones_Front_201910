@@ -15,7 +15,6 @@ export class ConcursoEditComponent implements OnInit, OnChanges {
 
     @Input() concurso: ConcursoDetail;
     concurso_id: number;
-    
     tecnicas: String[];
 
     @Output() cancel = new EventEmitter();
@@ -34,8 +33,8 @@ export class ConcursoEditComponent implements OnInit, OnChanges {
     }
 
     getConcursoDetail(): void {
-        this.concursoService.getConcursoDetail(this.concurso_id).subscribe(cd => {
-            this.concurso = cd
+        this.concursoService.getConcursoDetail(this.concurso_id).subscribe(concursoDetail => {
+            this.concurso = concursoDetail
         });
     }
 
@@ -49,7 +48,7 @@ export class ConcursoEditComponent implements OnInit, OnChanges {
 
     ngOnChanges(){
         this.ngOnInit()
-        this.tecnicas = ['Libre', 'Animación Completa', 'Animación Limitada', 'Artista', 'Rotoscopia', 'Live-Action', 'Claymotion', 'Pixelation', 'Go-Motion', 'Con Recortes', 'Flash', 'Captura de Movimiento', 'Modelado 3D', 'Animación con arena', 'Pinscreen'];
+         this.tecnicas = ['Administrator', 'Client', 'Jurado', 'Artista', 'Organizador'];
     }
 
 }
