@@ -17,7 +17,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="concursoReglas"><b>Usuario</b></label>
+            <label for="concursoReglas"><b>Reglas</b></label>
             <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
                    <div class="invalid-feedback">
                 <p>Faltan las reglas del concurso</p>
