@@ -298,7 +298,6 @@ const routes: Routes = [
                 {
                     path: ':id',
                     component: ConcursoDetailComponent,
-                    outlet: 'detail'
                 },
                 {
                     path: 'create',

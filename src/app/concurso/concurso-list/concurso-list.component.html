@@ -1,6 +1,6 @@
 <div class="justify-content-center col-12 row my-4" style="color: #313a87;">
     <h3 class="col-7 text-center ">Concursos</h3>
-    <button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crea Concurso</button>
+    <button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crea Concurso  </button>
     <div class="col-10 row container-fluid" *ngIf="showCreate">
         <app-concurso-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-concurso-create>
     </div>

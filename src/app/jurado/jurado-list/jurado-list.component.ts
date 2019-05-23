@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 import { Jurado } from '../jurado';
@@ -16,6 +16,7 @@ export class JuradoListComponent implements OnInit {
   constructor(private juradoService: JuradoService) { }
 
   //Atributo que contiene todos los jurados en una lista
+  @Input()
   jurados : Jurado[];
 
   //Atributo que me permite controlar la visualizacion 

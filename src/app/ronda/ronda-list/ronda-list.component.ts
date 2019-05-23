@@ -1,7 +1,7 @@
 /*
  * archivo que representa el caso de uso de listar una ronda
  */
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ronda } from '../ronda';
 import { RondaService} from '../ronda.service';
@@ -18,6 +18,7 @@ constructor(private RondasService: RondaService, private router: Router) { }
 /*
  * arreglo de rondas a listar
  */
+@Input() 
 rondas: Ronda[];
 /*
  * id de la ronda seleccionada
