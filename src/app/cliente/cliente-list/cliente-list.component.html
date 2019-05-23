@@ -1,11 +1,11 @@
-<div class="container-fluid col-12 row">
+<div class="container-fluid col-12 row mt-4">
         <h4 class="text-left col-2">Clientes</h4>
         <button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crear Cliente</button>
         <div class="col-10 row container-fluid" *ngIf="showCreate">
                 <app-cliente-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-cliente-create>
             </div>
       
-        <div class="row">
+        <div class="row col-12 mt-2">
            
       
             <table class="table table-striped">

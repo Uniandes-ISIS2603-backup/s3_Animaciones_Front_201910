@@ -1,10 +1,8 @@
-<div class ="container-fluid">
-  <div class="card">
-    <h5 class="card-header">Factura #{{id}}</h5>
+<div class ="container-fluid mt-3 col-12  border-info border-top">
+    <h5 class="text-left mt-4">Factura #{{id}}</h5>
       <div class="card-body">
       <h5 class="card-title">Asociada a la animación {{factura.idAnim}}</h5>
       <p class="card-text">Fecha de facturación: {{factura.fecha}}</p>
     </div>
-  </div>
-  <router-outlet></router-outlet>
+  <router-outlet class="col-12 justify-content-center"></router-outlet>
 </div>

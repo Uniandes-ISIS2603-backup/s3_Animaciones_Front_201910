@@ -7,7 +7,6 @@
   .stars-outer::before {
     content: "\f006 \f006 \f006 \f006 \f006\f006 \f006 \f006 \f006 \f006";
   }
-   
   .stars-inner {
     position: absolute;
     top: 0;
@@ -25,4 +24,8 @@
   table thead {
     color: white;
     background-color: #313A87;
+  }
+
+  .btn-block{
+    max-height: 40px !important;
   }

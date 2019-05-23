@@ -1,20 +1,20 @@
 <div class="justify-content-center col-12 row my-4" style="color: #313a87;">
     <h3 class="col-7 text-center ">Concursos</h3>
-    <div class="justify-content-around col-5">
-        <button routerLink="/concursos/create" class="btn btn-info">Agregar Concurso</button>
+    <button [ngClass]="{'btn-primary': !showCreate, 'btn-danger': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crea Concurso</button>
+    <div class="col-10 row container-fluid" *ngIf="showCreate">
+        <app-concurso-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-concurso-create>
     </div>
 </div>
 <div class="container-fluid" >
-    <div class="row col-12">
+    <div class="row">
+         <div class="col-3" ></div>
         <div class="col-6">
             <div class="col">
                 <div class="card-concurso" *ngFor="let i of concursos" >
-                    <a (click)="onSelected(i.id)"><p>{{i.tema}}</p></a>
+                     <a class="btn btn-info" routerLink="/concursos/{{i.id}}">{{i.tema}}</a>
+                    
                 </div>
             </div>
-        </div>
-        <div class="col-6 justify-content-center align-content-center d-flex" *ngIf="selectedConcurso" >
-                <app-concurso-detail  [concursoDetail]="selectedConcurso"> </app-concurso-detail>
         </div>
     </div>
 </div>
