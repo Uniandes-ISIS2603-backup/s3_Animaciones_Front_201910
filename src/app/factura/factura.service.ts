@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Factura} from './factura';import {environment} from '../../environments/environment';
 
 const API_URL = environment.apiURL;
-const prop = '/facturas';
+const prop = 'facturas';
 
 @Injectable()
 export class FacturaService {
@@ -22,7 +22,7 @@ export class FacturaService {
    * @return La factura, si la encontró
    */
   getFactura(id): Observable<Factura>{
-    return this.http.get<Factura>(API_URL+prop+"/"+id);
+    return this.http.get<Factura>(API_URL+"propuestas/"+id+'/factura');
   }
 
   /**

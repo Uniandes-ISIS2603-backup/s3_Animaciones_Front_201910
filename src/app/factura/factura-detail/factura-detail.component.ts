@@ -13,7 +13,7 @@ import {PropuestaService} from '../../propuesta/propuesta.service';
 })
 export class FacturaDetailComponent implements OnInit, OnDestroy {
   /**
-   * Identificador de la factura
+   * Identificador de la propuesta que contiene la factura
    */
   id: number;
 
@@ -52,7 +52,7 @@ export class FacturaDetailComponent implements OnInit, OnDestroy {
    * Método que se ejecuta al invocar al componente
    */
   ngOnInit() {
-    this.data.currentMessage.subscribe(sapo=>{this.id = sapo});
+    this.id = +this.route.snapshot.paramMap.get('id');
     this.factura = new Factura();
     this.getFacturaDetail();
   }
