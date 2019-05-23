@@ -20,7 +20,6 @@ import { RondaModule } from '../ronda/ronda.module';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      AnimacionParticipanteModule,
       FormsModule,
       RondaModule,
       NgxPermissionsModule
