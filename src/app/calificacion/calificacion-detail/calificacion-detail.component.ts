@@ -40,6 +40,7 @@ export class CalificacionDetailComponent implements OnInit {
     ngOnInit() {
       this.id = +this.activateRoute.snapshot.paramMap.get('id');
     this.getCalificacion();
+    this.showEdit = false;
   }
   
 
