@@ -1,8 +1,12 @@
-
-    <div class="row">
-        <div class="col-12">
+<div class="row mt-4">
+        <h4 class="col-1">Votaciones</h4>
+    <button type="button" class="btn btn-success offset-8"
+            routerLink="rondas/create"
+            routerLinkActive="active">Add Votacion
+    </button>
+        <div class="col-12 mt-4">
             <table class="table table-striped">
-                <thead class="table">
+                <thead class="table table-dark">
                 <tr>
                     <th>ID</th>
                     <th>ID ANIMACION</th>
@@ -27,15 +31,5 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="border row">
-            <ul class="nav row">
-                <li class="nav-item col">
-                    <button type="button" class="btn btn-success"
-                            routerLink="rondas/create"
-                            routerLinkActive="active">Add Votacion
-                    </button>
-                </li>
-            </ul>
         </div>
     </div>

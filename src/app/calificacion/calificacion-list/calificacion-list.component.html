@@ -1,39 +1,45 @@
-<button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn btn-primary" (click)="showHideCreate()">Agregar calificación</button>
-<div class="col-10 row container-fluid" *ngIf="showCreate">
-        <app-calificacion-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-calificacion-create>
-    </div>
+<div class="col-12 row">
+    <div class="col-6  col-xs-12 row  mt-4" >
 
-    <div class="row">
-        
-    <div class="col-md-3">
-        <table class="table table-striped">
-            <thead class="table-info">
-                
-                
+        <button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn btn-sm btn-block btn-primary"
+                (click)="showHideCreate()">Agregar calificación
+        </button>
+        <div class="col-12 mt-4" *ngIf="showCreate">
+            <app-calificacion-create class="col-12 row container-fluid" (cancel)="showHideCreate()"
+                                 (create)="ngOnInit()"></app-calificacion-create>
+        </div>
+    </div>
+    <div class="row mt-3 col-6 col-xs-12">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="table-info">
                 <tr>
                     <th colspan="4">Calificaciones</th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <th>Usuario</th>
                 <th>Comentario</th>
                 <th>Calificacion</th>
-              
                 <tr *ngFor="let calificacion of calificaciones">
                     <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/clientes/detail/', calificacion.cliente.id]"> {{calificacion.cliente.usuario}}</a>
-                      </td>
-                      <td style="cursor: pointer;">
-                          <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.comentario}}</a>
-                        </td>
-                        <td style="cursor: pointer;">
-                            <a class="figure-caption" [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.calificacion}}</a>
-                          </td>
-                       
+                        <a class="figure-caption"
+                           [routerLink]="['/clientes/detail/', calificacion.cliente.id]"> {{calificacion.cliente.usuario}}</a>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <a class="figure-caption"
+                           [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.comentario}}</a>
+                    </td>
+                    <td style="cursor: pointer;">
+                        <a class="figure-caption"
+                           [routerLink]="['/calificaciones/detail/', calificacion.id]"> {{calificacion.calificacion}}</a>
+                    </td>
                 </tr>
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
+</div>
+
 
     
    
