@@ -1,14 +1,21 @@
-<<div class="justify-content-center col-12 row">
-    
+<div class="justify-content-center col-12 row">
+
     <br>
     <div class="card mt-3 col-12 row">
         <div class="card-content m-4">
             <h4 class="text-center col-12">{{concursoDetail.tema}}</h4>
             <article>
-                <p><b>Usuario:</b> {{concursoDetail.Tecnica}}</p>
-                <p><b>Tecnica:</b> {{concursoDetail.reglas}}</p>
+                <p><b>Tecnica:</b> {{concursoDetail.tecnica}}</p>
+                <p><b>Reglas:</b> {{concursoDetail.reglas}}</p>
             </article>
         </div>
-        
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <h6 class="text-left mt-4">Rondas de este Concurso</h6>
+            <app-ronda-list [rondas]="concursoDetail.rondas"></app-ronda-list>
+        </div>
+       
+    </div>
 </div>
 

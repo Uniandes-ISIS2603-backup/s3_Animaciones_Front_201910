@@ -12,6 +12,8 @@ import { ConcursoDetailComponent } from './concurso-detail/concurso-detail.compo
 import { ConcursoCreateComponent } from './concurso-create/concurso-create.component';
 import {ConcursoEditComponent} from './concurso-edit/concurso-edit.component';
 import { RondaModule } from '../ronda/ronda.module';
+import { JuradoModule } from '../jurado/jurado.module';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { RondaModule } from '../ronda/ronda.module';
       HttpClientModule,
       FormsModule,
       RondaModule,
+      JuradoModule,
       NgxPermissionsModule
   ],
     declarations: [ConcursoListComponent, ConcursoDetailComponent, ConcursoCreateComponent, ConcursoEditComponent],

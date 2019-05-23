@@ -7,6 +7,7 @@ import { Concurso } from '../concurso';
 
 import {AnimacionParticipanteListComponent} from '../../animacion-participante/animacion-participante-list/animacion-participante-list.component'
 import {RondaListComponent} from '../../ronda/ronda-list/ronda-list.component'
+import {JuradoListComponent} from '../../jurado/jurado-list/jurado-list.component'
 
     @Component({
   selector: 'app-concurso-detail',
