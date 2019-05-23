@@ -179,15 +179,15 @@ const routes: Routes = [
                         path: 'propuestas',
                         component: PropuestaListComponent,
                         children: [
-                            {
-                                path: 'create',
-                                component: PropuestaCreateComponent,
-                                canActivate: [NgxPermissionsGuard],
-                                data: {
-                                    permissions: {
-                                        only: ['CLIENT', 'ADMIN']
-                                }}
-                            },
+                           // {
+                           //     path: 'create',
+                           //     component: PropuestaCreateComponent,
+                           //     canActivate: [NgxPermissionsGuard],
+                           //     data: {
+                           //         permissions: {
+                           //             only: ['CLIENT', 'ADMIN']
+                           //     }}
+                           // },
                             {
                                 path: ':idp',
                                 component: PropuestaDetailComponent,
