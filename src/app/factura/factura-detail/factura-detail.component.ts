@@ -22,7 +22,6 @@ export class FacturaDetailComponent implements OnInit, OnDestroy {
    */
   factura: Factura;
   
-  para: any;
 
   /**
    * La suscripción a la navegación
