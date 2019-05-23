@@ -34,6 +34,7 @@ import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 import { PropuestaListComponent } from '../propuesta/propuesta-list/propuesta-list.component'
 import { PropuestaDetailComponent } from '../propuesta/propuesta-detail/propuesta-detail.component';
+import { PropuestaEditComponent } from '../propuesta/propuesta-edit/propuesta-edit.component';
 import { PropuestaCreateComponent } from '../propuesta/propuesta-create/propuesta-create.component';
 import { FacturaDetailComponent } from '../factura/factura-detail/factura-detail.component';
 import { FacturaCreateComponent } from '../factura/factura-create/factura-create.component';
@@ -132,7 +133,28 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: AnimacionDetailComponent
+                component: AnimacionDetailComponent,
+                children:[
+                    {
+                        path: 'comprar',
+                        component: PropuestaCreateComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['ADMIN','CLIENT']
+                            }
+                        },
+                        children:[
+                            {
+                                path: 'facturar',
+                                component: PropuestaEditComponent,
+                                canActivate: [NgxPermissionsGuard]
+                            }
+                        ]
+                    }
+                ]
+                  
+                
             },
             {
                 path: 'add',
@@ -376,118 +398,107 @@ const routes: Routes = [
 
             },
             {
-                path: 'add',
-                component: VotacionCreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN','JURADO']
-                    }
-                }
-            }
-        ]
-    }
-    ,
-    {
-        path: 'concursos',
-        children: [{
-            path: 'list',
-            component: ConcursoListComponent
-        },
-        {
-            path: ':id',
-            component: ConcursoDetailComponent,
-            outlet: 'detail'
-        },
-        {
-            path: 'create',
-            component: ConcursoCreateComponent
-        }
-        ]
-    },
-    {
-        path: 'jurados',
-        children: [
-            {
-                path: 'list',
-                component: JuradoListComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST', 'ADMIN' ]
-                    }
-                }
-            },
-            {
-                path: 'create',
-                component: JuradoCreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN', 'ORGANIZADOR']
-                    }
-                }
-            },
-            {
-                path: 'detail/:id',
-                component: JuradoDetailComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
-                    }
-                }
-            }
-        ]
+                path: 'mediodepago',
+                children: [
 
-    },
-    {
-        path: 'mediodepago',
-        children: [
-            
-            {
-                path: 'create',
-                component: CreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
-                    }
-                }
-            },{
-                path: 'list',
-                component: ListComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
-                    }
-                }
-            },
-            {
-                path: 'detail/:id',
-                component: EditComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN', 'ORGANIZADOR','CLIENT']
-                    }
-                }
-            },
-            
-        ]
+                    {
+                        path: 'create',
+                        component: CreateComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['ADMIN', 'ORGANIZADOR', 'CLIENT']
+                            }
+                        }
+                    }, {
+                        path: 'list',
+                        component: ListComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['ADMIN', 'ORGANIZADOR', 'CLIENT']
+                            }
+                        }
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: EditComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['ADMIN', 'ORGANIZADOR', 'CLIENT']
+                            }
+                        }
+                    },
 
-    },
-    
-    {
-        path: 'home',
-        component: AuthLoginComponent
-    },
-    {
-        path: '**',
-        component: HomeComponent,
-    },
-];
+                ]
+
+            },
+            {
+                path: 'propuestas',
+                component: PropuestaListComponent,
+                children: [
+                    {
+                        path: 'create',
+                        component: PropuestaCreateComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['CLIENT', 'ADMIN']
+                            }
+                        }
+                    },
+                    {
+                        path: ':id',
+                        component: PropuestaDetailComponent,
+                        children: [
+                            {
+                                path: 'factura',
+                                component: FacturaDetailComponent,
+                                children: [
+                                    {
+                                        path: 'createF',
+                                        component: FacturaCreateComponent,
+                                        canActivate: [NgxPermissionsGuard],
+                                        data: {
+                                            permissions: {
+                                                only: ['CLIENT', 'ADMIN']
+                                            }
+                                        }
+                                    }
+                                ],
+                                canActivate: [NgxPermissionsGuard],
+                                data: {
+                                    permissions: {
+                                        only: ['CLIENT', 'ADMIN']
+                                    }
+                                }
+                            }
+                        ],
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['CLIENT', 'ADMIN']
+                            }
+                        }
+                    }
+                ],
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT', 'ADMIN']
+                    }
+                }
+            },
+            {
+                path: 'home',
+                component: AuthLoginComponent
+            },
+            {
+                path: '**',
+                component: HomeComponent,
+            }
+        ];
 
 @NgModule({
     imports: [
