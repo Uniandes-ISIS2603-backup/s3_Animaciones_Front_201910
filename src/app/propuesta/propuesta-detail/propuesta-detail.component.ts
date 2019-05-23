@@ -16,11 +16,6 @@ export class PropuestaDetailComponent implements OnInit, OnDestroy {
      * ID de la propuesta que se está viendo
      */
   id: number;
-
-    /**
-     * id de la factura asociada a la propuesta, si existe
-     */
-  idFactura: number;
     
   
   /**
@@ -54,27 +49,15 @@ export class PropuestaDetailComponent implements OnInit, OnDestroy {
   getPropuestaDetail(): void{
     this.service.getPropuestaDetail(this.id).subscribe(sapon => {this.propuesta = sapon});
   }
-
-    /**
-     * Método que debería sincronizar el id de factura
-     */
-  getFacturaId(): void{
-    this.data.currentMessage.subscribe(sapin =>{this.idFactura=sapin});
-  }
+  
 
     /**
      * Método que se ejecuta al instanciar la clase
      */
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+    this.id = +this.route.snapshot.paramMap.get('idp');
     this.propuesta = new Propuesta();
-    this.getPropuestaDetail();
-    this.getFacturaId();
-    if(this.propuesta.factura!=null){
-      this.idFactura = this.propuesta.factura.id;
-      this.data.changeMessage(this.idFactura);
-    }
-    
+    this.getPropuestaDetail();    
   }
 
     /**

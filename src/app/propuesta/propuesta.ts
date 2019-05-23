@@ -9,8 +9,6 @@ export class Propuesta {
   precio: number;
 
   factura: Factura;
-
-  constructor(){
-    
-  }
+  
+  idCliente: number;
 }

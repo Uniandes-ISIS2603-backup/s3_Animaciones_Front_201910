@@ -34,6 +34,7 @@ import { createComponent } from '@angular/compiler/src/core';
 import { CreateComponent } from '../medio-de-pago/create/create.component';
 import { PropuestaListComponent } from '../propuesta/propuesta-list/propuesta-list.component'
 import { PropuestaDetailComponent } from '../propuesta/propuesta-detail/propuesta-detail.component';
+import { PropuestaEditComponent } from '../propuesta/propuesta-edit/propuesta-edit.component';
 import { PropuestaCreateComponent } from '../propuesta/propuesta-create/propuesta-create.component';
 import { FacturaDetailComponent } from '../factura/factura-detail/factura-detail.component';
 import { FacturaCreateComponent } from '../factura/factura-create/factura-create.component';
@@ -132,7 +133,28 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: AnimacionDetailComponent
+                component: AnimacionDetailComponent,
+                children:[
+                    {
+                        path: 'comprar',
+                        component: PropuestaCreateComponent,
+                        canActivate: [NgxPermissionsGuard],
+                        data: {
+                            permissions: {
+                                only: ['ADMIN','CLIENT']
+                            }
+                        },
+                        children:[
+                            {
+                                path: 'facturar',
+                                component: PropuestaEditComponent,
+                                canActivate: [NgxPermissionsGuard]
+                            }
+                        ]
+                    }
+                ]
+                  
+                
             },
             {
                 path: 'add',
@@ -173,7 +195,51 @@ const routes: Routes = [
                     permissions: {
                         only: ['ADMIN']
                     }
-                }
+                },
+                children:[
+                    {
+                        path: 'propuestas',
+                        component: PropuestaListComponent,
+                        children: [
+                           // {
+                           //     path: 'create',
+                           //     component: PropuestaCreateComponent,
+                           //     canActivate: [NgxPermissionsGuard],
+                           //     data: {
+                           //         permissions: {
+                           //             only: ['CLIENT', 'ADMIN']
+                           //     }}
+                           // },
+                            {
+                                path: ':idp',
+                                component: PropuestaDetailComponent,
+                                children: [
+                                    {
+                                        path: 'factura',
+                                        component: FacturaDetailComponent,
+                                        canActivate: [NgxPermissionsGuard],
+                                        data: {
+                                            permissions: {
+                                                only: ['CLIENT', 'ADMIN']
+                                        }}
+                                    }
+                                ],
+                                canActivate: [NgxPermissionsGuard],
+                                data: {
+                                    permissions: {
+                                        only: ['CLIENT', 'ADMIN']
+                                    }}
+                            }
+                ],
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT', 'ADMIN']
+                    }}
+            }
+                ]
+                    
+                
             }
         ]
     },
