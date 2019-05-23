@@ -9,7 +9,7 @@
       <p>{{propuesta.precio | currency}}</p>
       <br>
       <div *ngIf = "propuesta.factura; else noblock">
-        <button class="btn btn-secondary" type="button" routerLink="/propuestas/{{propuesta.id}}/factura">Ver Factura</button>
+        <button class="btn btn-secondary" type="button" routerLink="factura">Ver Factura</button>
       </div>  
       <!--<ng-template #noblock>
         <button class="btn btn-secondary" type="button" routerLink="/propuestas/{{propuesta.id}}/factura/createF">Crear Factura</button>

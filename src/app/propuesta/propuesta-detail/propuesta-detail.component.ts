@@ -55,7 +55,7 @@ export class PropuestaDetailComponent implements OnInit, OnDestroy {
      * Método que se ejecuta al instanciar la clase
      */
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+    this.id = +this.route.snapshot.paramMap.get('idp');
     this.propuesta = new Propuesta();
     this.getPropuestaDetail();    
   }

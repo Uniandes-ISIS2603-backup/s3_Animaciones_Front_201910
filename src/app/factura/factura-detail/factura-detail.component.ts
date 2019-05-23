@@ -54,7 +54,7 @@ export class FacturaDetailComponent implements OnInit, OnDestroy {
    */
   ngOnInit() {
      // this.para = this.route.parent.
-      this.id = +this.route.parent.snapshot.paramMap.get('id');
+      this.id = +this.route.parent.snapshot.paramMap.get('idp');
     this.factura = new Factura();
     this.getFacturaDetail();
   }
