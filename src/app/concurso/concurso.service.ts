@@ -5,10 +5,10 @@ import {HttpClient} from '@angular/common/http';
 import {Concurso} from './concurso';
 import {ConcursoDetail} from './concurso-detail';
 
-
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
 const concursos = 'concursos';
+
 
 @Injectable()
 export class ConcursoService {
@@ -19,7 +19,7 @@ export class ConcursoService {
     }
     
     getConcursoDetail(concursoId): Observable<ConcursoDetail> {
-        return this.http.get<ConcursoDetail>(API_URL + concursos + '/'+ concursoId);
+        return this.http.get<ConcursoDetail>(API_URL + concursos + '/' + concursoId);
     }
     
      createConcurso(concurso): Observable<Concurso> {
