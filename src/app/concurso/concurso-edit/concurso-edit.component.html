@@ -1,0 +1,28 @@
+<div class="row">
+    <br>
+    <h2 class="text-center">Editar un concurso</h2>
+    <br>
+    <form name="concurso" (ngSubmit)="f.form.valid && editconcurso()" #f="ngForm" novalidate>
+          <div class="form-group">
+            <label for="concursoTema"><b>Nombre</b></label>
+            <input type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoTema.invalid}" required>
+                   <div class="invalid-feedback">
+                <p>Falta el tema del concurso</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tecnica"><b>Técnicas</b></label>
+            <select class="custom-select" name="tecnica" id="tecnica" [(ngModel)]="concurso.tecnica" required>
+                <option [value]="tecnica" *ngFor="let tecnica of tecnicas">{{tecnica}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="concursoReglas"><b>Reglas</b></label>
+            <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
+                   <div class="invalid-feedback">
+                <p>Faltan las reglas del concurso</p>
+            </div>
+        </div>
+    </form>
+</div>
+

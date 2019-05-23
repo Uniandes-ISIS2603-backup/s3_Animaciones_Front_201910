@@ -19,7 +19,7 @@
                                 <div class="col-1">
                                     <label for="concursoNombre" style="color:#313a87"><b>Tema</b></label>
                                 </div>
-                                <div class="col">
+                                <div class="col-8">
                                     <input style="color:#313a87" type="text" name="concursoTema" class="form-control" id="concursoTema" [(ngModel)]="concurso.tema" #concursoTema="ngModel" [ngClass]="{'is-invalid': f.submitted && tema.invalid}" required>
                                            <div class="invalid-feedback">
                                         <p>Falta el tema del concurso</p>
@@ -32,7 +32,7 @@
                                 <div class="col-1"> 
                                     <label for="concursoTecnica"><b> Tecnica   </b></label>
                                 </div>
-                                <div class="col">
+                                <div class="col-8">
                                     <select class="form-control" name="select">
                                         <option value="value1" selected>Libre</option> 
                                         <option value="value1" >Aniamcion completa</option> 
@@ -57,7 +57,7 @@
                                 <div class="col-1">
                                     <label for="concursoReglas"><b>Reglas </b></label>
                                 </div>
-                                <div class="col">
+                                <div class="col-8">
                                     <input type="text" name="concursoReglas" class="form-control" id="concursoReglas" [(ngModel)]="concurso.reglas" #concursoReglas="ngModel" [ngClass]="{'is-invalid': f.submitted && concursoReglas.invalid}" required>
                                            <div class="invalid-feedback">
                                         <p>Faltan las reglas</p>
