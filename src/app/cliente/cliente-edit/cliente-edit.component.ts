@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import { ClienteService } from '../cliente.service';
+import { ActivatedRoute } from '@angular/router';
 import { Cliente } from '../cliente';
 import {ToastrService} from 'ngx-toastr';
 
@@ -19,13 +20,20 @@ export class ClienteEditComponent implements OnInit {
    constructor(
     private clienteService: ClienteService,
     private toastrService: ToastrService,
+    private route: ActivatedRoute
 ) {}
 
+
+  /**
+    * The id of the cliente that the user wants to edit
+    * This is passed as a parameter by the parent component
+    */
+   @Input() cliente: Cliente;
     /**
     * The id of the cliente that the user wants to edit
     * This is passed as a parameter by the parent component
     */
-   @Input() cliente_id: number;
+  cliente_id: number;
 
    /**
    * The output which tells the parent component
@@ -39,10 +47,7 @@ export class ClienteEditComponent implements OnInit {
    */
    @Output() update = new EventEmitter();
 
-   /**
-   * The cliente to edit
-   */
-   cliente: Cliente;
+
 
    /**
    * Retrieves the information of the cliente
@@ -60,9 +65,10 @@ export class ClienteEditComponent implements OnInit {
    editCliente(): void {
        this.clienteService.updateCliente(this.cliente)
            .subscribe(() => {
-               this.update.emit();
+            
                this.toastrService.success("The cliente's information was updated", "Cliente edition");
            });
+           this.update.emit();
    }
 
    /**
@@ -72,13 +78,21 @@ export class ClienteEditComponent implements OnInit {
        this.cancel.emit();
    }
 
+   getClienteDetail(): void {
+    this.clienteService.getClienteDetail(this.cliente_id).subscribe(clienteDetail => {
+        this.cliente = clienteDetail
+    });
+}
 
   /**
     * The function which initializes the component
     */
    ngOnInit() {
+    this.cliente_id = +this.route.snapshot.paramMap.get('id');
+    if(this.cliente_id){
     this.cliente = new Cliente();
-    this.getCliente();
+    this.getClienteDetail();
+    }
 }
 
 /**

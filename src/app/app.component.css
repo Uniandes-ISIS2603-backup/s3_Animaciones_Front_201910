@@ -40,4 +40,15 @@ li a:active{
     position: fixed;
     left: 0;
     bottom: 0;
+    height: 70px;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.container-fluid::after {
+    content: '';
+    display: block;
+    height: 70px;
 }

@@ -1,27 +1,33 @@
 <div class="container-fluid col-12 row">
+        <h4 class="text-left col-2">Clientes</h4>
+        <button [ngClass]="{'btn-primary': !showCreate, ' btn-outline-dark': showCreate}" type="button" class="btn offset-8" (click)="showHideCreate()">Crear Cliente</button>
+        <div class="col-10 row container-fluid" *ngIf="showCreate">
+                <app-cliente-create class="col-12 row container-fluid" (cancel)="showHideCreate()" (create)="ngOnInit()"></app-cliente-create>
+            </div>
+      
         <div class="row">
-            <div class="col"></div>
-        <div class="col-md-3">
+           
+      
             <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th colspan="3">Clientes</th>
-                    </tr>
+                <thead class="thead">
+                        <th>Nombre</th>
+                        <th>Usuario</th>
                 </thead>
                 <tbody>
-                    <th>Nombre</th>
+                   
 
                     <tr *ngFor="let cliente of clientes">
                         <td style="cursor: pointer;">
                                 <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.id]"> {{cliente.nombre}}</a>
                           </td>
+                          <td style="cursor: pointer;">
+                                <a class="figure-caption" [routerLink]="['/clientes/detail/', cliente.id]"> {{cliente.usuario}}</a>
+                          </td>
 
                     </tr>
                 </tbody>
             </table>
-        </div>
+        
     <br>
     <br>
-    <div class="col">
-            <button routerLink="/clientes/create" class="btn btn-info">Agregar Cliente</button>
-        </div>
+

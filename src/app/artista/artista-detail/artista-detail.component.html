@@ -1,7 +1,7 @@
-<div class="justify-content-center col-12 row">
+
     <button [ngClass]="{'btn-primary': !showEdit, 'btn-danger': showEdit}" type="button" class="btn" (click)="showHideEdit()" *ngxPermissionsOnly="['ADMIN', 'ARTISTA']">Editar Artista</button>
     <div *ngIf="showEdit">
-        <app-artista-edit (cancel)="showHideEdit()" (create)="ngOnInit()"></app-artista-edit>
+        <app-artista-edit [artista]="artistaDetail" (cancel)="showHideEdit()" (create)="ngOnInit()"></app-artista-edit>
     </div>
     <br>
     <br>
@@ -16,5 +16,5 @@
         <h6 class="text-left mt-4">Animaciones de este artista: </h6>
         <app-animacion-list [animaciones]="artistaDetail.animaciones"></app-animacion-list>
     </div>
-</div>
+
 

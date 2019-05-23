@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
+import {ToastrService} from 'ngx-toastr';
 import {ClienteService} from '../cliente.service';
 import {Cliente} from '../cliente';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
@@ -17,22 +17,38 @@ export class ClienteCreateComponent implements OnInit {
   cliente_id: any;
   cliente : Cliente;
   
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService,   private toastService: ToastrService) { }
+  @Output() cancel = new EventEmitter();
 
-  getClientes(): void {
-    this.clienteService.getClientes().subscribe(clientes => {
-        this.clientes = clientes;
-        console.table(this.clientes);
-    });
+  @Output() create = new EventEmitter();
+
+ 
+
+createCliente(): Cliente {
+  
+  this.clienteService.createCliente(this.cliente).subscribe((cliente) => {
+      this.cliente = cliente;
+      this.create.emit();
+      this.toastService.success("El cliente ha sido creado", "Creacion de un Cliente");
+    }, err => {
+      this.toastService.error(err,"Error");
+  });
+  return this.cliente;
 }
+
+
 
 showHideCreate(): void {
   this.showCreate = !this.showCreate!
 }
+cancelCreation(): void {
+  this.cancel.emit();
+}
 
   ngOnInit() {
     this.showCreate = false;
-    this.getClientes();
+  
+  
     this.cliente = new Cliente ();
   }
 

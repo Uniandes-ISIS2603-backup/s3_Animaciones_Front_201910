@@ -39,8 +39,8 @@ export class CalificacionService {
     return this.http.get<Calificacion>(API_URL + calificaciones + '/' + calificacionId);
 }
 
- createCalificacion(calificacion: Calificacion): Observable<Calificacion> {
-   return this.http.post<Calificacion>(API_URL + calificaciones, calificacion);
+    createCalificacion(calificacion: Calificacion, idAnimacion: number): Observable<Calificacion> {
+     return this.http.post<Calificacion>(API_URL + 'animaciones/' + idAnimacion + '/' + calificaciones, calificacion);
  }
    /**
     * Updates an cliente
